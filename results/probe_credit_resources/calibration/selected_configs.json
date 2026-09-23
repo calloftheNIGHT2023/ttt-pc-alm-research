@@ -1,0 +1,267 @@
+{
+  "primary": "credit_control_probe33",
+  "budget_seconds": 0.41443988749961136,
+  "budget_factor": 1.0,
+  "within_budget": [
+    "credit_control_probe33",
+    "probe_archive_only",
+    "probe_then_pc33",
+    "probe_pc64_33",
+    "probe_then_nodual33",
+    "probe_then_adam60_33",
+    "probe_then_adam120_33",
+    "probe_then_adam240_33",
+    "credit_control_alm33",
+    "plain_alm64_33",
+    "cold__adam240_r33",
+    "cold__prior4096_ridge",
+    "cold__prior16384_ridge",
+    "cold__meta_shallow64_20"
+  ],
+  "over_budget_background": [
+    "probe_all_alm64"
+  ],
+  "configs": [
+    {
+      "name": "credit_control_probe33",
+      "family": "local",
+      "group": "candidate",
+      "config": {
+        "name": "credit_control_probe33",
+        "atomic": "branch_probe",
+        "solver": "alm",
+        "certificate": false,
+        "action": "Q",
+        "prefix": 32,
+        "extra": 32
+      }
+    },
+    {
+      "name": "probe_archive_only",
+      "family": "probe",
+      "group": "archive",
+      "config": {
+        "name": "probe_archive_only",
+        "atomic": "branch_probe",
+        "solver": "archive",
+        "certificate": false,
+        "action": "Q"
+      }
+    },
+    {
+      "name": "probe_then_pc33",
+      "family": "local",
+      "group": "probe_pc",
+      "config": {
+        "name": "probe_then_pc33",
+        "atomic": "branch_probe",
+        "solver": "pc",
+        "certificate": false,
+        "action": "Q",
+        "prefix": 32,
+        "extra": 32
+      }
+    },
+    {
+      "name": "probe_pc64_33",
+      "family": "local",
+      "group": "probe_pc",
+      "config": {
+        "name": "probe_pc64_33",
+        "atomic": "branch_probe",
+        "solver": "pc",
+        "certificate": false,
+        "action": "Q",
+        "prefix": 64,
+        "extra": 64
+      }
+    },
+    {
+      "name": "probe_then_nodual33",
+      "family": "local",
+      "group": "probe_nodual",
+      "config": {
+        "name": "probe_then_nodual33",
+        "atomic": "branch_probe",
+        "solver": "nodual",
+        "certificate": false,
+        "action": "Q",
+        "prefix": 32,
+        "extra": 32
+      }
+    },
+    {
+      "name": "probe_then_adam60_33",
+      "family": "probe",
+      "group": "probe_adam",
+      "config": {
+        "name": "probe_then_adam60_33",
+        "atomic": "branch_probe",
+        "solver": "adam",
+        "certificate": false,
+        "action": "Q",
+        "steps": 60
+      }
+    },
+    {
+      "name": "probe_then_adam120_33",
+      "family": "probe",
+      "group": "probe_adam",
+      "config": {
+        "name": "probe_then_adam120_33",
+        "atomic": "branch_probe",
+        "solver": "adam",
+        "certificate": false,
+        "action": "Q",
+        "steps": 120
+      }
+    },
+    {
+      "name": "probe_then_adam240_33",
+      "family": "probe",
+      "group": "probe_adam",
+      "config": {
+        "name": "probe_then_adam240_33",
+        "atomic": "branch_probe",
+        "solver": "adam",
+        "certificate": false,
+        "action": "Q",
+        "steps": 240
+      }
+    },
+    {
+      "name": "credit_control_alm33",
+      "family": "local",
+      "group": "plain_alm",
+      "config": {
+        "name": "credit_control_alm33",
+        "atomic": "alm1",
+        "solver": "alm",
+        "certificate": false,
+        "action": "L",
+        "prefix": 32,
+        "extra": 32
+      }
+    },
+    {
+      "name": "plain_alm64_33",
+      "family": "local",
+      "group": "plain_alm",
+      "config": {
+        "name": "plain_alm64_33",
+        "atomic": "alm1",
+        "solver": "alm",
+        "certificate": false,
+        "action": "L",
+        "prefix": 64,
+        "extra": 64
+      }
+    },
+    {
+      "name": "cold__adam240_r33",
+      "family": "legacy",
+      "group": "cold_adam",
+      "config": {
+        "name": "cold__adam240_r33",
+        "family": "cold_plus",
+        "group": "cold_adam",
+        "config": {
+          "name": "cold__adam240_r33",
+          "family": "bp",
+          "method": "adam",
+          "steps": 240,
+          "restarts": 33
+        }
+      }
+    },
+    {
+      "name": "cold__prior4096_ridge",
+      "family": "prior",
+      "group": "ridge",
+      "features": 4096
+    },
+    {
+      "name": "cold__prior16384_ridge",
+      "family": "prior",
+      "group": "ridge",
+      "features": 16384
+    },
+    {
+      "name": "cold__meta_shallow64_20",
+      "family": "legacy",
+      "group": "shallow",
+      "config": {
+        "name": "cold__meta_shallow64_20",
+        "family": "head",
+        "config": {
+          "name": "meta_shallow64_20",
+          "family": "meta"
+        }
+      }
+    },
+    {
+      "name": "probe_all_alm64",
+      "family": "legacy",
+      "group": "full_probe",
+      "config": {
+        "name": "probe_all_alm64",
+        "family": "new",
+        "config": {
+          "name": "probe_all_alm64",
+          "initial": "branch_probe",
+          "method": "alm",
+          "steps": 64,
+          "all_trials": true
+        }
+      }
+    }
+  ],
+  "sensitivity_110_percent": [
+    "credit_control_probe33",
+    "probe_archive_only",
+    "probe_then_pc33",
+    "probe_pc64_33",
+    "probe_pc128_33",
+    "probe_then_nodual33",
+    "probe_nodual64_33",
+    "probe_then_adam60_33",
+    "probe_then_adam120_33",
+    "probe_then_adam240_33",
+    "probe_then_adam480_33",
+    "credit_control_alm33",
+    "plain_alm64_33",
+    "plain_alm128_33",
+    "cold__adam240_r33",
+    "cold__prior4096_ridge",
+    "cold__prior16384_ridge",
+    "cold__meta_shallow64_20"
+  ],
+  "calibration_means": {
+    "credit_control_probe33": 0.41443988749961136,
+    "probe_archive_only": 0.34380374999454943,
+    "probe_then_pc33": 0.3697429791718605,
+    "probe_pc64_33": 0.39093671249914524,
+    "probe_pc128_33": 0.41928732917100814,
+    "probe_pc256_33": 0.4795343041672216,
+    "probe_then_nodual33": 0.39047206667358597,
+    "probe_nodual64_33": 0.4279100583322967,
+    "probe_nodual128_33": 0.5124428499960535,
+    "probe_nodual256_33": 0.6635207708216816,
+    "probe_then_adam60_33": 0.36891857917119825,
+    "probe_then_adam120_33": 0.38544402499731706,
+    "probe_then_adam240_33": 0.40473898333342123,
+    "probe_then_adam480_33": 0.4459550000028685,
+    "probe_then_adam960_33": 0.5280454708214771,
+    "credit_control_alm33": 0.24593237082929895,
+    "plain_alm64_33": 0.31330084166499245,
+    "plain_alm128_33": 0.4213985291644349,
+    "plain_alm256_33": 0.5890265124932436,
+    "cold__adam240_r33": 0.35476931666441186,
+    "cold__prior4096_ridge": 0.026393270835493848,
+    "cold__prior16384_ridge": 0.11495981666424389,
+    "cold__prior65536_ridge": 0.4844383875024505,
+    "cold__meta_shallow64_20": 0.004257145832525566,
+    "probe_all_alm64": 0.6884132458168702
+  },
+  "phase_accesses_query_targets": false
+}
