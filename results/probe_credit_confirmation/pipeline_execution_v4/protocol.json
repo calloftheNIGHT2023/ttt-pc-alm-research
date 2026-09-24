@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-09-24T13:03:00.082561+00:00",
+  "driver_source_sha256": "13afbd1df29809cdbc05acbf64de41203a69179622e052192f688f268acf0d2f",
+  "old_complete_preflight_sha256": "5b97ecb4cc8648a9a96f6b214335b6309461a4454e70bfbe6327eb48f9b275a2",
+  "existing_prediction_audit_identity": null,
+  "stages": [
+    [
+      "paths",
+      "audit_probe_confirmation_paths_v4.py",
+      "path_audit_v4"
+    ],
+    [
+      "evaluation",
+      "evaluate_probe_credit_confirmation_v4.py",
+      "evaluation_v4"
+    ],
+    [
+      "statistics",
+      "audit_probe_credit_confirmation_evaluation_v4.py",
+      "evaluation_audit_v4"
+    ],
+    [
+      "figures",
+      "plot_probe_credit_confirmation_v5.py",
+      "figures_v5"
+    ]
+  ],
+  "no_restart": true,
+  "no_algorithm_changes": true,
+  "component_gate_scope_changed": true,
+  "pool_budget_scope_note_sha256": "02052312ee79738cbf567f3c778c7aafbdbb585d627e8876d4bd0694f9f9057c",
+  "query_access_policy": "Only the frozen evaluator after all-prediction and fixed-first64 path gates; any stage failure stops",
+  "final_visual_review_required": true
+}
