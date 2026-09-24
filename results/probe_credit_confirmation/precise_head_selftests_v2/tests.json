@@ -1,0 +1,55 @@
+{
+  "distinct_support": {
+    "passed": true,
+    "independent_rational_primal_2x2_equals_high_precision_dual": true
+  },
+  "repeated_support": {
+    "passed": true,
+    "independent_rational_primal_2x2_equals_high_precision_dual": true
+  },
+  "near_repeated_support": {
+    "passed": true,
+    "independent_rational_primal_2x2_equals_high_precision_dual": true
+  },
+  "observed_reference_discrepancy_resolved": {
+    "passed": true,
+    "diagnostic": {
+      "reference": "independent_high_precision",
+      "original_numpy_prediction_gap": 2.0050375804103737e-09,
+      "high_precision_used": true,
+      "original_tolerances": {
+        "rtol": 1e-10,
+        "atol": 1e-09
+      },
+      "precision_runs": [
+        {
+          "ridge": "0.0000003827266050035612009347474189336066208449288989411444140378713322679497",
+          "dps": 70,
+          "maximum_dual_residual": "7.697327217002705512382751397254623013580151518418267461145222656445176e-71"
+        },
+        {
+          "ridge": "0.0000003827266050035612009347474189336066208449288989411444140378713322679497032257739953585445776376401162122185331",
+          "dps": 110,
+          "maximum_dual_residual": "4.158163906257959687412161832272762547115817123350275000903369230318758621821828258090856331764996974558682466e-111"
+        }
+      ],
+      "high_precision_prediction_gap": 2.9466140638589877e-10,
+      "original_numpy_state_gaps": {
+        "fast_0": 8.13659001286382e-10
+      },
+      "high_precision_state_gaps": {
+        "fast_0": 1.2003453786491036e-10
+      },
+      "precision_stability_atol": 1e-60,
+      "prediction_precision_gap": 0.0,
+      "state_precision_gap": 0.0,
+      "original_tolerances_passed": true
+    }
+  },
+  "corrupted_prediction_rejected": {
+    "passed": true
+  },
+  "corrupted_state_rejected": {
+    "passed": true
+  }
+}
