@@ -1,0 +1,111 @@
+{
+  "passed": true,
+  "stage": "confirmation",
+  "tasks": 8192,
+  "predictors": 221184,
+  "functional_preflight_only": false,
+  "query_targets_accessed": true,
+  "comparisons": 104,
+  "main_family_size": 25,
+  "main_adjusted_negative_upper_bounds": 21,
+  "all25_adjusted_negative_upper_bounds": false,
+  "core_research_goal_complete": false,
+  "bootstrap_index_sha256": "50f216f7c8ef7324363f4471918cf2c86589f64d95e571b8a7a8b24c005ab41d",
+  "bootstrap_selftest": {
+    "passed": true,
+    "explicit_index_checks": 4,
+    "zero_difference_retained": true,
+    "block_independent_random_stream": true
+  },
+  "numerical_failures": 0,
+  "resource_notes": {
+    "successful_and_fallback_calls_seconds": 71542.22163601872,
+    "extra_interrupted_completed_calls": 0,
+    "extra_known_interrupted_seconds": 0.0,
+    "completed_task_wall_including_io_seconds": 77903.41361289949,
+    "unresolved_started_calls": 0,
+    "model_loading_seconds_all_invocations": 0.010020599991548806,
+    "shared_checkpoint_manifest": {
+      "prior256_fixed": {
+        "checkpoint_sha256": "8f7e339b39c3ee0464e13e9a4a9095df717d366dd0b8dfeb4fd0b37fa550f6b9",
+        "shared_model_bytes": 534560,
+        "historical_training": {
+          "method": "prior256_fixed",
+          "outer_training_seconds": 0.5392401000135578,
+          "outer_tasks": 0,
+          "outer_task_query_values": 0,
+          "trainable_parameters": 0,
+          "selected_step": 0,
+          "best_validation_raw_mse": 0.047218798098407094,
+          "checkpoint_sha256": "8f7e339b39c3ee0464e13e9a4a9095df717d366dd0b8dfeb4fd0b37fa550f6b9"
+        }
+      },
+      "meta_ridge64": {
+        "checkpoint_sha256": "49b6eb8961adefbe90f36f07d5289cdedc053703c7f78f691447d718f5d12e09",
+        "shared_model_bytes": 141344,
+        "historical_training": {
+          "method": "meta_ridge64",
+          "outer_training_seconds": 105.4562190999859,
+          "outer_tasks": 32000,
+          "outer_task_query_values": 2048000,
+          "trainable_parameters": 16644,
+          "selected_step": 1000,
+          "best_validation_raw_mse": 0.04719756900993165,
+          "checkpoint_sha256": "49b6eb8961adefbe90f36f07d5289cdedc053703c7f78f691447d718f5d12e09"
+        }
+      },
+      "meta_ridge128": {
+        "checkpoint_sha256": "48372cbe9ee2a65ec084c5e3fa9ee3133aa3cb7c6483f47bf434d2171084d035",
+        "shared_model_bytes": 272416,
+        "historical_training": {
+          "method": "meta_ridge128",
+          "outer_training_seconds": 111.60632210003678,
+          "outer_tasks": 32000,
+          "outer_task_query_values": 2048000,
+          "trainable_parameters": 33028,
+          "selected_step": 1000,
+          "best_validation_raw_mse": 0.04699549858478176,
+          "checkpoint_sha256": "48372cbe9ee2a65ec084c5e3fa9ee3133aa3cb7c6483f47bf434d2171084d035"
+        }
+      },
+      "meta_shallow64_5": {
+        "checkpoint_sha256": "eba577be647c19f22a16df3dc28ad4466906f290c20c440689b7ba3db37831ec",
+        "shared_model_bytes": 1072,
+        "historical_training": {
+          "method": "meta_shallow64_5",
+          "outer_training_seconds": 212.02656879997812,
+          "outer_tasks": 32000,
+          "outer_task_query_values": 2048000,
+          "trainable_parameters": 134,
+          "selected_step": 2000,
+          "best_validation_raw_mse": 0.09590774630623847,
+          "checkpoint_sha256": "eba577be647c19f22a16df3dc28ad4466906f290c20c440689b7ba3db37831ec"
+        }
+      },
+      "meta_shallow64_20": {
+        "checkpoint_sha256": "2dba027d7a71ecea2cef258f2cd2fd063a40c82a4e397e4e0eb76172913e00e8",
+        "shared_model_bytes": 1072,
+        "historical_training": {
+          "method": "meta_shallow64_20",
+          "outer_training_seconds": 966.1798766000429,
+          "outer_tasks": 32000,
+          "outer_task_query_values": 2048000,
+          "trainable_parameters": 134,
+          "selected_step": 2000,
+          "best_validation_raw_mse": 0.09556721553771036,
+          "checkpoint_sha256": "2dba027d7a71ecea2cef258f2cd2fd063a40c82a4e397e4e0eb76172913e00e8"
+        }
+      }
+    },
+    "scope": "Named numeric subtotals are not peak native memory; per-method call times exclude I/O/loading, task wall and loading shown separately; faster controls may require further fair budget enhancement"
+  },
+  "seconds": 1457.848629300017,
+  "outputs_sha256": {
+    "protocol.json": "1100a04de90063dcb4823755dd3db90ccc3bb7050eb63a456820bbf985bba411",
+    "task_metrics.npz": "92aed0efe3acab1dc9dad86680bd954725ad27521135001cb5b1e81544bb8c4a",
+    "bootstrap_means.npz": "7667382285a818fb6546d34f91ace163840dd201aeca91c427060158964a501c",
+    "comparisons.json": "2936399dd77ff408b123bdb91973e1a8805406851134bafb6f221fe0ef057002",
+    "methods.json": "ea19bea913e204a4ff8f2054341dfd07c8a63fa12ccc731b5b39ef15f3ab8384"
+  },
+  "next": "Independent full risk and bootstrap audit, then report every comparator and resource gap; do not substitute secondary metrics"
+}
