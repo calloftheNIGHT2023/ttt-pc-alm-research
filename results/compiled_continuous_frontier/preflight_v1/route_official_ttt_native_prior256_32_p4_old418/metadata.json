@@ -1,0 +1,77 @@
+{
+  "config": {
+    "name": "official_ttt_native_prior256_32_p4",
+    "kind": "cohort",
+    "training_config": {
+      "kind": "official_ttt",
+      "name": "official_ttt_native_prior256_32_p4",
+      "head_dim": 32,
+      "inner_passes": 4,
+      "key_basis": "prior256",
+      "rate_mode": "native",
+      "learning_rate": 0.001
+    }
+  },
+  "worker_pid": 50232,
+  "generation": 0,
+  "budget_seconds": 20.0,
+  "selected": "final",
+  "error": null,
+  "received_final": true,
+  "setup_seconds": 7.775190699961968,
+  "decision_seconds": 0.04176890000235289,
+  "controller_overrun_seconds": 0.0,
+  "archive_seconds": 0.00021249998826533556,
+  "task_cleanup_seconds": 0.11341640003956854,
+  "terminated_owned_worker": false,
+  "cleanup_seconds": 0.0,
+  "worker_reused": false,
+  "model_fingerprint_verified": true,
+  "query_targets_accessed": false,
+  "initialization_receives_support": false,
+  "hard_realtime_guarantee": false,
+  "warm_runtime_setup_excluded_and_separately_charged": true,
+  "late_predictions_admitted": false,
+  "shared_scientific_task_state_reused": false,
+  "setup_worker_memory": {
+    "rss": 707272704,
+    "vms": 1115000832,
+    "num_page_faults": 207126,
+    "peak_wset": 748462080,
+    "wset": 707272704,
+    "peak_paged_pool": 9530856,
+    "paged_pool": 9530552,
+    "peak_nonpaged_pool": 76144,
+    "nonpaged_pool": 75936,
+    "pagefile": 1115000832,
+    "peak_pagefile": 1126572032,
+    "private": 1115000832
+  },
+  "resource_samples": [
+    {
+      "seconds": 0.015381200006231666,
+      "worker_rss": 716701696,
+      "controller_rss": 574103552,
+      "worker_peak_working_set_since_creation": 748462080,
+      "worker_cpu_seconds": 0.015625
+    },
+    {
+      "seconds": 0.031388400006107986,
+      "worker_rss": 723128320,
+      "controller_rss": 574103552,
+      "worker_peak_working_set_since_creation": 748462080,
+      "worker_cpu_seconds": 0.03125
+    },
+    {
+      "seconds": 0.041760100051760674,
+      "worker_rss": 712200192,
+      "controller_rss": 574103552,
+      "worker_peak_working_set_since_creation": 748462080,
+      "worker_cpu_seconds": 0.046875
+    }
+  ],
+  "resource_poll_interval_seconds": 0.005,
+  "worker_max_sampled_rss": 723128320,
+  "controller_max_sampled_rss": 574103552,
+  "memory_scope": "Sampled RSS is a lower bound on online peak; lifetime peak_wset includes setup/prior tasks; shared pages not deduplicated"
+}
