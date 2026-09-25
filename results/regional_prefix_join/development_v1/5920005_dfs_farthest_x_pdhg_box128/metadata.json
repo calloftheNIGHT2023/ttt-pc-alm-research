@@ -1,0 +1,4533 @@
+{
+  "method": "pdhg_box128",
+  "schedule": "dfs",
+  "order_name": "farthest_x",
+  "order": [
+    12,
+    18,
+    1,
+    9,
+    4,
+    10,
+    16,
+    6,
+    5,
+    14,
+    21,
+    19,
+    3,
+    17,
+    7,
+    23,
+    8,
+    11,
+    13,
+    0,
+    15,
+    2,
+    22,
+    20
+  ],
+  "single_counts": [
+    6,
+    11,
+    9,
+    18,
+    7,
+    6,
+    28,
+    11,
+    7,
+    10,
+    6,
+    6,
+    9,
+    9,
+    10,
+    7,
+    6,
+    7,
+    9,
+    9,
+    12,
+    10,
+    10,
+    11
+  ],
+  "completed": false,
+  "stop_reason": "expanded_limit_at_batch_boundary",
+  "full_product": 88746410671382661120000,
+  "expanded": 65536,
+  "final_candidates": 604,
+  "first_full_seconds": 1.0476892000297084,
+  "stages": [],
+  "batches": [
+    {
+      "k": 1,
+      "start": 0,
+      "processed": 6,
+      "parent_count": 1,
+      "retained": 6,
+      "rejected_c5": 0,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 0.020830600056797266
+    },
+    {
+      "k": 2,
+      "start": 0,
+      "processed": 66,
+      "parent_count": 6,
+      "retained": 31,
+      "rejected_c5": 35,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 0.026366300066001713
+    },
+    {
+      "k": 3,
+      "start": 0,
+      "processed": 279,
+      "parent_count": 31,
+      "retained": 43,
+      "rejected_c5": 232,
+      "rejected_c20": 4,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 0.03547110001090914
+    },
+    {
+      "k": 4,
+      "start": 0,
+      "processed": 774,
+      "parent_count": 43,
+      "retained": 83,
+      "rejected_c5": 670,
+      "rejected_c20": 14,
+      "rejected_local": 7,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0003396999090909958,
+            "proposal_rows": 270,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0018593999557197094,
+            "proposal_rows": 540,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.003370199934579432,
+            "proposal_rows": 810,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.004860699991695583,
+            "proposal_rows": 1080,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 7,
+            "seconds": 0.006488399929367006,
+            "proposal_rows": 1350,
+            "rounded_checks": 7
+          }
+        ],
+        "proposal_rows": 1350,
+        "rounded_checks": 7,
+        "live_named_array_bytes": 248850,
+        "initial_archive_bytes": 25920,
+        "returned_array_bytes": 99090,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.006507999962195754
+      },
+      "cumulative_seconds": 0.057762500015087426
+    },
+    {
+      "k": 5,
+      "start": 0,
+      "processed": 581,
+      "parent_count": 83,
+      "retained": 89,
+      "rejected_c5": 436,
+      "rejected_c20": 8,
+      "rejected_local": 48,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.00046209990978240967,
+            "proposal_rows": 411,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.002667799941264093,
+            "proposal_rows": 822,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 2,
+            "seconds": 0.004995699971914291,
+            "proposal_rows": 1233,
+            "rounded_checks": 2
+          },
+          {
+            "step": 96,
+            "certified": 12,
+            "seconds": 0.008076299913227558,
+            "proposal_rows": 1644,
+            "rounded_checks": 12
+          },
+          {
+            "step": 128,
+            "certified": 48,
+            "seconds": 0.010526899946853518,
+            "proposal_rows": 2055,
+            "rounded_checks": 48
+          }
+        ],
+        "proposal_rows": 2055,
+        "rounded_checks": 48,
+        "live_named_array_bytes": 470869,
+        "initial_archive_bytes": 48224,
+        "returned_array_bytes": 185909,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.010548399994149804
+      },
+      "cumulative_seconds": 0.08479009999427944
+    },
+    {
+      "k": 6,
+      "start": 0,
+      "processed": 534,
+      "parent_count": 89,
+      "retained": 97,
+      "rejected_c5": 421,
+      "rejected_c20": 5,
+      "rejected_local": 11,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0004048999398946762,
+            "proposal_rows": 324,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0024783998960629106,
+            "proposal_rows": 648,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.004529499914497137,
+            "proposal_rows": 972,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 1,
+            "seconds": 0.0069972999626770616,
+            "proposal_rows": 1296,
+            "rounded_checks": 1
+          },
+          {
+            "step": 128,
+            "certified": 11,
+            "seconds": 0.009484199923463166,
+            "proposal_rows": 1620,
+            "rounded_checks": 11
+          }
+        ],
+        "proposal_rows": 1620,
+        "rounded_checks": 11,
+        "live_named_array_bytes": 443772,
+        "initial_archive_bytes": 44928,
+        "returned_array_bytes": 174204,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.009506699978373945
+      },
+      "cumulative_seconds": 0.11010589997749776
+    },
+    {
+      "k": 7,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 97,
+      "retained": 37,
+      "rejected_c5": 983,
+      "rejected_c20": 4,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 0.13297280005645007
+    },
+    {
+      "k": 8,
+      "start": 0,
+      "processed": 407,
+      "parent_count": 37,
+      "retained": 14,
+      "rejected_c5": 369,
+      "rejected_c20": 24,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 0.14757979998830706
+    },
+    {
+      "k": 9,
+      "start": 0,
+      "processed": 98,
+      "parent_count": 14,
+      "retained": 14,
+      "rejected_c5": 84,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 0.15463330002967268
+    },
+    {
+      "k": 10,
+      "start": 0,
+      "processed": 140,
+      "parent_count": 14,
+      "retained": 16,
+      "rejected_c5": 124,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 0.163118900032714
+    },
+    {
+      "k": 11,
+      "start": 0,
+      "processed": 96,
+      "parent_count": 16,
+      "retained": 24,
+      "rejected_c5": 64,
+      "rejected_c20": 8,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 0.17165040003601462
+    },
+    {
+      "k": 12,
+      "start": 0,
+      "processed": 144,
+      "parent_count": 24,
+      "retained": 48,
+      "rejected_c5": 96,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 0.1821436999598518
+    },
+    {
+      "k": 13,
+      "start": 0,
+      "processed": 432,
+      "parent_count": 48,
+      "retained": 0,
+      "rejected_c5": 432,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 0.19289239996578544
+    },
+    {
+      "k": 7,
+      "start": 1024,
+      "processed": 1024,
+      "parent_count": 97,
+      "retained": 67,
+      "rejected_c5": 957,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0003527998924255371,
+            "proposal_rows": 201,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.002078799996525049,
+            "proposal_rows": 402,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.003786599962040782,
+            "proposal_rows": 603,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.005460399901494384,
+            "proposal_rows": 804,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.0071359999710693955,
+            "proposal_rows": 1005,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1005,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 320327,
+        "initial_archive_bytes": 32160,
+        "returned_array_bytes": 125223,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.007155300001613796
+      },
+      "cumulative_seconds": 0.22366140002850443
+    },
+    {
+      "k": 8,
+      "start": 0,
+      "processed": 737,
+      "parent_count": 67,
+      "retained": 18,
+      "rejected_c5": 691,
+      "rejected_c20": 28,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 0.24313980003353208
+    },
+    {
+      "k": 9,
+      "start": 0,
+      "processed": 126,
+      "parent_count": 18,
+      "retained": 30,
+      "rejected_c5": 96,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 0.25168950005900115
+    },
+    {
+      "k": 10,
+      "start": 0,
+      "processed": 300,
+      "parent_count": 30,
+      "retained": 40,
+      "rejected_c5": 248,
+      "rejected_c20": 12,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 0.26449930004309863
+    },
+    {
+      "k": 11,
+      "start": 0,
+      "processed": 240,
+      "parent_count": 40,
+      "retained": 80,
+      "rejected_c5": 160,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.000407799961976707,
+            "proposal_rows": 240,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0027074000099673867,
+            "proposal_rows": 480,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.005257499986328185,
+            "proposal_rows": 720,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.007649900042451918,
+            "proposal_rows": 960,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.009854800067842007,
+            "proposal_rows": 1200,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1200,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 597520,
+        "initial_archive_bytes": 58880,
+        "returned_array_bytes": 231440,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.009876600001007318
+      },
+      "cumulative_seconds": 0.28752740006893873
+    },
+    {
+      "k": 12,
+      "start": 0,
+      "processed": 480,
+      "parent_count": 80,
+      "retained": 150,
+      "rejected_c5": 320,
+      "rejected_c20": 0,
+      "rejected_local": 10,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0006132000125944614,
+            "proposal_rows": 480,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.005363099975511432,
+            "proposal_rows": 960,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.00934750004671514,
+            "proposal_rows": 1440,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.013257900020107627,
+            "proposal_rows": 1920,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 10,
+            "seconds": 0.017556500039063394,
+            "proposal_rows": 2400,
+            "rounded_checks": 10
+          }
+        ],
+        "proposal_rows": 2400,
+        "rounded_checks": 10,
+        "live_named_array_bytes": 1302560,
+        "initial_archive_bytes": 128000,
+        "returned_array_bytes": 503840,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.017587400041520596
+      },
+      "cumulative_seconds": 0.32844630000181496
+    },
+    {
+      "k": 13,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 150,
+      "retained": 98,
+      "rejected_c5": 926,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005224000196903944,
+            "proposal_rows": 294,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.003455700003542006,
+            "proposal_rows": 588,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.006225900026038289,
+            "proposal_rows": 882,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.009075799956917763,
+            "proposal_rows": 1176,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.011818200000561774,
+            "proposal_rows": 1470,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1470,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 863674,
+        "initial_archive_bytes": 84672,
+        "returned_array_bytes": 333690,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.011840499937534332
+      },
+      "cumulative_seconds": 0.37295089999679476
+    },
+    {
+      "k": 14,
+      "start": 0,
+      "processed": 882,
+      "parent_count": 98,
+      "retained": 98,
+      "rejected_c5": 784,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005210998933762312,
+            "proposal_rows": 294,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0037742999847978354,
+            "proposal_rows": 588,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.006898599909618497,
+            "proposal_rows": 882,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.009978699963539839,
+            "proposal_rows": 1176,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.01283489994239062,
+            "proposal_rows": 1470,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1470,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 929530,
+        "initial_archive_bytes": 90944,
+        "returned_array_bytes": 358778,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.012856599991209805
+      },
+      "cumulative_seconds": 0.4166558999568224
+    },
+    {
+      "k": 15,
+      "start": 0,
+      "processed": 980,
+      "parent_count": 98,
+      "retained": 109,
+      "rejected_c5": 847,
+      "rejected_c20": 0,
+      "rejected_local": 24,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0008619000436738133,
+            "proposal_rows": 399,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.004851200035773218,
+            "proposal_rows": 798,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.00873260002117604,
+            "proposal_rows": 1197,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.012668100069276989,
+            "proposal_rows": 1596,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 24,
+            "seconds": 0.018158000078983605,
+            "proposal_rows": 1995,
+            "rounded_checks": 24
+          }
+        ],
+        "proposal_rows": 1995,
+        "rounded_checks": 24,
+        "live_named_array_bytes": 1350881,
+        "initial_archive_bytes": 131936,
+        "returned_array_bytes": 520961,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.018184100044891238
+      },
+      "cumulative_seconds": 0.47121930005960166
+    },
+    {
+      "k": 16,
+      "start": 0,
+      "processed": 763,
+      "parent_count": 109,
+      "retained": 102,
+      "rejected_c5": 654,
+      "rejected_c20": 0,
+      "rejected_local": 7,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.000595899997279048,
+            "proposal_rows": 327,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.004567500087432563,
+            "proposal_rows": 654,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.008540700073353946,
+            "proposal_rows": 981,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.012498300056904554,
+            "proposal_rows": 1308,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 7,
+            "seconds": 0.016729500028304756,
+            "proposal_rows": 1635,
+            "rounded_checks": 7
+          }
+        ],
+        "proposal_rows": 1635,
+        "rounded_checks": 7,
+        "live_named_array_bytes": 1180361,
+        "initial_archive_bytes": 115104,
+        "returned_array_bytes": 454857,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.016753200092352927
+      },
+      "cumulative_seconds": 0.5195362999802455
+    },
+    {
+      "k": 17,
+      "start": 0,
+      "processed": 612,
+      "parent_count": 102,
+      "retained": 110,
+      "rejected_c5": 408,
+      "rejected_c20": 74,
+      "rejected_local": 20,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0006509999511763453,
+            "proposal_rows": 390,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0052689999574795365,
+            "proposal_rows": 780,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.010008899960666895,
+            "proposal_rows": 1170,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.014816900016739964,
+            "proposal_rows": 1560,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 20,
+            "seconds": 0.019672299968078732,
+            "proposal_rows": 1950,
+            "rounded_checks": 20
+          }
+        ],
+        "proposal_rows": 1950,
+        "rounded_checks": 20,
+        "live_named_array_bytes": 1495130,
+        "initial_archive_bytes": 145600,
+        "returned_array_bytes": 575770,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.0196966000366956
+      },
+      "cumulative_seconds": 0.5747603999916464
+    },
+    {
+      "k": 18,
+      "start": 0,
+      "processed": 770,
+      "parent_count": 110,
+      "retained": 106,
+      "rejected_c5": 660,
+      "rejected_c20": 0,
+      "rejected_local": 4,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0006140000186860561,
+            "proposal_rows": 330,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.00481670000590384,
+            "proposal_rows": 660,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.008999000070616603,
+            "proposal_rows": 990,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.01330330001655966,
+            "proposal_rows": 1320,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 4,
+            "seconds": 0.017980300006456673,
+            "proposal_rows": 1650,
+            "rounded_checks": 4
+          }
+        ],
+        "proposal_rows": 1650,
+        "rounded_checks": 4,
+        "live_named_array_bytes": 1339030,
+        "initial_archive_bytes": 130240,
+        "returned_array_bytes": 515350,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.018009599996730685
+      },
+      "cumulative_seconds": 0.6285620999988168
+    },
+    {
+      "k": 19,
+      "start": 0,
+      "processed": 954,
+      "parent_count": 106,
+      "retained": 106,
+      "rejected_c5": 848,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0006852999795228243,
+            "proposal_rows": 318,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.005468100076541305,
+            "proposal_rows": 636,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.009695200016722083,
+            "proposal_rows": 954,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.013868500012904406,
+            "proposal_rows": 1272,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.0184861000161618,
+            "proposal_rows": 1590,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1590,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 1361570,
+        "initial_archive_bytes": 132288,
+        "returned_array_bytes": 523746,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.018511699978262186
+      },
+      "cumulative_seconds": 0.6875654000323266
+    },
+    {
+      "k": 20,
+      "start": 0,
+      "processed": 954,
+      "parent_count": 106,
+      "retained": 102,
+      "rejected_c5": 764,
+      "rejected_c20": 84,
+      "rejected_local": 4,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0006476000417023897,
+            "proposal_rows": 318,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.004955500015057623,
+            "proposal_rows": 636,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.009586900006979704,
+            "proposal_rows": 954,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.01384989998769015,
+            "proposal_rows": 1272,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 4,
+            "seconds": 0.01838789996691048,
+            "proposal_rows": 1590,
+            "rounded_checks": 4
+          }
+        ],
+        "proposal_rows": 1590,
+        "rounded_checks": 4,
+        "live_named_array_bytes": 1432802,
+        "initial_archive_bytes": 139072,
+        "returned_array_bytes": 550882,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.018411000026389956
+      },
+      "cumulative_seconds": 0.757738700020127
+    },
+    {
+      "k": 21,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 102,
+      "retained": 142,
+      "rejected_c5": 854,
+      "rejected_c20": 28,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0008229999803006649,
+            "proposal_rows": 426,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.007078800001181662,
+            "proposal_rows": 852,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.0126663000555709,
+            "proposal_rows": 1278,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.018354600062593818,
+            "proposal_rows": 1704,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.023887400049716234,
+            "proposal_rows": 2130,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 2130,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 2014838,
+        "initial_archive_bytes": 195392,
+        "returned_array_bytes": 774326,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.023989300010725856
+      },
+      "cumulative_seconds": 0.8352576000615954
+    },
+    {
+      "k": 22,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 142,
+      "retained": 70,
+      "rejected_c5": 886,
+      "rejected_c20": 68,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.000876300036907196,
+            "proposal_rows": 210,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0044450000859797,
+            "proposal_rows": 420,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.007772000040858984,
+            "proposal_rows": 630,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.011000900063663721,
+            "proposal_rows": 840,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.014210000052116811,
+            "proposal_rows": 1050,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1050,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 1040270,
+        "initial_archive_bytes": 100800,
+        "returned_array_bytes": 399630,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.014310500002466142
+      },
+      "cumulative_seconds": 0.9021941999671981
+    },
+    {
+      "k": 23,
+      "start": 0,
+      "processed": 700,
+      "parent_count": 70,
+      "retained": 100,
+      "rejected_c5": 560,
+      "rejected_c20": 40,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0006770000327378511,
+            "proposal_rows": 300,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.005336500005796552,
+            "proposal_rows": 600,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.010143900057300925,
+            "proposal_rows": 900,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.014555700006894767,
+            "proposal_rows": 1200,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.018888000049628317,
+            "proposal_rows": 1500,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1500,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 1553300,
+        "initial_archive_bytes": 150400,
+        "returned_array_bytes": 596500,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.01891250000335276
+      },
+      "cumulative_seconds": 0.9636129999998957
+    },
+    {
+      "k": 24,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 100,
+      "retained": 141,
+      "rejected_c5": 855,
+      "rejected_c20": 28,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0008371999720111489,
+            "proposal_rows": 423,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.007223399938084185,
+            "proposal_rows": 846,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.013456499902531505,
+            "proposal_rows": 1269,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.01941469998564571,
+            "proposal_rows": 1692,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.02556809992529452,
+            "proposal_rows": 2115,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 2115,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 2284905,
+        "initial_archive_bytes": 221088,
+        "returned_array_bytes": 877161,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.025669299997389317
+      },
+      "cumulative_seconds": 1.0476239999989048
+    },
+    {
+      "k": 24,
+      "start": 1024,
+      "processed": 76,
+      "parent_count": 100,
+      "retained": 9,
+      "rejected_c5": 65,
+      "rejected_c20": 2,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.0559127000160515
+    },
+    {
+      "k": 22,
+      "start": 1024,
+      "processed": 396,
+      "parent_count": 142,
+      "retained": 28,
+      "rejected_c5": 348,
+      "rejected_c20": 20,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.07926510006655
+    },
+    {
+      "k": 23,
+      "start": 0,
+      "processed": 280,
+      "parent_count": 28,
+      "retained": 40,
+      "rejected_c5": 224,
+      "rejected_c20": 16,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.0995973000535741
+    },
+    {
+      "k": 24,
+      "start": 0,
+      "processed": 440,
+      "parent_count": 40,
+      "retained": 60,
+      "rejected_c5": 368,
+      "rejected_c20": 12,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.1289347000420094
+    },
+    {
+      "k": 21,
+      "start": 1024,
+      "processed": 200,
+      "parent_count": 102,
+      "retained": 30,
+      "rejected_c5": 166,
+      "rejected_c20": 4,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.1433853000635281
+    },
+    {
+      "k": 22,
+      "start": 0,
+      "processed": 300,
+      "parent_count": 30,
+      "retained": 26,
+      "rejected_c5": 250,
+      "rejected_c20": 24,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.163181700045243
+    },
+    {
+      "k": 23,
+      "start": 0,
+      "processed": 260,
+      "parent_count": 26,
+      "retained": 37,
+      "rejected_c5": 208,
+      "rejected_c20": 15,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.1820680999662727
+    },
+    {
+      "k": 24,
+      "start": 0,
+      "processed": 407,
+      "parent_count": 37,
+      "retained": 56,
+      "rejected_c5": 340,
+      "rejected_c20": 11,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.2082135999808088
+    },
+    {
+      "k": 13,
+      "start": 1024,
+      "processed": 326,
+      "parent_count": 150,
+      "retained": 36,
+      "rejected_c5": 290,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.2211744000669569
+    },
+    {
+      "k": 14,
+      "start": 0,
+      "processed": 324,
+      "parent_count": 36,
+      "retained": 36,
+      "rejected_c5": 288,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.2359161999775097
+    },
+    {
+      "k": 15,
+      "start": 0,
+      "processed": 360,
+      "parent_count": 36,
+      "retained": 49,
+      "rejected_c5": 311,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.252357400022447
+    },
+    {
+      "k": 16,
+      "start": 0,
+      "processed": 343,
+      "parent_count": 49,
+      "retained": 49,
+      "rejected_c5": 294,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.268937599961646
+    },
+    {
+      "k": 17,
+      "start": 0,
+      "processed": 294,
+      "parent_count": 49,
+      "retained": 61,
+      "rejected_c5": 196,
+      "rejected_c20": 37,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.2879419999662787
+    },
+    {
+      "k": 18,
+      "start": 0,
+      "processed": 427,
+      "parent_count": 61,
+      "retained": 61,
+      "rejected_c5": 366,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.3088673000456765
+    },
+    {
+      "k": 19,
+      "start": 0,
+      "processed": 549,
+      "parent_count": 61,
+      "retained": 61,
+      "rejected_c5": 488,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.333552399999462
+    },
+    {
+      "k": 20,
+      "start": 0,
+      "processed": 549,
+      "parent_count": 61,
+      "retained": 61,
+      "rejected_c5": 444,
+      "rejected_c20": 44,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.3662776000564918
+    },
+    {
+      "k": 21,
+      "start": 0,
+      "processed": 732,
+      "parent_count": 61,
+      "retained": 85,
+      "rejected_c5": 617,
+      "rejected_c20": 16,
+      "rejected_local": 14,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0006249999860301614,
+            "proposal_rows": 297,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.004806100041605532,
+            "proposal_rows": 594,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.008767300052568316,
+            "proposal_rows": 891,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.012697000056505203,
+            "proposal_rows": 1188,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 14,
+            "seconds": 0.01801620004698634,
+            "proposal_rows": 1485,
+            "rounded_checks": 14
+          }
+        ],
+        "proposal_rows": 1485,
+        "rounded_checks": 14,
+        "live_named_array_bytes": 1404711,
+        "initial_archive_bytes": 136224,
+        "returned_array_bytes": 539847,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.01803859998472035
+      },
+      "cumulative_seconds": 1.4219997000182047
+    },
+    {
+      "k": 22,
+      "start": 0,
+      "processed": 850,
+      "parent_count": 85,
+      "retained": 44,
+      "rejected_c5": 755,
+      "rejected_c20": 51,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.46401750005316
+    },
+    {
+      "k": 23,
+      "start": 0,
+      "processed": 440,
+      "parent_count": 44,
+      "retained": 63,
+      "rejected_c5": 352,
+      "rejected_c20": 25,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 1.4912498999619856
+    },
+    {
+      "k": 24,
+      "start": 0,
+      "processed": 693,
+      "parent_count": 63,
+      "retained": 94,
+      "rejected_c5": 580,
+      "rejected_c20": 19,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0006504000630229712,
+            "proposal_rows": 282,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.005009200074709952,
+            "proposal_rows": 564,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.009182900073938072,
+            "proposal_rows": 846,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.013514399994164705,
+            "proposal_rows": 1128,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.017820000066421926,
+            "proposal_rows": 1410,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1410,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 1523270,
+        "initial_archive_bytes": 147392,
+        "returned_array_bytes": 584774,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.017843300011008978
+      },
+      "cumulative_seconds": 1.5488118999637663
+    },
+    {
+      "k": 7,
+      "start": 2048,
+      "processed": 668,
+      "parent_count": 97,
+      "retained": 92,
+      "rejected_c5": 572,
+      "rejected_c20": 0,
+      "rejected_local": 4,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005271000554785132,
+            "proposal_rows": 288,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.00268759997561574,
+            "proposal_rows": 576,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.0049603000516071916,
+            "proposal_rows": 864,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.007079600007273257,
+            "proposal_rows": 1152,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 4,
+            "seconds": 0.009263699990697205,
+            "proposal_rows": 1440,
+            "rounded_checks": 4
+          }
+        ],
+        "proposal_rows": 1440,
+        "rounded_checks": 4,
+        "live_named_array_bytes": 458976,
+        "initial_archive_bytes": 46080,
+        "returned_array_bytes": 179424,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.009287600056268275
+      },
+      "cumulative_seconds": 1.5772897000424564
+    },
+    {
+      "k": 8,
+      "start": 0,
+      "processed": 1012,
+      "parent_count": 92,
+      "retained": 91,
+      "rejected_c5": 865,
+      "rejected_c20": 47,
+      "rejected_local": 9,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0007072000298649073,
+            "proposal_rows": 300,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.003091600025072694,
+            "proposal_rows": 600,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.005432500038295984,
+            "proposal_rows": 900,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.007593300077132881,
+            "proposal_rows": 1200,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 9,
+            "seconds": 0.010081600048579276,
+            "proposal_rows": 1500,
+            "rounded_checks": 9
+          }
+        ],
+        "proposal_rows": 1500,
+        "rounded_checks": 9,
+        "live_named_array_bytes": 545300,
+        "initial_archive_bytes": 54400,
+        "returned_array_bytes": 212500,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.010104000102728605
+      },
+      "cumulative_seconds": 1.6157345999963582
+    },
+    {
+      "k": 9,
+      "start": 0,
+      "processed": 637,
+      "parent_count": 91,
+      "retained": 148,
+      "rejected_c5": 471,
+      "rejected_c20": 0,
+      "rejected_local": 18,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0006448000203818083,
+            "proposal_rows": 498,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.003901700023561716,
+            "proposal_rows": 996,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.007276499993167818,
+            "proposal_rows": 1494,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.010531700099818408,
+            "proposal_rows": 1992,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 18,
+            "seconds": 0.014137200079858303,
+            "proposal_rows": 2490,
+            "rounded_checks": 18
+          }
+        ],
+        "proposal_rows": 2490,
+        "rounded_checks": 18,
+        "live_named_array_bytes": 1016750,
+        "initial_archive_bytes": 100928,
+        "returned_array_bytes": 395246,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.014160200022161007
+      },
+      "cumulative_seconds": 1.6520565999671817
+    },
+    {
+      "k": 10,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 148,
+      "retained": 137,
+      "rejected_c5": 843,
+      "rejected_c20": 41,
+      "rejected_local": 3,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005345999961718917,
+            "proposal_rows": 420,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.003653199994005263,
+            "proposal_rows": 840,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.00685250002425164,
+            "proposal_rows": 1260,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.010058799991384149,
+            "proposal_rows": 1680,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 3,
+            "seconds": 0.013619299978017807,
+            "proposal_rows": 2100,
+            "rounded_checks": 3
+          }
+        ],
+        "proposal_rows": 2100,
+        "rounded_checks": 3,
+        "live_named_array_bytes": 951580,
+        "initial_archive_bytes": 94080,
+        "returned_array_bytes": 369180,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.01364560006186366
+      },
+      "cumulative_seconds": 1.697830699966289
+    },
+    {
+      "k": 11,
+      "start": 0,
+      "processed": 822,
+      "parent_count": 137,
+      "retained": 239,
+      "rejected_c5": 548,
+      "rejected_c20": 35,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0007796999998390675,
+            "proposal_rows": 717,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.005969200050458312,
+            "proposal_rows": 1434,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.01099500001873821,
+            "proposal_rows": 2151,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.015896000084467232,
+            "proposal_rows": 2868,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.020901800016872585,
+            "proposal_rows": 3585,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 3585,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 1785091,
+        "initial_archive_bytes": 175904,
+        "returned_array_bytes": 691427,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.020926700090058148
+      },
+      "cumulative_seconds": 1.7547081999946386
+    },
+    {
+      "k": 12,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 239,
+      "retained": 318,
+      "rejected_c5": 682,
+      "rejected_c20": 0,
+      "rejected_local": 24,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0011053000343963504,
+            "proposal_rows": 1026,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.008060200023464859,
+            "proposal_rows": 2052,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.01573600003030151,
+            "proposal_rows": 3078,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.022576099960133433,
+            "proposal_rows": 4104,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 24,
+            "seconds": 0.030029800022020936,
+            "proposal_rows": 5130,
+            "rounded_checks": 24
+          }
+        ],
+        "proposal_rows": 5130,
+        "rounded_checks": 24,
+        "live_named_array_bytes": 2784222,
+        "initial_archive_bytes": 273600,
+        "returned_array_bytes": 1076958,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.03005409997422248
+      },
+      "cumulative_seconds": 1.8279195000650361
+    },
+    {
+      "k": 13,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 318,
+      "retained": 114,
+      "rejected_c5": 910,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005269999383017421,
+            "proposal_rows": 342,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0036684999940916896,
+            "proposal_rows": 684,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.006712799891829491,
+            "proposal_rows": 1026,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.010117199970409274,
+            "proposal_rows": 1368,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.014115099911578,
+            "proposal_rows": 1710,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1710,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 1004682,
+        "initial_archive_bytes": 98496,
+        "returned_array_bytes": 388170,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.01413889997638762
+      },
+      "cumulative_seconds": 1.8740488999756053
+    },
+    {
+      "k": 14,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 114,
+      "retained": 105,
+      "rejected_c5": 918,
+      "rejected_c20": 0,
+      "rejected_local": 1,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005922999698668718,
+            "proposal_rows": 318,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0035864999517798424,
+            "proposal_rows": 636,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.006597199942916632,
+            "proposal_rows": 954,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.0097472999477759,
+            "proposal_rows": 1272,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 1,
+            "seconds": 0.012970999930985272,
+            "proposal_rows": 1590,
+            "rounded_checks": 1
+          }
+        ],
+        "proposal_rows": 1590,
+        "rounded_checks": 1,
+        "live_named_array_bytes": 1005410,
+        "initial_archive_bytes": 98368,
+        "returned_array_bytes": 388066,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.012994799995794892
+      },
+      "cumulative_seconds": 1.921716000069864
+    },
+    {
+      "k": 15,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 105,
+      "retained": 108,
+      "rejected_c5": 906,
+      "rejected_c20": 0,
+      "rejected_local": 10,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005911999614909291,
+            "proposal_rows": 354,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.004162600031122565,
+            "proposal_rows": 708,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.007584600010886788,
+            "proposal_rows": 1062,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.010971699957735837,
+            "proposal_rows": 1416,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 10,
+            "seconds": 0.014639200060628355,
+            "proposal_rows": 1770,
+            "rounded_checks": 10
+          }
+        ],
+        "proposal_rows": 1770,
+        "rounded_checks": 10,
+        "live_named_array_bytes": 1198526,
+        "initial_archive_bytes": 117056,
+        "returned_array_bytes": 462206,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.014660299988463521
+      },
+      "cumulative_seconds": 1.9734146000118926
+    },
+    {
+      "k": 16,
+      "start": 0,
+      "processed": 756,
+      "parent_count": 108,
+      "retained": 85,
+      "rejected_c5": 648,
+      "rejected_c20": 0,
+      "rejected_local": 23,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005960999988019466,
+            "proposal_rows": 324,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0044883000664412975,
+            "proposal_rows": 648,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.008264700067229569,
+            "proposal_rows": 972,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.011933800065889955,
+            "proposal_rows": 1296,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 23,
+            "seconds": 0.016047700075432658,
+            "proposal_rows": 1620,
+            "rounded_checks": 23
+          }
+        ],
+        "proposal_rows": 1620,
+        "rounded_checks": 23,
+        "live_named_array_bytes": 1169532,
+        "initial_archive_bytes": 114048,
+        "returned_array_bytes": 450684,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.01607110002078116
+      },
+      "cumulative_seconds": 2.0195928000612184
+    },
+    {
+      "k": 17,
+      "start": 0,
+      "processed": 510,
+      "parent_count": 85,
+      "retained": 78,
+      "rejected_c5": 340,
+      "rejected_c20": 81,
+      "rejected_local": 11,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0004990999586880207,
+            "proposal_rows": 267,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.003927199984900653,
+            "proposal_rows": 534,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.007363899960182607,
+            "proposal_rows": 801,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.01070729992352426,
+            "proposal_rows": 1068,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 11,
+            "seconds": 0.01444699999410659,
+            "proposal_rows": 1335,
+            "rounded_checks": 11
+          }
+        ],
+        "proposal_rows": 1335,
+        "rounded_checks": 11,
+        "live_named_array_bytes": 1023589,
+        "initial_archive_bytes": 99680,
+        "returned_array_bytes": 394181,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.01446929993107915
+      },
+      "cumulative_seconds": 2.0651332000270486
+    },
+    {
+      "k": 18,
+      "start": 0,
+      "processed": 546,
+      "parent_count": 78,
+      "retained": 64,
+      "rejected_c5": 468,
+      "rejected_c20": 0,
+      "rejected_local": 14,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005033999914303422,
+            "proposal_rows": 234,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0036374999908730388,
+            "proposal_rows": 468,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.006718400050885975,
+            "proposal_rows": 702,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.009825900080613792,
+            "proposal_rows": 936,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 14,
+            "seconds": 0.013609900022856891,
+            "proposal_rows": 1170,
+            "rounded_checks": 14
+          }
+        ],
+        "proposal_rows": 1170,
+        "rounded_checks": 14,
+        "live_named_array_bytes": 949494,
+        "initial_archive_bytes": 92352,
+        "returned_array_bytes": 365430,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.013639300013892353
+      },
+      "cumulative_seconds": 2.1039005999919027
+    },
+    {
+      "k": 19,
+      "start": 0,
+      "processed": 576,
+      "parent_count": 64,
+      "retained": 64,
+      "rejected_c5": 512,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0004770000232383609,
+            "proposal_rows": 192,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0033057000255212188,
+            "proposal_rows": 384,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.006120000034570694,
+            "proposal_rows": 576,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.008884300012141466,
+            "proposal_rows": 768,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.011532700038515031,
+            "proposal_rows": 960,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 960,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 822080,
+        "initial_archive_bytes": 79872,
+        "returned_array_bytes": 316224,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.01155370008200407
+      },
+      "cumulative_seconds": 2.142227099975571
+    },
+    {
+      "k": 20,
+      "start": 0,
+      "processed": 576,
+      "parent_count": 64,
+      "retained": 59,
+      "rejected_c5": 468,
+      "rejected_c20": 44,
+      "rejected_local": 5,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.00047339999582618475,
+            "proposal_rows": 192,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0032932000467553735,
+            "proposal_rows": 384,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.006603999994695187,
+            "proposal_rows": 576,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.009482100023888052,
+            "proposal_rows": 768,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 5,
+            "seconds": 0.012645100010558963,
+            "proposal_rows": 960,
+            "rounded_checks": 5
+          }
+        ],
+        "proposal_rows": 960,
+        "rounded_checks": 5,
+        "live_named_array_bytes": 865088,
+        "initial_archive_bytes": 83968,
+        "returned_array_bytes": 332608,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.012667300063185394
+      },
+      "cumulative_seconds": 2.188065299997106
+    },
+    {
+      "k": 21,
+      "start": 0,
+      "processed": 708,
+      "parent_count": 59,
+      "retained": 91,
+      "rejected_c5": 590,
+      "rejected_c20": 27,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005827000131830573,
+            "proposal_rows": 273,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.004603200010024011,
+            "proposal_rows": 546,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.008376799989491701,
+            "proposal_rows": 819,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.012233900022692978,
+            "proposal_rows": 1092,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.016189099987968802,
+            "proposal_rows": 1365,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1365,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 1291199,
+        "initial_archive_bytes": 125216,
+        "returned_array_bytes": 496223,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.016211300040595233
+      },
+      "cumulative_seconds": 2.2456636000424623
+    },
+    {
+      "k": 22,
+      "start": 0,
+      "processed": 910,
+      "parent_count": 91,
+      "retained": 56,
+      "rejected_c5": 799,
+      "rejected_c20": 55,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.2926122000208125
+    },
+    {
+      "k": 23,
+      "start": 0,
+      "processed": 560,
+      "parent_count": 56,
+      "retained": 80,
+      "rejected_c5": 448,
+      "rejected_c20": 32,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005673000123351812,
+            "proposal_rows": 240,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.004181599942967296,
+            "proposal_rows": 480,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.008191899978555739,
+            "proposal_rows": 720,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.011816099984571338,
+            "proposal_rows": 960,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.015615199925377965,
+            "proposal_rows": 1200,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1200,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 1242640,
+        "initial_archive_bytes": 120320,
+        "returned_array_bytes": 477200,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.015640700003132224
+      },
+      "cumulative_seconds": 2.3445649000350386
+    },
+    {
+      "k": 24,
+      "start": 0,
+      "processed": 880,
+      "parent_count": 80,
+      "retained": 120,
+      "rejected_c5": 736,
+      "rejected_c20": 24,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0007927000988274813,
+            "proposal_rows": 360,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.006181700038723648,
+            "proposal_rows": 720,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.011327799991704524,
+            "proposal_rows": 1080,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.016437600017525256,
+            "proposal_rows": 1440,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.02162550005596131,
+            "proposal_rows": 1800,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1800,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 1944600,
+        "initial_archive_bytes": 188160,
+        "returned_array_bytes": 746520,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.021649600006639957
+      },
+      "cumulative_seconds": 2.4191064999904484
+    },
+    {
+      "k": 15,
+      "start": 1024,
+      "processed": 26,
+      "parent_count": 105,
+      "retained": 3,
+      "rejected_c5": 23,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.42484480002895
+    },
+    {
+      "k": 16,
+      "start": 0,
+      "processed": 21,
+      "parent_count": 3,
+      "retained": 3,
+      "rejected_c5": 18,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.4304407000308856
+    },
+    {
+      "k": 17,
+      "start": 0,
+      "processed": 18,
+      "parent_count": 3,
+      "retained": 3,
+      "rejected_c5": 12,
+      "rejected_c20": 3,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.435963000054471
+    },
+    {
+      "k": 18,
+      "start": 0,
+      "processed": 21,
+      "parent_count": 3,
+      "retained": 3,
+      "rejected_c5": 18,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.4413609000621364
+    },
+    {
+      "k": 19,
+      "start": 0,
+      "processed": 27,
+      "parent_count": 3,
+      "retained": 3,
+      "rejected_c5": 24,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.4470479000592604
+    },
+    {
+      "k": 20,
+      "start": 0,
+      "processed": 27,
+      "parent_count": 3,
+      "retained": 3,
+      "rejected_c5": 24,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.45245059998706
+    },
+    {
+      "k": 21,
+      "start": 0,
+      "processed": 36,
+      "parent_count": 3,
+      "retained": 3,
+      "rejected_c5": 32,
+      "rejected_c20": 1,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.458405000041239
+    },
+    {
+      "k": 22,
+      "start": 0,
+      "processed": 30,
+      "parent_count": 3,
+      "retained": 0,
+      "rejected_c5": 28,
+      "rejected_c20": 2,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.4643665000330657
+    },
+    {
+      "k": 14,
+      "start": 1024,
+      "processed": 2,
+      "parent_count": 114,
+      "retained": 0,
+      "rejected_c5": 2,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.465347900055349
+    },
+    {
+      "k": 13,
+      "start": 1024,
+      "processed": 1024,
+      "parent_count": 318,
+      "retained": 113,
+      "rejected_c5": 911,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005265000509098172,
+            "proposal_rows": 339,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0036150000523775816,
+            "proposal_rows": 678,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.006775900023058057,
+            "proposal_rows": 1017,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.010083899949677289,
+            "proposal_rows": 1356,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.013349700020626187,
+            "proposal_rows": 1695,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1695,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 995869,
+        "initial_archive_bytes": 97632,
+        "returned_array_bytes": 384765,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.013371699955314398
+      },
+      "cumulative_seconds": 2.5109440999804065
+    },
+    {
+      "k": 14,
+      "start": 0,
+      "processed": 1017,
+      "parent_count": 113,
+      "retained": 100,
+      "rejected_c5": 916,
+      "rejected_c20": 0,
+      "rejected_local": 1,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005211998941376805,
+            "proposal_rows": 303,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.00345059996470809,
+            "proposal_rows": 606,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.006492499960586429,
+            "proposal_rows": 909,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.009788399911485612,
+            "proposal_rows": 1212,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 1,
+            "seconds": 0.01289869996253401,
+            "proposal_rows": 1515,
+            "rounded_checks": 1
+          }
+        ],
+        "proposal_rows": 1515,
+        "rounded_checks": 1,
+        "live_named_array_bytes": 957985,
+        "initial_archive_bytes": 93728,
+        "returned_array_bytes": 369761,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.0129196000052616
+      },
+      "cumulative_seconds": 2.5574316000565886
+    },
+    {
+      "k": 15,
+      "start": 0,
+      "processed": 1000,
+      "parent_count": 100,
+      "retained": 88,
+      "rejected_c5": 900,
+      "rejected_c20": 0,
+      "rejected_local": 12,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005298999603837729,
+            "proposal_rows": 300,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0036432999186217785,
+            "proposal_rows": 600,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.006814099964685738,
+            "proposal_rows": 900,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.00996079994365573,
+            "proposal_rows": 1200,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 12,
+            "seconds": 0.01325429999269545,
+            "proposal_rows": 1500,
+            "rounded_checks": 12
+          }
+        ],
+        "proposal_rows": 1500,
+        "rounded_checks": 12,
+        "live_named_array_bytes": 1015700,
+        "initial_archive_bytes": 99200,
+        "returned_array_bytes": 391700,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.013277699938043952
+      },
+      "cumulative_seconds": 2.605540700023994
+    },
+    {
+      "k": 16,
+      "start": 0,
+      "processed": 616,
+      "parent_count": 88,
+      "retained": 63,
+      "rejected_c5": 528,
+      "rejected_c20": 0,
+      "rejected_local": 25,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.00048649997916072607,
+            "proposal_rows": 264,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.003759999992325902,
+            "proposal_rows": 528,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.0068212999030947685,
+            "proposal_rows": 792,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.009963299962691963,
+            "proposal_rows": 1056,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 25,
+            "seconds": 0.013497599982656538,
+            "proposal_rows": 1320,
+            "rounded_checks": 25
+          }
+        ],
+        "proposal_rows": 1320,
+        "rounded_checks": 25,
+        "live_named_array_bytes": 952952,
+        "initial_archive_bytes": 92928,
+        "returned_array_bytes": 367224,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.013520799926482141
+      },
+      "cumulative_seconds": 2.644056700053625
+    },
+    {
+      "k": 17,
+      "start": 0,
+      "processed": 378,
+      "parent_count": 63,
+      "retained": 63,
+      "rejected_c5": 252,
+      "rejected_c20": 63,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.669311000034213
+    },
+    {
+      "k": 18,
+      "start": 0,
+      "processed": 441,
+      "parent_count": 63,
+      "retained": 63,
+      "rejected_c5": 378,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.6900753000518307
+    },
+    {
+      "k": 19,
+      "start": 0,
+      "processed": 567,
+      "parent_count": 63,
+      "retained": 63,
+      "rejected_c5": 504,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.715588800027035
+    },
+    {
+      "k": 20,
+      "start": 0,
+      "processed": 567,
+      "parent_count": 63,
+      "retained": 63,
+      "rejected_c5": 490,
+      "rejected_c20": 14,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.743728999979794
+    },
+    {
+      "k": 21,
+      "start": 0,
+      "processed": 756,
+      "parent_count": 63,
+      "retained": 63,
+      "rejected_c5": 645,
+      "rejected_c20": 48,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.784887699992396
+    },
+    {
+      "k": 22,
+      "start": 0,
+      "processed": 630,
+      "parent_count": 63,
+      "retained": 0,
+      "rejected_c5": 561,
+      "rejected_c20": 69,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 2.8173206000356004
+    },
+    {
+      "k": 13,
+      "start": 2048,
+      "processed": 814,
+      "parent_count": 318,
+      "retained": 91,
+      "rejected_c5": 723,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005092000355944037,
+            "proposal_rows": 273,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.00312330003362149,
+            "proposal_rows": 546,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.005910599953494966,
+            "proposal_rows": 819,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.008927399991080165,
+            "proposal_rows": 1092,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.011499200016260147,
+            "proposal_rows": 1365,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1365,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 801983,
+        "initial_archive_bytes": 78624,
+        "returned_array_bytes": 309855,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.011522099957801402
+      },
+      "cumulative_seconds": 2.8549501000670716
+    },
+    {
+      "k": 14,
+      "start": 0,
+      "processed": 819,
+      "parent_count": 91,
+      "retained": 77,
+      "rejected_c5": 732,
+      "rejected_c20": 0,
+      "rejected_local": 10,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005441999528557062,
+            "proposal_rows": 261,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0031630999874323606,
+            "proposal_rows": 522,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.005857400014065206,
+            "proposal_rows": 783,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.008415099931880832,
+            "proposal_rows": 1044,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 10,
+            "seconds": 0.011326499981805682,
+            "proposal_rows": 1305,
+            "rounded_checks": 10
+          }
+        ],
+        "proposal_rows": 1305,
+        "rounded_checks": 10,
+        "live_named_array_bytes": 825195,
+        "initial_archive_bytes": 80736,
+        "returned_array_bytes": 318507,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.011348000029101968
+      },
+      "cumulative_seconds": 2.894660499994643
+    },
+    {
+      "k": 15,
+      "start": 0,
+      "processed": 770,
+      "parent_count": 77,
+      "retained": 96,
+      "rejected_c5": 667,
+      "rejected_c20": 0,
+      "rejected_local": 7,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.000667800079099834,
+            "proposal_rows": 309,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.003924200078472495,
+            "proposal_rows": 618,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.007007900043390691,
+            "proposal_rows": 927,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.00996830000076443,
+            "proposal_rows": 1236,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 7,
+            "seconds": 0.013250600080937147,
+            "proposal_rows": 1545,
+            "rounded_checks": 7
+          }
+        ],
+        "proposal_rows": 1545,
+        "rounded_checks": 7,
+        "live_named_array_bytes": 1046171,
+        "initial_archive_bytes": 102176,
+        "returned_array_bytes": 403451,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.01327070000115782
+      },
+      "cumulative_seconds": 2.9370431000133976
+    },
+    {
+      "k": 16,
+      "start": 0,
+      "processed": 672,
+      "parent_count": 96,
+      "retained": 93,
+      "rejected_c5": 576,
+      "rejected_c20": 0,
+      "rejected_local": 3,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005289999535307288,
+            "proposal_rows": 288,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0038096000207588077,
+            "proposal_rows": 576,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.007143200025893748,
+            "proposal_rows": 864,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.011467000003904104,
+            "proposal_rows": 1152,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 3,
+            "seconds": 0.015176999964751303,
+            "proposal_rows": 1440,
+            "rounded_checks": 3
+          }
+        ],
+        "proposal_rows": 1440,
+        "rounded_checks": 3,
+        "live_named_array_bytes": 1039584,
+        "initial_archive_bytes": 101376,
+        "returned_array_bytes": 400608,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.015200200024992228
+      },
+      "cumulative_seconds": 2.9797015000367537
+    },
+    {
+      "k": 17,
+      "start": 0,
+      "processed": 558,
+      "parent_count": 93,
+      "retained": 154,
+      "rejected_c5": 372,
+      "rejected_c20": 19,
+      "rejected_local": 13,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0007556999335065484,
+            "proposal_rows": 501,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.006083099986426532,
+            "proposal_rows": 1002,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.011734499945305288,
+            "proposal_rows": 1503,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.017229999997653067,
+            "proposal_rows": 2004,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 13,
+            "seconds": 0.0232504999730736,
+            "proposal_rows": 2505,
+            "rounded_checks": 13
+          }
+        ],
+        "proposal_rows": 2505,
+        "rounded_checks": 13,
+        "live_named_array_bytes": 1920667,
+        "initial_archive_bytes": 187040,
+        "returned_array_bytes": 739643,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.023276999942027032
+      },
+      "cumulative_seconds": 3.0354508999735117
+    },
+    {
+      "k": 18,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 154,
+      "retained": 142,
+      "rejected_c5": 878,
+      "rejected_c20": 0,
+      "rejected_local": 4,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0007121000671759248,
+            "proposal_rows": 438,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.005964100011624396,
+            "proposal_rows": 876,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.01088690001051873,
+            "proposal_rows": 1314,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.01584140001796186,
+            "proposal_rows": 1752,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 4,
+            "seconds": 0.021346100023947656,
+            "proposal_rows": 2190,
+            "rounded_checks": 4
+          }
+        ],
+        "proposal_rows": 2190,
+        "rounded_checks": 4,
+        "live_named_array_bytes": 1777258,
+        "initial_archive_bytes": 172864,
+        "returned_array_bytes": 684010,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.021371699986048043
+      },
+      "cumulative_seconds": 3.0992749000433832
+    },
+    {
+      "k": 19,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 142,
+      "retained": 114,
+      "rejected_c5": 904,
+      "rejected_c20": 6,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0009840999264270067,
+            "proposal_rows": 342,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.005452599958516657,
+            "proposal_rows": 684,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.009541899897158146,
+            "proposal_rows": 1026,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.013677199953235686,
+            "proposal_rows": 1368,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.017864499939605594,
+            "proposal_rows": 1710,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1710,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 1464330,
+        "initial_archive_bytes": 142272,
+        "returned_array_bytes": 563274,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.017886299989186227
+      },
+      "cumulative_seconds": 3.160920200054534
+    },
+    {
+      "k": 20,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 114,
+      "retained": 142,
+      "rejected_c5": 815,
+      "rejected_c20": 38,
+      "rejected_local": 29,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0008151999209076166,
+            "proposal_rows": 513,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.006904499954544008,
+            "proposal_rows": 1026,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.01323649997357279,
+            "proposal_rows": 1539,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.019175399909727275,
+            "proposal_rows": 2052,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 29,
+            "seconds": 0.025940899970009923,
+            "proposal_rows": 2565,
+            "rounded_checks": 29
+          }
+        ],
+        "proposal_rows": 2565,
+        "rounded_checks": 29,
+        "live_named_array_bytes": 2311407,
+        "initial_archive_bytes": 224352,
+        "returned_array_bytes": 888687,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.025966899935156107
+      },
+      "cumulative_seconds": 3.2381500999908894
+    },
+    {
+      "k": 21,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 142,
+      "retained": 144,
+      "rejected_c5": 854,
+      "rejected_c20": 26,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0007596999639645219,
+            "proposal_rows": 432,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.006410300033167005,
+            "proposal_rows": 864,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.01236849999986589,
+            "proposal_rows": 1296,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.0178163000382483,
+            "proposal_rows": 1728,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.023213000036776066,
+            "proposal_rows": 2160,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 2160,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 2043216,
+        "initial_archive_bytes": 198144,
+        "returned_array_bytes": 785232,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.023235499975271523
+      },
+      "cumulative_seconds": 3.3127594999969006
+    },
+    {
+      "k": 22,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 144,
+      "retained": 15,
+      "rejected_c5": 907,
+      "rejected_c20": 102,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.362694300012663
+    },
+    {
+      "k": 23,
+      "start": 0,
+      "processed": 150,
+      "parent_count": 15,
+      "retained": 21,
+      "rejected_c5": 120,
+      "rejected_c20": 9,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.375180699978955
+    },
+    {
+      "k": 24,
+      "start": 0,
+      "processed": 231,
+      "parent_count": 21,
+      "retained": 31,
+      "rejected_c5": 194,
+      "rejected_c20": 6,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.3913097999757156
+    },
+    {
+      "k": 22,
+      "start": 1024,
+      "processed": 416,
+      "parent_count": 144,
+      "retained": 13,
+      "rejected_c5": 369,
+      "rejected_c20": 34,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.41466400003992
+    },
+    {
+      "k": 23,
+      "start": 0,
+      "processed": 130,
+      "parent_count": 13,
+      "retained": 18,
+      "rejected_c5": 104,
+      "rejected_c20": 8,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.427185900043696
+    },
+    {
+      "k": 24,
+      "start": 0,
+      "processed": 198,
+      "parent_count": 18,
+      "retained": 27,
+      "rejected_c5": 166,
+      "rejected_c20": 5,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.442930500023067
+    },
+    {
+      "k": 21,
+      "start": 1024,
+      "processed": 680,
+      "parent_count": 142,
+      "retained": 101,
+      "rejected_c5": 566,
+      "rejected_c20": 13,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0008490000618621707,
+            "proposal_rows": 303,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.004965099971741438,
+            "proposal_rows": 606,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.009248699992895126,
+            "proposal_rows": 909,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.013347400003112853,
+            "proposal_rows": 1212,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.0181395000545308,
+            "proposal_rows": 1515,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1515,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 1433089,
+        "initial_archive_bytes": 138976,
+        "returned_array_bytes": 550753,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.018164800014346838
+      },
+      "cumulative_seconds": 3.4964528999989852
+    },
+    {
+      "k": 22,
+      "start": 0,
+      "processed": 1010,
+      "parent_count": 101,
+      "retained": 17,
+      "rejected_c5": 905,
+      "rejected_c20": 88,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.5459885000018403
+    },
+    {
+      "k": 23,
+      "start": 0,
+      "processed": 170,
+      "parent_count": 17,
+      "retained": 24,
+      "rejected_c5": 136,
+      "rejected_c20": 10,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.5594451000215486
+    },
+    {
+      "k": 24,
+      "start": 0,
+      "processed": 264,
+      "parent_count": 24,
+      "retained": 35,
+      "rejected_c5": 222,
+      "rejected_c20": 7,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.5774109000340104
+    },
+    {
+      "k": 20,
+      "start": 1024,
+      "processed": 2,
+      "parent_count": 114,
+      "retained": 1,
+      "rejected_c5": 1,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.581389300059527
+    },
+    {
+      "k": 21,
+      "start": 0,
+      "processed": 12,
+      "parent_count": 1,
+      "retained": 2,
+      "rejected_c5": 10,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.586129800067283
+    },
+    {
+      "k": 22,
+      "start": 0,
+      "processed": 20,
+      "parent_count": 2,
+      "retained": 0,
+      "rejected_c5": 18,
+      "rejected_c20": 2,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.5912502000574023
+    },
+    {
+      "k": 19,
+      "start": 1024,
+      "processed": 254,
+      "parent_count": 142,
+      "retained": 28,
+      "rejected_c5": 224,
+      "rejected_c20": 2,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.6055066999979317
+    },
+    {
+      "k": 20,
+      "start": 0,
+      "processed": 252,
+      "parent_count": 28,
+      "retained": 37,
+      "rejected_c5": 198,
+      "rejected_c20": 17,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.622265200014226
+    },
+    {
+      "k": 21,
+      "start": 0,
+      "processed": 444,
+      "parent_count": 37,
+      "retained": 59,
+      "rejected_c5": 370,
+      "rejected_c20": 9,
+      "rejected_local": 6,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0004911998985335231,
+            "proposal_rows": 195,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0034980999771505594,
+            "proposal_rows": 390,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.006371899973601103,
+            "proposal_rows": 585,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.00937539990991354,
+            "proposal_rows": 780,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 6,
+            "seconds": 0.012815399910323322,
+            "proposal_rows": 975,
+            "rounded_checks": 6
+          }
+        ],
+        "proposal_rows": 975,
+        "rounded_checks": 6,
+        "live_named_array_bytes": 922285,
+        "initial_archive_bytes": 89440,
+        "returned_array_bytes": 354445,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.012838099966757
+      },
+      "cumulative_seconds": 3.6606171999592334
+    },
+    {
+      "k": 22,
+      "start": 0,
+      "processed": 590,
+      "parent_count": 59,
+      "retained": 15,
+      "rejected_c5": 527,
+      "rejected_c20": 48,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.6913578000385314
+    },
+    {
+      "k": 23,
+      "start": 0,
+      "processed": 150,
+      "parent_count": 15,
+      "retained": 21,
+      "rejected_c5": 120,
+      "rejected_c20": 9,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.7042690999805927
+    },
+    {
+      "k": 24,
+      "start": 0,
+      "processed": 231,
+      "parent_count": 21,
+      "retained": 31,
+      "rejected_c5": 194,
+      "rejected_c20": 6,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.7206950000254437
+    },
+    {
+      "k": 18,
+      "start": 1024,
+      "processed": 54,
+      "parent_count": 154,
+      "retained": 8,
+      "rejected_c5": 46,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.7273095999844372
+    },
+    {
+      "k": 19,
+      "start": 0,
+      "processed": 72,
+      "parent_count": 8,
+      "retained": 8,
+      "rejected_c5": 64,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.7342615000670776
+    },
+    {
+      "k": 20,
+      "start": 0,
+      "processed": 72,
+      "parent_count": 8,
+      "retained": 16,
+      "rejected_c5": 56,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.742143900017254
+    },
+    {
+      "k": 21,
+      "start": 0,
+      "processed": 192,
+      "parent_count": 16,
+      "retained": 24,
+      "rejected_c5": 160,
+      "rejected_c20": 8,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.756351500051096
+    },
+    {
+      "k": 22,
+      "start": 0,
+      "processed": 240,
+      "parent_count": 24,
+      "retained": 0,
+      "rejected_c5": 218,
+      "rejected_c20": 22,
+      "rejected_local": 0,
+      "solver": null,
+      "cumulative_seconds": 3.7713690999662504
+    },
+    {
+      "k": 12,
+      "start": 1024,
+      "processed": 410,
+      "parent_count": 239,
+      "retained": 116,
+      "rejected_c5": 274,
+      "rejected_c20": 0,
+      "rejected_local": 20,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005324999801814556,
+            "proposal_rows": 408,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0039201999315992,
+            "proposal_rows": 816,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.0075715999118983746,
+            "proposal_rows": 1224,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.010805499972775578,
+            "proposal_rows": 1632,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 20,
+            "seconds": 0.014432500000111759,
+            "proposal_rows": 2040,
+            "rounded_checks": 20
+          }
+        ],
+        "proposal_rows": 2040,
+        "rounded_checks": 20,
+        "live_named_array_bytes": 1107176,
+        "initial_archive_bytes": 108800,
+        "returned_array_bytes": 428264,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.014455499942414463
+      },
+      "cumulative_seconds": 3.8055710999760777
+    },
+    {
+      "k": 13,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 116,
+      "retained": 114,
+      "rejected_c5": 910,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005373000167310238,
+            "proposal_rows": 342,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.0035873999586328864,
+            "proposal_rows": 684,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.007349599967710674,
+            "proposal_rows": 1026,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.010565900010988116,
+            "proposal_rows": 1368,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.013568199938163161,
+            "proposal_rows": 1710,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1710,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 1004682,
+        "initial_archive_bytes": 98496,
+        "returned_array_bytes": 388170,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.013592700008302927
+      },
+      "cumulative_seconds": 3.8526599999750033
+    },
+    {
+      "k": 14,
+      "start": 0,
+      "processed": 1024,
+      "parent_count": 114,
+      "retained": 103,
+      "rejected_c5": 908,
+      "rejected_c20": 2,
+      "rejected_local": 11,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.0005154999671503901,
+            "proposal_rows": 342,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.003921800060197711,
+            "proposal_rows": 684,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.007308600004762411,
+            "proposal_rows": 1026,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.010370000032708049,
+            "proposal_rows": 1368,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 11,
+            "seconds": 0.01383529999293387,
+            "proposal_rows": 1710,
+            "rounded_checks": 11
+          }
+        ],
+        "proposal_rows": 1710,
+        "rounded_checks": 11,
+        "live_named_array_bytes": 1081290,
+        "initial_archive_bytes": 105792,
+        "returned_array_bytes": 417354,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.013857400044798851
+      },
+      "cumulative_seconds": 3.9014553000451997
+    },
+    {
+      "k": 15,
+      "start": 0,
+      "processed": 561,
+      "parent_count": 103,
+      "retained": 84,
+      "rejected_c5": 477,
+      "rejected_c20": 0,
+      "rejected_local": 0,
+      "solver": {
+        "family": "pdhg_box",
+        "steps": 128,
+        "checkpoints": [
+          {
+            "step": 0,
+            "certified": 0,
+            "seconds": 0.00048040004912763834,
+            "proposal_rows": 252,
+            "rounded_checks": 0
+          },
+          {
+            "step": 32,
+            "certified": 0,
+            "seconds": 0.003173000062815845,
+            "proposal_rows": 504,
+            "rounded_checks": 0
+          },
+          {
+            "step": 64,
+            "certified": 0,
+            "seconds": 0.005725300055928528,
+            "proposal_rows": 756,
+            "rounded_checks": 0
+          },
+          {
+            "step": 96,
+            "certified": 0,
+            "seconds": 0.008647000067867339,
+            "proposal_rows": 1008,
+            "rounded_checks": 0
+          },
+          {
+            "step": 128,
+            "certified": 0,
+            "seconds": 0.011212500045076013,
+            "proposal_rows": 1260,
+            "rounded_checks": 0
+          }
+        ],
+        "proposal_rows": 1260,
+        "rounded_checks": 0,
+        "live_named_array_bytes": 853188,
+        "initial_archive_bytes": 83328,
+        "returned_array_bytes": 329028,
+        "memory_scope": "Named arrays only, not process peak",
+        "explicit_steps": true,
+        "query_targets_accessed": false,
+        "suffix_accessed": false,
+        "global_bp_used": false,
+        "lp_used": false,
+        "total_seconds": 0.011234799982048571
+      },
+      "cumulative_seconds": 3.942358599975705
+    }
+  ],
+  "pending": [
+    {
+      "k": 10,
+      "start": 1024,
+      "parent_count": 148,
+      "combinations": 456
+    },
+    {
+      "k": 13,
+      "start": 1024,
+      "parent_count": 116,
+      "combinations": 20
+    },
+    {
+      "k": 14,
+      "start": 1024,
+      "parent_count": 114,
+      "combinations": 2
+    },
+    {
+      "k": 15,
+      "start": 561,
+      "parent_count": 103,
+      "combinations": 469
+    },
+    {
+      "k": 16,
+      "start": 0,
+      "parent_count": 84,
+      "combinations": 588
+    }
+  ],
+  "peak_search_states": 1594,
+  "live_named_array_bytes_lower_bound": 6580832,
+  "returned_array_bytes": 4935152,
+  "language_seconds": 0.016648399992845953,
+  "solver_rows": 6428,
+  "solver_coordinate_steps": 50496000,
+  "solver_seconds": 0.8763952001463622,
+  "rounded_checks": 412,
+  "proposal_rows": 96420,
+  "rejected_local": 412,
+  "max_expanded": 65536,
+  "max_states": 20000,
+  "max_seconds": 8.0,
+  "gate": 64,
+  "batch_size": 1024,
+  "query_targets_accessed": false,
+  "geometry_accessed": false,
+  "global_bp_used": false,
+  "lp_used": false,
+  "complete_search_not_prediction": true,
+  "compressed_io_excluded": true,
+  "resource_scope": "Full search including guard and proof archive copies; excludes final geometry/readout, disk compression and independent audit; named arrays not RSS peak",
+  "total_seconds": 3.942870800034143
+}
