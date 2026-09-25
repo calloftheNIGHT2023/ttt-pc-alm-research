@@ -1,0 +1,157 @@
+{
+  "source_sha256": {
+    "work/experiments/test_prefix_matched_controls_v1.py": "1d08dc1338f4bf4e17ceb2d58d566fb334a486154bc4c677b7aa2d6d7eb23040",
+    "work/experiments/prefix_matched_controls_v1.py": "41becbd31084381c1db537c709808ec87bccff573e38ac9836e90b37c717eb87",
+    "work/experiments/prefix_deadline_worker_v1.py": "e96eb2bbc4b6455655c97a0f6790b44c0c9eb187117a996dc1d6d6796b718b96",
+    "outputs/ttt-pc-alm-research/395_prefix_matched_controls_v1.md": "6a02e32b0884aef39e3a88dcc77668f80a16725d3f8cb3e92eb483441547374e"
+  },
+  "cohort_configs": [
+    {
+      "name": "official_ttt_native_prior256_16_p1",
+      "kind": "cohort",
+      "training_config": {
+        "kind": "official_ttt",
+        "name": "official_ttt_native_prior256_16_p1",
+        "head_dim": 16,
+        "inner_passes": 1,
+        "key_basis": "prior256",
+        "rate_mode": "native",
+        "learning_rate": 0.001
+      }
+    },
+    {
+      "name": "official_ttt_native_prior256_16_p4",
+      "kind": "cohort",
+      "training_config": {
+        "kind": "official_ttt",
+        "name": "official_ttt_native_prior256_16_p4",
+        "head_dim": 16,
+        "inner_passes": 4,
+        "key_basis": "prior256",
+        "rate_mode": "native",
+        "learning_rate": 0.001
+      }
+    },
+    {
+      "name": "official_ttt_native_prior256_32_p1",
+      "kind": "cohort",
+      "training_config": {
+        "kind": "official_ttt",
+        "name": "official_ttt_native_prior256_32_p1",
+        "head_dim": 32,
+        "inner_passes": 1,
+        "key_basis": "prior256",
+        "rate_mode": "native",
+        "learning_rate": 0.001
+      }
+    },
+    {
+      "name": "official_ttt_native_prior256_32_p4",
+      "kind": "cohort",
+      "training_config": {
+        "kind": "official_ttt",
+        "name": "official_ttt_native_prior256_32_p4",
+        "head_dim": 32,
+        "inner_passes": 4,
+        "key_basis": "prior256",
+        "rate_mode": "native",
+        "learning_rate": 0.001
+      }
+    },
+    {
+      "name": "official_ttt_native_scalar32_p1",
+      "kind": "cohort",
+      "training_config": {
+        "kind": "official_ttt",
+        "name": "official_ttt_native_scalar32_p1",
+        "head_dim": 32,
+        "inner_passes": 1,
+        "key_basis": "scalar",
+        "rate_mode": "native",
+        "learning_rate": 0.001
+      }
+    },
+    {
+      "name": "official_ttt_legacy_prior256_32_p1",
+      "kind": "cohort",
+      "training_config": {
+        "kind": "official_ttt",
+        "name": "official_ttt_legacy_prior256_32_p1",
+        "head_dim": 32,
+        "inner_passes": 1,
+        "key_basis": "prior256",
+        "rate_mode": "legacy",
+        "learning_rate": 0.001
+      }
+    },
+    {
+      "name": "cohort_meta_ridge128",
+      "kind": "cohort",
+      "training_config": {
+        "name": "cohort_meta_ridge128",
+        "kind": "ridge",
+        "rank": 128,
+        "learning_rate": 0.001
+      }
+    },
+    {
+      "name": "cohort_meta_shallow64_20",
+      "kind": "cohort",
+      "training_config": {
+        "name": "cohort_meta_shallow64_20",
+        "kind": "shallow",
+        "width": 64,
+        "inner_steps": 20,
+        "learning_rate": 0.001
+      }
+    }
+  ],
+  "portfolios": {
+    "adam_gn64_anytime": [
+      [
+        "adam",
+        240,
+        64
+      ],
+      [
+        "gauss_newton",
+        40,
+        64
+      ]
+    ],
+    "adam_gn64_256_anytime": [
+      [
+        "adam",
+        240,
+        64
+      ],
+      [
+        "gauss_newton",
+        40,
+        64
+      ],
+      [
+        "adam",
+        240,
+        256
+      ],
+      [
+        "gauss_newton",
+        40,
+        256
+      ]
+    ]
+  },
+  "training_audit_sha256": "2449e44c1649c13706fc2e35c41f751a574526df3491eaac549f84d0ab424ac5",
+  "seeds": [
+    5920000,
+    5920001
+  ],
+  "stages": [
+    4,
+    8,
+    16,
+    24
+  ],
+  "query_targets_accessed": false
+}

@@ -1,0 +1,170 @@
+[
+  {
+    "config": {
+      "name": "official_ttt_native_prior256_16_p1",
+      "head_dim": 16,
+      "inner_passes": 1,
+      "key_basis": "prior256",
+      "rate_mode": "native",
+      "learning_rate": 0.001
+    },
+    "gradient_reference_max_error": 2.0157298052936312e-10,
+    "batch_vs_individual_max_error": 1.1102230246251565e-16,
+    "outer_gradients_finite": true,
+    "query_read_only": true,
+    "task_reset_identical": true,
+    "inference_slow_weights_unchanged": true,
+    "outer_optimizer_step_finite": true,
+    "checkpoint_roundtrip_identical": true,
+    "resources": {
+      "shared_model_bytes": 189656,
+      "fast_parameter_bytes": 17024,
+      "gradient_carry_bytes": 17024,
+      "fast_state_bytes": 34048,
+      "scope": "named tensors only; transient tensors and runtime memory measured separately",
+      "rate_mode": "native",
+      "inner_update": "pinned official TTTMLP.ttt; analytic global chain derivatives",
+      "query_targets_accessed": false
+    }
+  },
+  {
+    "config": {
+      "name": "official_ttt_native_prior256_16_p4",
+      "head_dim": 16,
+      "inner_passes": 4,
+      "key_basis": "prior256",
+      "rate_mode": "native",
+      "learning_rate": 0.001
+    },
+    "gradient_reference_max_error": 2.0102552955592046e-10,
+    "batch_vs_individual_max_error": 1.1102230246251565e-16,
+    "outer_gradients_finite": true,
+    "query_read_only": true,
+    "task_reset_identical": true,
+    "inference_slow_weights_unchanged": true,
+    "outer_optimizer_step_finite": true,
+    "checkpoint_roundtrip_identical": true,
+    "resources": {
+      "shared_model_bytes": 189656,
+      "fast_parameter_bytes": 17024,
+      "gradient_carry_bytes": 17024,
+      "fast_state_bytes": 34048,
+      "scope": "named tensors only; transient tensors and runtime memory measured separately",
+      "rate_mode": "native",
+      "inner_update": "pinned official TTTMLP.ttt; analytic global chain derivatives",
+      "query_targets_accessed": false
+    }
+  },
+  {
+    "config": {
+      "name": "official_ttt_native_prior256_32_p1",
+      "head_dim": 32,
+      "inner_passes": 1,
+      "key_basis": "prior256",
+      "rate_mode": "native",
+      "learning_rate": 0.001
+    },
+    "gradient_reference_max_error": 7.855432970771403e-11,
+    "batch_vs_individual_max_error": 1.1102230246251565e-16,
+    "outer_gradients_finite": true,
+    "query_read_only": true,
+    "task_reset_identical": true,
+    "inference_slow_weights_unchanged": true,
+    "outer_optimizer_step_finite": true,
+    "checkpoint_roundtrip_identical": true,
+    "resources": {
+      "shared_model_bytes": 285912,
+      "fast_parameter_bytes": 66816,
+      "gradient_carry_bytes": 66816,
+      "fast_state_bytes": 133632,
+      "scope": "named tensors only; transient tensors and runtime memory measured separately",
+      "rate_mode": "native",
+      "inner_update": "pinned official TTTMLP.ttt; analytic global chain derivatives",
+      "query_targets_accessed": false
+    }
+  },
+  {
+    "config": {
+      "name": "official_ttt_native_prior256_32_p4",
+      "head_dim": 32,
+      "inner_passes": 4,
+      "key_basis": "prior256",
+      "rate_mode": "native",
+      "learning_rate": 0.001
+    },
+    "gradient_reference_max_error": 7.855432970771403e-11,
+    "batch_vs_individual_max_error": 1.1102230246251565e-16,
+    "outer_gradients_finite": true,
+    "query_read_only": true,
+    "task_reset_identical": true,
+    "inference_slow_weights_unchanged": true,
+    "outer_optimizer_step_finite": true,
+    "checkpoint_roundtrip_identical": true,
+    "resources": {
+      "shared_model_bytes": 285912,
+      "fast_parameter_bytes": 66816,
+      "gradient_carry_bytes": 66816,
+      "fast_state_bytes": 133632,
+      "scope": "named tensors only; transient tensors and runtime memory measured separately",
+      "rate_mode": "native",
+      "inner_update": "pinned official TTTMLP.ttt; analytic global chain derivatives",
+      "query_targets_accessed": false
+    }
+  },
+  {
+    "config": {
+      "name": "official_ttt_native_scalar32_p1",
+      "head_dim": 32,
+      "inner_passes": 1,
+      "key_basis": "scalar",
+      "rate_mode": "native",
+      "learning_rate": 0.001
+    },
+    "gradient_reference_max_error": 1.7053625178675702e-10,
+    "batch_vs_individual_max_error": 1.1102230246251565e-16,
+    "outer_gradients_finite": true,
+    "query_read_only": true,
+    "task_reset_identical": true,
+    "inference_slow_weights_unchanged": true,
+    "outer_optimizer_step_finite": true,
+    "checkpoint_roundtrip_identical": true,
+    "resources": {
+      "shared_model_bytes": 138968,
+      "fast_parameter_bytes": 66816,
+      "gradient_carry_bytes": 66816,
+      "fast_state_bytes": 133632,
+      "scope": "named tensors only; transient tensors and runtime memory measured separately",
+      "rate_mode": "native",
+      "inner_update": "pinned official TTTMLP.ttt; analytic global chain derivatives",
+      "query_targets_accessed": false
+    }
+  },
+  {
+    "config": {
+      "name": "official_ttt_legacy_prior256_32_p1",
+      "head_dim": 32,
+      "inner_passes": 1,
+      "key_basis": "prior256",
+      "rate_mode": "legacy",
+      "learning_rate": 0.001
+    },
+    "gradient_reference_max_error": 1.681321748492337e-09,
+    "batch_vs_individual_max_error": 1.1102230246251565e-16,
+    "outer_gradients_finite": true,
+    "query_read_only": true,
+    "task_reset_identical": true,
+    "inference_slow_weights_unchanged": true,
+    "outer_optimizer_step_finite": true,
+    "checkpoint_roundtrip_identical": true,
+    "resources": {
+      "shared_model_bytes": 285912,
+      "fast_parameter_bytes": 66816,
+      "gradient_carry_bytes": 66816,
+      "fast_state_bytes": 133632,
+      "scope": "named tensors only; transient tensors and runtime memory measured separately",
+      "rate_mode": "legacy",
+      "inner_update": "pinned official TTTMLP.ttt; analytic global chain derivatives",
+      "query_targets_accessed": false
+    }
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "config": {
+    "name": "official_ttt_native_prior256_32_p1",
+    "kind": "cohort",
+    "training_config": {
+      "kind": "official_ttt",
+      "name": "official_ttt_native_prior256_32_p1",
+      "head_dim": 32,
+      "inner_passes": 1,
+      "key_basis": "prior256",
+      "rate_mode": "native",
+      "learning_rate": 0.001
+    }
+  },
+  "worker_pid": 19688,
+  "generation": 3,
+  "budget_seconds": 1e-06,
+  "selected": "constant",
+  "error": null,
+  "received_final": false,
+  "setup_seconds": 0.0,
+  "decision_seconds": 0.00010649999603629112,
+  "controller_overrun_seconds": 0.00010549999603629113,
+  "archive_seconds": 0.0,
+  "task_cleanup_seconds": 0.0,
+  "terminated_owned_worker": true,
+  "cleanup_seconds": 0.056838099961169064,
+  "worker_reused": true,
+  "model_fingerprint_verified": false,
+  "query_targets_accessed": false,
+  "initialization_receives_support": false,
+  "hard_realtime_guarantee": false,
+  "warm_runtime_setup_excluded_and_separately_charged": true,
+  "late_predictions_admitted": false,
+  "shared_scientific_task_state_reused": false,
+  "setup_worker_memory": {
+    "rss": 706904064,
+    "vms": 1140731904,
+    "num_page_faults": 351607,
+    "peak_wset": 740098048,
+    "wset": 706904064,
+    "peak_paged_pool": 9530856,
+    "paged_pool": 9530552,
+    "peak_nonpaged_pool": 223392,
+    "nonpaged_pool": 75936,
+    "pagefile": 1140731904,
+    "peak_pagefile": 1157632000,
+    "private": 1140731904
+  },
+  "resource_samples": [
+    {
+      "seconds": 9.980006143450737e-05,
+      "worker_rss": 706904064,
+      "controller_rss": 733577216,
+      "worker_peak_working_set_since_creation": 740098048,
+      "worker_cpu_seconds": 0.0
+    }
+  ],
+  "resource_poll_interval_seconds": 0.005,
+  "worker_max_sampled_rss": 706904064,
+  "controller_max_sampled_rss": 733577216,
+  "memory_scope": "Sampled RSS is a lower bound on online peak; lifetime peak_wset includes setup/prior tasks; shared pages not deduplicated"
+}

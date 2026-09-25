@@ -1,0 +1,130 @@
+{
+  "train_seed": 874600,
+  "initial_seed": 874601,
+  "steps": 2000,
+  "batch_size": 16,
+  "train_queries": 64,
+  "validation_seeds": [
+    5900032,
+    5900033,
+    5900034,
+    5900035,
+    5900036,
+    5900037,
+    5900038,
+    5900039,
+    5900040,
+    5900041,
+    5900042,
+    5900043,
+    5900044,
+    5900045,
+    5900046,
+    5900047
+  ],
+  "validation_queries": 512,
+  "validation_interval": 250,
+  "configs": [
+    {
+      "kind": "official_ttt",
+      "name": "official_ttt_native_prior256_16_p1",
+      "head_dim": 16,
+      "inner_passes": 1,
+      "key_basis": "prior256",
+      "rate_mode": "native",
+      "learning_rate": 0.001
+    },
+    {
+      "kind": "official_ttt",
+      "name": "official_ttt_native_prior256_16_p4",
+      "head_dim": 16,
+      "inner_passes": 4,
+      "key_basis": "prior256",
+      "rate_mode": "native",
+      "learning_rate": 0.001
+    },
+    {
+      "kind": "official_ttt",
+      "name": "official_ttt_native_prior256_32_p1",
+      "head_dim": 32,
+      "inner_passes": 1,
+      "key_basis": "prior256",
+      "rate_mode": "native",
+      "learning_rate": 0.001
+    },
+    {
+      "kind": "official_ttt",
+      "name": "official_ttt_native_prior256_32_p4",
+      "head_dim": 32,
+      "inner_passes": 4,
+      "key_basis": "prior256",
+      "rate_mode": "native",
+      "learning_rate": 0.001
+    },
+    {
+      "kind": "official_ttt",
+      "name": "official_ttt_native_scalar32_p1",
+      "head_dim": 32,
+      "inner_passes": 1,
+      "key_basis": "scalar",
+      "rate_mode": "native",
+      "learning_rate": 0.001
+    },
+    {
+      "kind": "official_ttt",
+      "name": "official_ttt_legacy_prior256_32_p1",
+      "head_dim": 32,
+      "inner_passes": 1,
+      "key_basis": "prior256",
+      "rate_mode": "legacy",
+      "learning_rate": 0.001
+    },
+    {
+      "name": "cohort_meta_ridge128",
+      "kind": "ridge",
+      "rank": 128,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "cohort_meta_shallow64_20",
+      "kind": "shallow",
+      "width": 64,
+      "inner_steps": 20,
+      "learning_rate": 0.001
+    }
+  ],
+  "primary": "official_ttt_native_prior256_32_p1",
+  "dtype": "float64",
+  "stages": [
+    4,
+    8,
+    16,
+    24
+  ],
+  "warm": true,
+  "device": "cuda",
+  "cpu_threads": 1,
+  "torch_version": "2.10.0+cu128",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "gpu": "NVIDIA GeForce RTX 5070",
+  "official_commit": "cd831db10c8c9a0f6340f02da5613316a8a92b67",
+  "source_sha256": {
+    "work/experiments/train_matched_official_ttt_v1.py": "5e6cacf34304de2fc3f55427f6b03dbf8fac0fa1391155d59bbbe00dbca95c87",
+    "work/experiments/matched_official_ttt_v1.py": "abadf678b0581ef784ed73cb977d352dedbff354e8d39f32a3aaf9506655566f",
+    "work/experiments/matched_shifted_meta_models.py": "d1ee4c3fb2fe12de56231d4aa5af6188de8f5f47cabfb443b1d965dfea0347c6",
+    "work/experiments/official_ttt_meta_bridge.py": "e928c9b9cb837326e45f31053dc62a2be8e81e05e3a381550f59939ba94ab9b7",
+    "work/experiments/test_matched_official_ttt_v1.py": "9de3638a93f9e46b56b95f58325641549d806d9e1035a83af6a6d4aaca66e975",
+    "work/third_party/ttt-lm-pytorch/ttt.py": "2520f9241550d16b4ff01d2438ac0377e2dff9fe35587742d35a11fac7b6b0d9",
+    "outputs/ttt-pc-alm-research/390_matched_official_ttt_design_v1.md": "ba290e1a7043888e24314e14ecaa9b934fa2b7519cb2719794d4200dff835eca"
+  },
+  "parent_training_protocol_sha256": "a6e23f891bf4885eb826b9875cea54aff9c5cd4370591ce1312f42d2a7c18399",
+  "preflight_summary_sha256": "ddc1b82507edc6804860eedc8587c44a49d52f9f4ea5dd8448237e02c00ba17d",
+  "cohort_generation_device": "cpu",
+  "exact_training_tensors_shared_by_all_eight_models": true,
+  "exact_training_tensors_equal_historical_cuda_cohort": false,
+  "selection": "minimum old-validation four-prefix raw MSE; earlier step wins ties",
+  "no_test_evaluation": true,
+  "new_task_query_targets_accessed": false,
+  "outer_bp_used": true,
+  "full_research_goal_complete": false
+}
