@@ -1,0 +1,37 @@
+nlp_agnews_minilm real-label binary d=32 n=32
+  zero                     nmse=0.9977±0.0000
+  linear_ridge             nmse=0.6532±0.0602
+  rf4096_relu_ridge        nmse=0.5173±0.0222
+  rf4096_link_ridge        nmse=0.5037±0.0183
+  rbf_krr                  nmse=0.5377±0.0228
+  poly3_krr                nmse=0.5214±0.0169
+  mlp_extra_layer          nmse=0.6251±0.0202
+  bp_adam_64x3             nmse=0.8930±0.0338
+  bp_gd_64x3               nmse=0.7241±0.0323
+  bp_lm_64                 nmse=1.7164±0.0630
+  pc_alm_1x2               nmse=1.3560±0.0520
+  pc_alm_gradact_1x2       nmse=1.3799±0.0548
+  pc_alm_8x2               nmse=1.3676±0.0505
+  pc_alm_gradact_8x2       nmse=1.3701±0.0492
+  pc_penalty_cont          nmse=0.6839±0.0378
+  altmin                   nmse=1.2896±0.0508
+  hybrid_transform_lm      nmse=1.7164±0.0630
+nlp_agnews_minilm real-label binary d=128 n=128
+  zero                     nmse=0.9980±0.0001
+  linear_ridge             nmse=0.4513±0.0132
+  rf4096_relu_ridge        nmse=0.4334±0.0147
+  rf4096_link_ridge        nmse=0.4402±0.0141
+  rbf_krr                  nmse=0.4225±0.0146
+  poly3_krr                nmse=0.4585±0.0119
+  mlp_extra_layer          nmse=0.6469±0.0106
+  bp_adam_64x3             nmse=1.0805±0.0195
+  bp_gd_64x3               nmse=0.6739±0.0215
+  bp_lm_64                 nmse=1.8721±0.0317
+  pc_alm_1x2               nmse=1.5063±0.0362
+  pc_alm_gradact_1x2       nmse=1.5655±0.0369
+  pc_alm_8x2               nmse=1.5838±0.0351
+  pc_alm_gradact_8x2       nmse=1.6011±0.0359
+  pc_penalty_cont          nmse=0.8756±0.0375
+  altmin                   nmse=1.5558±0.0389
+  hybrid_transform_lm      nmse=1.8976±0.0334
+DONE

@@ -1,0 +1,77 @@
+d=16 n=128 r=2
+  oracle                   mse=0.0000±0.0000 med=0.0000 succ=1.00 ov=1.0
+  zero                     mse=0.9531±0.0213 med=0.9123 succ=0.00 ov=None
+  linear_ridge             mse=0.9969±0.0222 med=0.9675 succ=0.00 ov=None
+  rf4096_relu_ridge        mse=0.9690±0.0230 med=0.9469 succ=0.00 ov=None
+  rf4096_link_ridge        mse=0.7519±0.0178 med=0.7139 succ=0.00 ov=None
+  rbf_krr                  mse=0.9317±0.0218 med=0.8871 succ=0.00 ov=None
+  poly3_krr                mse=0.9660±0.0222 med=0.9526 succ=0.00 ov=None
+  mlp_extra_layer          mse=1.6224±0.0567 med=1.5156 succ=0.00 ov=None
+  bp_gd_8x3                mse=0.7796±0.1269 med=0.7111 succ=0.28 ov=0.797
+  bp_adam_8x3              mse=0.1904±0.0819 med=0.0075 succ=0.84 ov=0.955
+  bp_lm_8                  mse=1.3243±0.3875 med=0.8099 succ=0.47 ov=0.804
+  pc_alm_1x2               mse=0.2688±0.1219 med=0.0072 succ=0.84 ov=0.939
+  pc_alm_8x2               mse=0.0081±0.0007 med=0.0070 succ=1.00 ov=0.999
+  pc_penalty_cont          mse=3.2302±0.3224 med=2.5121 succ=0.00 ov=0.478
+  altmin                   mse=6.1719±0.6265 med=5.7843 succ=0.00 ov=0.33
+  hybrid_transform_only    mse=16.5354±2.2925 med=13.7030 succ=0.00 ov=0.662
+  hybrid_transform_lm_8    mse=0.0079±0.0006 med=0.0068 succ=1.00 ov=0.999
+  time: {'closed': 1.55, 'mlp': 1.02, 'bp_gd': 0.12, 'bp_adam': 0.16, 'bp_lm': 0.2, 'pc_alm': 1.02, 'pc_alm_R': 1.77, 'pc_pen': 0.51, 'altmin': 0.5, 'hybrid': 0.25}
+d=32 n=256 r=2
+  oracle                   mse=0.0000±0.0000 med=0.0000 succ=1.00 ov=1.0
+  zero                     mse=0.9764±0.0194 med=0.9701 succ=0.00 ov=None
+  linear_ridge             mse=1.0535±0.0205 med=1.0521 succ=0.00 ov=None
+  rf4096_relu_ridge        mse=0.9881±0.0222 med=0.9714 succ=0.00 ov=None
+  rf4096_link_ridge        mse=0.9554±0.0190 med=0.9404 succ=0.00 ov=None
+  rbf_krr                  mse=0.9803±0.0207 med=0.9679 succ=0.00 ov=None
+  poly3_krr                mse=0.9865±0.0204 med=0.9782 succ=0.00 ov=None
+  mlp_extra_layer          mse=1.5124±0.0338 med=1.4796 succ=0.00 ov=None
+  bp_gd_8x3                mse=1.2801±0.1106 med=1.2331 succ=0.06 ov=0.609
+  bp_adam_8x3              mse=0.8795±0.1601 med=0.8891 succ=0.38 ov=0.789
+  bp_lm_8                  mse=1.6090±0.2060 med=1.4380 succ=0.25 ov=0.654
+  pc_alm_1x2               mse=0.3593±0.1541 med=0.0083 succ=0.78 ov=0.937
+  pc_alm_8x2               mse=0.0076±0.0004 med=0.0072 succ=1.00 ov=0.999
+  pc_penalty_cont          mse=3.3205±0.2586 med=3.1877 succ=0.00 ov=0.43
+  altmin                   mse=4.3540±0.3102 med=3.6561 succ=0.00 ov=0.273
+  hybrid_transform_only    mse=15.6107±1.6270 med=12.2656 succ=0.00 ov=0.656
+  hybrid_transform_lm_8    mse=0.0075±0.0004 med=0.0070 succ=1.00 ov=0.999
+  time: {'closed': 2.21, 'mlp': 0.7, 'bp_gd': 0.15, 'bp_adam': 0.18, 'bp_lm': 0.68, 'pc_alm': 1.06, 'pc_alm_R': 3.25, 'pc_pen': 0.53, 'altmin': 0.76, 'hybrid': 0.77}
+d=64 n=512 r=2
+  oracle                   mse=0.0000±0.0000 med=0.0000 succ=1.00 ov=1.0
+  zero                     mse=0.9839±0.0240 med=0.9640 succ=0.00 ov=None
+  linear_ridge             mse=1.0886±0.0248 med=1.0761 succ=0.00 ov=None
+  rf4096_relu_ridge        mse=0.9859±0.0238 med=0.9663 succ=0.00 ov=None
+  rf4096_link_ridge        mse=0.9853±0.0236 med=0.9605 succ=0.00 ov=None
+  rbf_krr                  mse=0.9861±0.0238 med=0.9664 succ=0.00 ov=None
+  poly3_krr                mse=0.9906±0.0237 med=0.9767 succ=0.00 ov=None
+  mlp_extra_layer          mse=1.4373±0.0434 med=1.3855 succ=0.00 ov=None
+  bp_gd_8x3                mse=1.7222±0.0965 med=1.6194 succ=0.00 ov=0.414
+  bp_adam_8x3              mse=1.5025±0.1642 med=1.4973 succ=0.16 ov=0.583
+  bp_lm_8                  mse=2.6454±0.1573 med=2.7975 succ=0.03 ov=0.396
+  pc_alm_1x2               mse=0.5353±0.1759 med=0.0092 succ=0.69 ov=0.912
+  pc_alm_8x2               mse=0.0074±0.0003 med=0.0072 succ=1.00 ov=0.999
+  pc_penalty_cont          mse=4.1969±0.2350 med=3.8879 succ=0.00 ov=0.361
+  altmin                   mse=4.4759±0.2405 med=4.1168 succ=0.00 ov=0.217
+  hybrid_transform_only    mse=14.1158±1.1169 med=12.0272 succ=0.00 ov=0.641
+  hybrid_transform_lm_8    mse=0.0640±0.0401 med=0.0070 succ=0.94 ov=0.982
+  time: {'closed': 4.56, 'mlp': 1.44, 'bp_gd': 0.35, 'bp_adam': 0.37, 'bp_lm': 3.26, 'pc_alm': 1.1, 'pc_alm_R': 6.24, 'pc_pen': 0.55, 'altmin': 0.55, 'hybrid': 3.31}
+d=128 n=1024 r=2
+  oracle                   mse=0.0000±0.0000 med=0.0000 succ=1.00 ov=1.0
+  zero                     mse=1.0316±0.0297 med=0.9992 succ=0.00 ov=None
+  linear_ridge             mse=1.1497±0.0306 med=1.1086 succ=0.00 ov=None
+  rf4096_relu_ridge        mse=1.0334±0.0297 med=0.9991 succ=0.00 ov=None
+  rf4096_link_ridge        mse=1.0317±0.0297 med=0.9989 succ=0.00 ov=None
+  rbf_krr                  mse=1.0327±0.0296 med=0.9984 succ=0.00 ov=None
+  poly3_krr                mse=1.0371±0.0297 med=0.9993 succ=0.00 ov=None
+  mlp_extra_layer          mse=1.3623±0.0334 med=1.3321 succ=0.00 ov=None
+  bp_gd_8x3                mse=2.1126±0.0554 med=2.0763 succ=0.00 ov=0.22
+  bp_adam_8x3              mse=2.6961±0.1361 med=2.6043 succ=0.00 ov=0.331
+  bp_lm_8                  mse=3.5172±0.1610 med=3.3701 succ=0.00 ov=0.221
+  pc_alm_1x2               mse=0.5119±0.1611 med=0.0075 succ=0.75 ov=0.898
+  pc_alm_8x2               mse=0.0072±0.0002 med=0.0070 succ=1.00 ov=0.999
+  pc_penalty_cont          mse=4.4167±0.1386 med=4.1834 succ=0.00 ov=0.335
+  altmin                   mse=4.3141±0.1813 med=4.1801 succ=0.00 ov=0.183
+  hybrid_transform_only    mse=15.0151±0.7195 med=13.9547 succ=0.00 ov=0.648
+  hybrid_transform_lm_8    mse=0.1381±0.0746 med=0.0070 succ=0.91 ov=0.977
+  time: {'closed': 11.05, 'mlp': 4.4, 'bp_gd': 1.14, 'bp_adam': 1.15, 'bp_lm': 18.87, 'pc_alm': 2.42, 'pc_alm_R': 12.39, 'pc_pen': 1.21, 'altmin': 1.2, 'hybrid': 18.98}
+DONE

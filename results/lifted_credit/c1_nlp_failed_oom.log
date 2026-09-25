@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/lifted_credit/exp_real_features.py", line 61, in <module>
+    res, tm = S.run_suite(link, X, y, Xq, yq, u.to(args.device), T=args.T, R=args.restarts, bp_big=args.bp_big,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/lifted_credit/suite.py", line 27, in run_suite
+    F, Fq = C.random_features(X, Xq, 4096, kind, link, seed + 7)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/lifted_credit/common.py", line 223, in random_features
+    return act(X) / math.sqrt(m), act(Xq) / math.sqrt(m)
+                                  ^^^^^^^
+  File "/workspace/lifted_credit/common.py", line 220, in <lambda>
+    act = lambda t: torch.relu(t @ V + b)
+                               ~~~~~~^~~
+RuntimeError: NVML_SUCCESS == r INTERNAL ASSERT FAILED at "/pytorch/c10/cuda/CUDACachingAllocator.cpp":1131, please report a bug to PyTorch. 

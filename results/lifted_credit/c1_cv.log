@@ -1,0 +1,61 @@
+cv_cifar10_resnet18 d=32 n=128 mean-kurtosis=3.17
+  oracle                   nmse=0.0000±0.0000 med=0.0000 succ=1.00 ov=1.0
+  zero                     nmse=1.0036±0.0007 med=1.0006 succ=0.00 ov=None
+  linear_ridge             nmse=1.0968±0.0134 med=1.0561 succ=0.00 ov=None
+  rf4096_relu_ridge        nmse=1.0340±0.0144 med=1.0026 succ=0.00 ov=None
+  rf4096_link_ridge        nmse=0.9292±0.0111 med=0.9355 succ=0.00 ov=None
+  rbf_krr                  nmse=1.0106±0.0104 med=0.9982 succ=0.00 ov=None
+  poly3_krr                nmse=1.0244±0.0097 med=1.0003 succ=0.00 ov=None
+  mlp_extra_layer          nmse=1.5203±0.0584 med=1.3475 succ=0.00 ov=None
+  bp_adam_64x3             nmse=0.2151±0.0630 med=0.0118 succ=0.78 ov=0.961
+  bp_gd_64x3               nmse=0.8175±0.0977 med=0.6293 succ=0.22 ov=0.776
+  bp_lm_64                 nmse=1.2122±0.2581 med=0.3078 succ=0.47 ov=0.822
+  pc_alm_1x2               nmse=0.0432±0.0120 med=0.0124 succ=0.89 ov=0.994
+  pc_alm_gradact_1x2       nmse=10.7994±1.1699 med=7.2278 succ=0.03 ov=0.127
+  pc_alm_8x2               nmse=0.0114±0.0009 med=0.0090 succ=1.00 ov=0.998
+  pc_alm_gradact_8x2       nmse=7.9540±1.1746 med=4.5553 succ=0.05 ov=0.313
+  pc_penalty_cont          nmse=7.7427±0.9673 med=5.3544 succ=0.00 ov=0.451
+  altmin                   nmse=1.6881±0.1763 med=1.2819 succ=0.00 ov=0.581
+  hybrid_transform_lm      nmse=0.0502±0.0226 med=0.0091 succ=0.94 ov=0.993
+  time: {'linear_ridge': 0.31, 'rf4096_relu': 0.42, 'rf4096_link': 0.44, 'rbf_krr': 1.13, 'poly3_krr': 0.28, 'mlp_extra_layer': 0.97, 'bp_adam_64x3': 0.12, 'bp_gd_64x3': 0.1, 'bp_lm_64': 1.07, 'pc_alm_1x2': 0.46, 'pc_alm_gradact_1x2': 0.78, 'pc_alm_8x2': 1.27, 'pc_alm_gradact_8x2': 0.82, 'pc_penalty_cont': 0.23, 'altmin': 0.23, 'hybrid_transform_lm': 0.1}
+cv_cifar10_resnet18 d=64 n=256 mean-kurtosis=3.20
+  oracle                   nmse=0.0000±0.0000 med=0.0000 succ=1.00 ov=1.0
+  zero                     nmse=1.0014±0.0004 med=1.0003 succ=0.00 ov=None
+  linear_ridge             nmse=1.1513±0.0149 med=1.1081 succ=0.00 ov=None
+  rf4096_relu_ridge        nmse=1.0078±0.0038 med=1.0009 succ=0.00 ov=None
+  rf4096_link_ridge        nmse=0.9968±0.0043 med=0.9980 succ=0.00 ov=None
+  rbf_krr                  nmse=0.9988±0.0034 med=0.9985 succ=0.00 ov=None
+  poly3_krr                nmse=1.0092±0.0042 med=1.0019 succ=0.00 ov=None
+  mlp_extra_layer          nmse=1.4374±0.0456 med=1.2943 succ=0.00 ov=None
+  bp_adam_64x3             nmse=1.2052±0.1642 med=0.9698 succ=0.28 ov=0.779
+  bp_gd_64x3               nmse=1.8266±0.1281 med=1.6996 succ=0.02 ov=0.49
+  bp_lm_64                 nmse=3.8040±0.4137 med=3.0046 succ=0.05 ov=0.508
+  pc_alm_1x2               nmse=0.0132±0.0010 med=0.0105 succ=1.00 ov=0.998
+  pc_alm_gradact_1x2       nmse=10.4491±0.7528 med=9.1791 succ=0.00 ov=0.073
+  pc_alm_8x2               nmse=0.0111±0.0007 med=0.0102 succ=1.00 ov=0.998
+  pc_alm_gradact_8x2       nmse=9.5993±0.9481 med=6.6776 succ=0.00 ov=0.164
+  pc_penalty_cont          nmse=6.7427±0.5919 med=5.2282 succ=0.00 ov=0.426
+  altmin                   nmse=1.4900±0.0815 med=1.3087 succ=0.00 ov=0.604
+  hybrid_transform_lm      nmse=0.0100±0.0006 med=0.0085 succ=1.00 ov=0.998
+  time: {'linear_ridge': 0.36, 'rf4096_relu': 0.71, 'rf4096_link': 0.74, 'rbf_krr': 1.68, 'poly3_krr': 0.42, 'mlp_extra_layer': 0.89, 'bp_adam_64x3': 0.35, 'bp_gd_64x3': 0.32, 'bp_lm_64': 5.13, 'pc_alm_1x2': 0.71, 'pc_alm_gradact_1x2': 0.96, 'pc_alm_8x2': 2.81, 'pc_alm_gradact_8x2': 1.27, 'pc_penalty_cont': 0.36, 'altmin': 0.36, 'hybrid_transform_lm': 0.25}
+cv_cifar10_resnet18 d=128 n=512 mean-kurtosis=3.22
+  oracle                   nmse=0.0000±0.0000 med=0.0000 succ=1.00 ov=1.0
+  zero                     nmse=1.0009±0.0003 med=1.0000 succ=0.00 ov=None
+  linear_ridge             nmse=1.3030±0.0488 med=1.1869 succ=0.00 ov=None
+  rf4096_relu_ridge        nmse=1.0023±0.0008 med=1.0006 succ=0.00 ov=None
+  rf4096_link_ridge        nmse=1.0053±0.0050 med=0.9989 succ=0.00 ov=None
+  rbf_krr                  nmse=1.0012±0.0012 med=0.9997 succ=0.00 ov=None
+  poly3_krr                nmse=1.0103±0.0049 med=1.0006 succ=0.00 ov=None
+  mlp_extra_layer          nmse=1.5443±0.1022 med=1.3034 succ=0.00 ov=None
+  bp_adam_64x3             nmse=2.0933±0.0981 med=1.9997 succ=0.00 ov=0.505
+  bp_gd_64x3               nmse=2.0338±0.1019 med=1.8611 succ=0.00 ov=0.333
+  bp_lm_64                 nmse=4.5108±0.2597 med=4.3323 succ=0.00 ov=0.342
+  pc_alm_1x2               nmse=0.0118±0.0006 med=0.0113 succ=1.00 ov=0.998
+  pc_alm_gradact_1x2       nmse=11.1290±0.8700 med=9.4393 succ=0.00 ov=0.047
+  pc_alm_8x2               nmse=0.0106±0.0004 med=0.0099 succ=1.00 ov=0.998
+  pc_alm_gradact_8x2       nmse=9.8489±0.6492 med=7.9788 succ=0.00 ov=0.097
+  pc_penalty_cont          nmse=6.5616±0.3313 med=6.1387 succ=0.00 ov=0.437
+  altmin                   nmse=1.4118±0.0516 med=1.3396 succ=0.00 ov=0.603
+  hybrid_transform_lm      nmse=0.0094±0.0004 med=0.0090 succ=1.00 ov=0.998
+  time: {'linear_ridge': 0.78, 'rf4096_relu': 1.54, 'rf4096_link': 1.57, 'rbf_krr': 3.47, 'poly3_krr': 0.87, 'mlp_extra_layer': 2.62, 'bp_adam_64x3': 1.05, 'bp_gd_64x3': 1.0, 'bp_lm_64': 28.84, 'pc_alm_1x2': 1.68, 'pc_alm_gradact_1x2': 1.52, 'pc_alm_8x2': 6.53, 'pc_alm_gradact_8x2': 2.82, 'pc_penalty_cont': 0.85, 'altmin': 0.83, 'hybrid_transform_lm': 0.78}
+DONE
