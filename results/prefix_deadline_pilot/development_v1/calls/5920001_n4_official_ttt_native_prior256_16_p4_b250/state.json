@@ -1,0 +1,49 @@
+{
+  "stages": [
+    4
+  ],
+  "support_exposures": 4,
+  "warm_trajectory": true,
+  "named_fast_state_bytes": 34048,
+  "returned_array_bytes": 40280,
+  "query_targets_accessed": false,
+  "total_seconds": 0.003016000031493604,
+  "model_manifest": {
+    "checkpoint_sha256": "a5973b27770691f8649afab740e349ef8ac3e3090a572b38d1459557c0f11a7d",
+    "training_config": {
+      "kind": "official_ttt",
+      "name": "official_ttt_native_prior256_16_p4",
+      "head_dim": 16,
+      "inner_passes": 4,
+      "key_basis": "prior256",
+      "rate_mode": "native",
+      "learning_rate": 0.001
+    },
+    "training_manifest": {
+      "method": "official_ttt_native_prior256_16_p4",
+      "outer_training_seconds": 124.32154619996436,
+      "outer_tasks": 32000,
+      "unique_outer_query_values": 2048000,
+      "outer_query_loss_exposures": 8192000,
+      "validation_events": 9,
+      "validation_query_loss_exposures": 294912,
+      "trainable_parameters": 21626,
+      "selected_step": 1250,
+      "best_validation_raw_mse": 0.05238855793131632,
+      "checkpoint_sha256": "a5973b27770691f8649afab740e349ef8ac3e3090a572b38d1459557c0f11a7d",
+      "consumed_batches_sha256": "52ad89049ea9594b03a76e1133099262002ac655342fbf9b8c90e95a35a45a1e",
+      "cuda_peak_allocated_bytes": 129459200,
+      "cuda_peak_reserved_bytes": 192937984,
+      "memory_scope": "CUDA allocator process-wide; not total driver/host memory",
+      "new_task_query_targets_accessed": false
+    },
+    "named_shared_model_bytes": 189656
+  },
+  "fallback_seconds": 0.026525499997660518,
+  "fallback_metadata": {
+    "persistent_state_bytes": 163840,
+    "noise_variance": 3.333333333333333e-07
+  },
+  "support_prefix": 4,
+  "end_to_end_seconds": 0.029566399985924363
+}
