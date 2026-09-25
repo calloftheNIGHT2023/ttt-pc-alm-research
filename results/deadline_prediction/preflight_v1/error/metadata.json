@@ -1,0 +1,56 @@
+{
+  "config": {
+    "kind": "probe",
+    "raise_after_fallback": true
+  },
+  "budget_seconds": 2.0,
+  "selected": "fallback",
+  "error": {
+    "kind": "error",
+    "phase": "online",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\callofthenight\\Documents\\Codex\\2026-09-18\\ttt-pc-alm-ttt-pc-alm\\work\\experiments\\deadline_prediction_worker_v1.py\", line 113, in worker\n    prediction, arrays, metadata = calculate(config, context, command['x'], command['v'], command['q'], command['seed'], emit)\n                                   ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\callofthenight\\Documents\\Codex\\2026-09-18\\ttt-pc-alm-ttt-pc-alm\\work\\experiments\\deadline_prediction_worker_v1.py\", line 53, in calculate\n    if config.get('raise_after_fallback'): raise RuntimeError('Intentional deadline preflight error')\n                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Intentional deadline preflight error\n",
+    "received_seconds": 0.0008039000676944852
+  },
+  "setup_seconds": 2.29630700009875,
+  "decision_seconds": 0.0009074000408872962,
+  "controller_overrun_seconds": 0.0,
+  "cleanup_seconds": 0.03338489995803684,
+  "archive_seconds": 0.0,
+  "terminated_owned_worker": true,
+  "worker_exitcode": -15,
+  "received_final": false,
+  "query_targets_accessed": false,
+  "hard_realtime_guarantee": false,
+  "warm_runtime_setup_excluded_and_separately_charged": true,
+  "receipt_and_prediction_copy_inside_online_clock": true,
+  "late_predictions_admitted": false,
+  "rss_peak_measured": false,
+  "initialization_receives_support": false,
+  "setup_worker_memory": {
+    "rss": 545820672,
+    "vms": 933892096,
+    "num_page_faults": 140481,
+    "peak_wset": 545820672,
+    "wset": 545820672,
+    "peak_paged_pool": 9339320,
+    "paged_pool": 9339224,
+    "peak_nonpaged_pool": 54928,
+    "nonpaged_pool": 54800,
+    "pagefile": 933892096,
+    "peak_pagefile": 933892096,
+    "private": 933892096
+  },
+  "resource_samples": [
+    {
+      "seconds": 0.0009003999875858426,
+      "worker_rss": 545865728,
+      "controller_rss": 547303424,
+      "worker_peak_working_set_since_creation": 545865728,
+      "worker_cpu_seconds": 0.0
+    }
+  ],
+  "worker_max_sampled_rss": 545865728,
+  "controller_max_sampled_rss": 547303424,
+  "resource_poll_interval_seconds": 0.005,
+  "resource_scope": "5ms observed process RSS lower bound to true online peak; Windows peak_wset includes setup; shared pages not deduplicated; CPU to last sample"
+}

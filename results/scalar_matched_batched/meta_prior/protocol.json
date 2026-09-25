@@ -1,0 +1,99 @@
+{
+  "train_seed": 874600,
+  "initial_seed": 874601,
+  "steps": 2000,
+  "batch_size": 16,
+  "train_queries": 64,
+  "validation_seeds": [
+    5900032,
+    5900033,
+    5900034,
+    5900035,
+    5900036,
+    5900037,
+    5900038,
+    5900039,
+    5900040,
+    5900041,
+    5900042,
+    5900043,
+    5900044,
+    5900045,
+    5900046,
+    5900047
+  ],
+  "evaluation_seeds": [
+    5900000,
+    5900001,
+    5900002,
+    5900003,
+    5900004,
+    5900005,
+    5900006,
+    5900007,
+    5900008,
+    5900009,
+    5900010,
+    5900011,
+    5900012,
+    5900013,
+    5900014,
+    5900015
+  ],
+  "validation_queries": 512,
+  "evaluation_queries": 2048,
+  "validation_interval": 250,
+  "configs": [
+    {
+      "name": "prior256_fixed",
+      "kind": "prior",
+      "lr": 0.001
+    },
+    {
+      "name": "meta_ridge64",
+      "kind": "ridge",
+      "rank": 64,
+      "lr": 0.001
+    },
+    {
+      "name": "meta_ridge128",
+      "kind": "ridge",
+      "rank": 128,
+      "lr": 0.001
+    },
+    {
+      "name": "meta_shallow64_5",
+      "kind": "shallow",
+      "width": 64,
+      "inner_steps": 5,
+      "lr": 0.001
+    },
+    {
+      "name": "meta_shallow64_20",
+      "kind": "shallow",
+      "width": 64,
+      "inner_steps": 20,
+      "lr": 0.001
+    }
+  ],
+  "device": "cuda",
+  "torch_version": "2.10.0+cu128",
+  "gpu": "NVIDIA GeForce RTX 5070",
+  "source_sha256": {
+    "run_matched_shifted_meta.py": "695e6d96df9eb995fd6afed029ddccbe9b2407614d864952378669f0fbd27762",
+    "matched_shifted_meta_models.py": "d1ee4c3fb2fe12de56231d4aa5af6188de8f5f47cabfb443b1d965dfea0347c6"
+  },
+  "config_sha256": "0255fa58b36fca4c188b452407ca497652fbe2cd45b7091e31e9cf2be7cb5f93",
+  "audit": {
+    "passed": true,
+    "teacher_numpy_max_error": 0.0,
+    "ridge_primal_dual_max_error": 9.43689570931383e-16,
+    "ridge_affinity_max_error": 3.3306690738754696e-16,
+    "shallow_batched_individual_max_error": 0.0,
+    "full_second_order_outer_gradients_finite": true,
+    "query_target_absent_from_adapt_and_predict": true
+  },
+  "task_scope": "same shifted-tent prior; all test streams historically observed; outer training BP allowed and explicitly charged; no official TTT claim",
+  "dtype": "float64",
+  "warm_start": "shallow carries fast parameters over 4,8,16,24 support prefixes; ridge refits closed form on full prefix"
+}

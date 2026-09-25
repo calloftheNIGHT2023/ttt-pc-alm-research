@@ -1,0 +1,190 @@
+[
+  {
+    "case": "zero",
+    "selected": "constant",
+    "received_final": false,
+    "setup_seconds": 2.283174699987285,
+    "decision_seconds": 0.00030429998878389597,
+    "controller_overrun_seconds": 0.00030429998878389597,
+    "cleanup_seconds": 0.034099599928595126,
+    "terminated_owned_worker": true,
+    "error": null,
+    "files": {
+      "arrays.npz": "665484075ca1ef3863f6d5cfb619ea7a92305d0ce08318a3a708b9cf62ae08b8",
+      "events.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "metadata.json": "f7011049ea66defca9e4f85a79161835964047114501140a489fbd046334c89b"
+    }
+  },
+  {
+    "case": "early",
+    "selected": "final",
+    "received_final": true,
+    "setup_seconds": 2.317810000036843,
+    "decision_seconds": 0.020737800048664212,
+    "controller_overrun_seconds": 0.0,
+    "cleanup_seconds": 0.3566749000456184,
+    "terminated_owned_worker": false,
+    "error": null,
+    "files": {
+      "archive_metadata.json": "17bcde3340da2b947a7bf300348c2526a59bf7f3537955bb3701f1ed3d2ef9ec",
+      "arrays.npz": "c4d265361ecbaeaa0ef17f04708d110955a96b3aefbb290050b3283c3e29350b",
+      "events.json": "8d88ad6207a39e54e0599c28ba6c5973a14d9b3131898d7db684204d4735794d",
+      "metadata.json": "7c89e74a92e375e7b3c084370cc53f45a5b6b5ace632ef03547107c249d5fd78"
+    }
+  },
+  {
+    "case": "late",
+    "selected": "fallback",
+    "received_final": false,
+    "setup_seconds": 2.338797300006263,
+    "decision_seconds": 0.30638189997989684,
+    "controller_overrun_seconds": 0.0063818999798968545,
+    "cleanup_seconds": 0.03514829999767244,
+    "terminated_owned_worker": true,
+    "error": null,
+    "files": {
+      "arrays.npz": "bcdb41786335fda3ac7f97bfa8451ac4cb91a814a8dbf70a6577c105375d3245",
+      "events.json": "53b0dae0dfbead0eed8136e82884f93ce0090a05cc5ef154441de38357dd19c0",
+      "metadata.json": "07d0cf772b0237c5fe7cad55291720951e82a2c2b8a173c9dc995aa47b02107e"
+    }
+  },
+  {
+    "case": "all_late",
+    "selected": "constant",
+    "received_final": false,
+    "setup_seconds": 2.351633399957791,
+    "decision_seconds": 0.20479400001931936,
+    "controller_overrun_seconds": 0.004794000019319344,
+    "cleanup_seconds": 0.034142000018619,
+    "terminated_owned_worker": true,
+    "error": null,
+    "files": {
+      "arrays.npz": "665484075ca1ef3863f6d5cfb619ea7a92305d0ce08318a3a708b9cf62ae08b8",
+      "events.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "metadata.json": "b83d05e06ace09b00cdcf38aec59babc99237c39d6f77350f4a4faf262ae7e8d"
+    }
+  },
+  {
+    "case": "error",
+    "selected": "fallback",
+    "received_final": false,
+    "setup_seconds": 2.29630700009875,
+    "decision_seconds": 0.0009074000408872962,
+    "controller_overrun_seconds": 0.0,
+    "cleanup_seconds": 0.03338489995803684,
+    "terminated_owned_worker": true,
+    "error": {
+      "kind": "error",
+      "phase": "online",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\callofthenight\\Documents\\Codex\\2026-09-18\\ttt-pc-alm-ttt-pc-alm\\work\\experiments\\deadline_prediction_worker_v1.py\", line 113, in worker\n    prediction, arrays, metadata = calculate(config, context, command['x'], command['v'], command['q'], command['seed'], emit)\n                                   ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\callofthenight\\Documents\\Codex\\2026-09-18\\ttt-pc-alm-ttt-pc-alm\\work\\experiments\\deadline_prediction_worker_v1.py\", line 53, in calculate\n    if config.get('raise_after_fallback'): raise RuntimeError('Intentional deadline preflight error')\n                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Intentional deadline preflight error\n",
+      "received_seconds": 0.0008039000676944852
+    },
+    "files": {
+      "arrays.npz": "bcdb41786335fda3ac7f97bfa8451ac4cb91a814a8dbf70a6577c105375d3245",
+      "events.json": "66fdc261e3a1521fa43ddbfff1269b7414b4c5f54f9e84821814adc5349da6fc",
+      "metadata.json": "0aa62a77d82bd51021bd4f10800ad514184c4edbffe977586c4043396f914e6b"
+    }
+  },
+  {
+    "case": "regional_wide",
+    "selected": "final",
+    "received_final": true,
+    "setup_seconds": 2.2665306999115273,
+    "decision_seconds": 0.5799587999936193,
+    "controller_overrun_seconds": 0.0,
+    "cleanup_seconds": 0.35994750005193055,
+    "terminated_owned_worker": false,
+    "error": null,
+    "files": {
+      "archive_metadata.json": "f6f4c2b0d8e71c9201e33a6373d1616feace5b02ded91ed0d37b76f6daba57c8",
+      "arrays.npz": "cc822f1d044ad8ac0e27bfeddbbefedaab4101d0c6e67909031b6c9e7a092376",
+      "events.json": "daaab67ff5e659626662af7f78b4be895db0f29a2d0485a1ad8ac547fa7ac703",
+      "metadata.json": "e6d179a695c48af78e677ffc2175b41e7e7faa78f45ccb85e23aa778bdc1018b"
+    }
+  },
+  {
+    "case": "prior_wide",
+    "selected": "final",
+    "received_final": true,
+    "setup_seconds": 2.2859659999376163,
+    "decision_seconds": 0.027787300059571862,
+    "controller_overrun_seconds": 0.0,
+    "cleanup_seconds": 0.43618180009070784,
+    "terminated_owned_worker": false,
+    "error": null,
+    "files": {
+      "archive_metadata.json": "29d57e4292ef4d003d15a062a0d680c98b1aad037b15853713cf18bf410b1ee7",
+      "arrays.npz": "56336348fd8196d7ed73a25c9baac35dc185f584857031798b9e33d1c08f6fb7",
+      "events.json": "93ccaf579573e7bbc7eadf77eb1f35646aa216b4429bee3b4af35a85079d4381",
+      "metadata.json": "9127782f56b555e52491616558d87b0a46dd52602495c92d12f357191ab35357"
+    }
+  },
+  {
+    "case": "meta_ridge128_wide",
+    "selected": "final",
+    "received_final": true,
+    "setup_seconds": 2.3349879999877885,
+    "decision_seconds": 0.029715500073507428,
+    "controller_overrun_seconds": 0.0,
+    "cleanup_seconds": 0.3556496000383049,
+    "terminated_owned_worker": false,
+    "error": null,
+    "files": {
+      "archive_metadata.json": "769e4aa93a5cd59f1746193634fc598ce6ec40cca2cccdb6ade1778ec305a7fa",
+      "arrays.npz": "c4383db90efb20df22d90b2c052336c19760798a624f33ffbdce7a5db9038262",
+      "events.json": "1f3432d546916065dd3e47938d77b49c08d4380083fef4f9ec609b470b30a0f5",
+      "metadata.json": "732d36ca3ef5352b42ce6f8096b32a1744987d2287102a238b4db76aa2b20727"
+    }
+  },
+  {
+    "case": "meta_shallow64_20_wide",
+    "selected": "final",
+    "received_final": true,
+    "setup_seconds": 2.304191099945456,
+    "decision_seconds": 0.06156629999168217,
+    "controller_overrun_seconds": 0.0,
+    "cleanup_seconds": 0.3780726999975741,
+    "terminated_owned_worker": false,
+    "error": null,
+    "files": {
+      "archive_metadata.json": "c6200b27fe0143d4e5c71cbbd376ca77d818c2d86a986b36e1dd09101680a0a1",
+      "arrays.npz": "14e62624320c3826192db082b1fc7b0ab0b7c6e59c87bbd9755cbfd6b08a4106",
+      "events.json": "3c8ff9167f7437dd07f61ec8f9a1b73010916336eabe6593b1ea00acc9ee27e8",
+      "metadata.json": "349b60a5ae1ffb83376c67e01f296c9f44a28de4acd3ed0008af1ad8cf036161"
+    }
+  },
+  {
+    "case": "adam_union_wide",
+    "selected": "final",
+    "received_final": true,
+    "setup_seconds": 2.2670748999807984,
+    "decision_seconds": 0.3129220000701025,
+    "controller_overrun_seconds": 0.0,
+    "cleanup_seconds": 0.38114149996545166,
+    "terminated_owned_worker": false,
+    "error": null,
+    "files": {
+      "archive_metadata.json": "3f95aa6727f05ad93beeb865c71016cc675881faa25cacb3fede76bc843ab4a4",
+      "arrays.npz": "e3f1cecf1df3a095dfc3812a93ac7b76f4a9a1124c1d2e0df95b13608eb3aa39",
+      "events.json": "ba6efa366e4a1689a477a12e81e27cedc4bf0772bf240b481072b873ca8970e3",
+      "metadata.json": "01270f5239e4a9d67422cf016aa6148b9eee9823b427996932b19c6ebda2b176"
+    }
+  },
+  {
+    "case": "alm_point_wide",
+    "selected": "final",
+    "received_final": true,
+    "setup_seconds": 2.2758753000525758,
+    "decision_seconds": 0.20122869999613613,
+    "controller_overrun_seconds": 0.0,
+    "cleanup_seconds": 0.35214520001318306,
+    "terminated_owned_worker": false,
+    "error": null,
+    "files": {
+      "archive_metadata.json": "d5588ee4ab77bd97a7b86443e33bc5ff713f28181ab4ae3fb1bfa0225b5d85e5",
+      "arrays.npz": "29fe4e1f76dd550bf89f03920a679667536916b32a4e98cb9e5eff06e65e5b7c",
+      "events.json": "60f8516dcc6777b3f1069a573ad8f66b2e5d11da25b2559c906877259bbea6ca",
+      "metadata.json": "9e9c58106fa977e98c4de365851428b412117f9e9cdb6b759349609233dc83c1"
+    }
+  }
+]

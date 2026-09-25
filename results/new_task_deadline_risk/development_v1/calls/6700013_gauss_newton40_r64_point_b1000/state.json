@@ -1,0 +1,42 @@
+{
+  "family": "gauss_newton",
+  "steps": 40,
+  "restarts": 64,
+  "readout": "point",
+  "parameter_prior_bounds": [
+    -0.12,
+    0.12
+  ],
+  "support_band": 0.001,
+  "selected_index": 31,
+  "selected_support_max_error": 0.0010000000132811548,
+  "discovery": {
+    "batched_bp_solver": "gauss_newton",
+    "batched_steps": 40,
+    "learning_rate": null,
+    "per_restart_forward_evaluations_total": 15424,
+    "per_restart_global_jacobian_evaluations_total": 2560,
+    "accepted_joint_steps": 1001,
+    "major_arrays_bytes_subtotal": 69632,
+    "state_scope": "array subtotal only; excludes temporary solve/line-search and Python/native workspace"
+  },
+  "discovery_seconds": 0.01872589997947216,
+  "readout_metadata": null,
+  "readout_seconds": 0.0,
+  "query_targets_accessed": false,
+  "global_bp_used": true,
+  "shared_readout_available_to_optimizers": true,
+  "complete_posterior_claim": false,
+  "objective_scope": "Common band-feasibility target and support best-point selection; different finite-step surrogates",
+  "returned_array_bytes": 10680,
+  "total_seconds": 0.019020500010810792,
+  "fallback_seconds": 0.02630879997741431,
+  "fallback_metadata": {
+    "persistent_state_bytes": 163840,
+    "noise_variance": 3.333333333333333e-07
+  },
+  "output_clipping": [
+    0.0,
+    1.0
+  ]
+}
