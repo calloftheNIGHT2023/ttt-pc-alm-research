@@ -1,0 +1,5482 @@
+{
+  "method": "regional_passive1024",
+  "schedule": "bfs",
+  "order_name": "observed",
+  "search": {
+    "method": "regional_passive1024",
+    "schedule": "bfs",
+    "order_name": "observed",
+    "order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "single_counts": [
+      9,
+      9,
+      10,
+      9
+    ],
+    "completed": true,
+    "stop_reason": null,
+    "full_product": 7290,
+    "expanded": 700,
+    "final_candidates": 53,
+    "first_full_seconds": 0.04338909999933094,
+    "stages": [
+      {
+        "k": 1,
+        "possible": 9,
+        "processed": 9,
+        "retained": 9,
+        "complete": true
+      },
+      {
+        "k": 2,
+        "possible": 81,
+        "processed": 81,
+        "retained": 25,
+        "complete": true
+      },
+      {
+        "k": 3,
+        "possible": 250,
+        "processed": 250,
+        "retained": 40,
+        "complete": true
+      },
+      {
+        "k": 4,
+        "possible": 360,
+        "processed": 360,
+        "retained": 53,
+        "complete": true
+      }
+    ],
+    "batches": [
+      {
+        "k": 1,
+        "start": 0,
+        "processed": 9,
+        "parent_count": 1,
+        "retained": 9,
+        "rejected_c5": 0,
+        "rejected_c20": 0,
+        "rejected_local": 0,
+        "solver": null,
+        "cumulative_seconds": 0.019681100035086274
+      },
+      {
+        "k": 2,
+        "start": 0,
+        "processed": 81,
+        "parent_count": 9,
+        "retained": 25,
+        "rejected_c5": 56,
+        "rejected_c20": 0,
+        "rejected_local": 0,
+        "solver": null,
+        "cumulative_seconds": 0.02517379994969815
+      },
+      {
+        "k": 3,
+        "start": 0,
+        "processed": 250,
+        "parent_count": 25,
+        "retained": 40,
+        "rejected_c5": 209,
+        "rejected_c20": 1,
+        "rejected_local": 0,
+        "solver": null,
+        "cumulative_seconds": 0.033273200038820505
+      },
+      {
+        "k": 4,
+        "start": 0,
+        "processed": 360,
+        "parent_count": 40,
+        "retained": 53,
+        "rejected_c5": 306,
+        "rejected_c20": 1,
+        "rejected_local": 0,
+        "solver": null,
+        "cumulative_seconds": 0.043330100015737116
+      }
+    ],
+    "pending": [],
+    "peak_search_states": 93,
+    "live_named_array_bytes_lower_bound": 18956,
+    "returned_array_bytes": 13564,
+    "language_seconds": 0.015443200012668967,
+    "solver_rows": 0,
+    "solver_coordinate_steps": 0,
+    "solver_seconds": 0.0,
+    "rounded_checks": 0,
+    "proposal_rows": 0,
+    "rejected_local": 0,
+    "max_expanded": 65536,
+    "max_states": 20000,
+    "max_seconds": 8.0,
+    "gate": 64,
+    "batch_size": 1024,
+    "query_targets_accessed": false,
+    "geometry_accessed": false,
+    "global_bp_used": false,
+    "lp_used": false,
+    "complete_search_not_prediction": true,
+    "compressed_io_excluded": true,
+    "resource_scope": "Full search including guard and proof archive copies; excludes final geometry/readout, disk compression and independent audit; named arrays not RSS peak",
+    "total_seconds": 0.04349720000755042,
+    "solver_coordinate_steps_upper_bound": 0,
+    "strict_certificate_retirement": true
+  },
+  "readout": {
+    "readout_available": true,
+    "search_completed": true,
+    "positive_modes": [
+      "01010001020100020202010201010101",
+      "01010001020200020102010102020102",
+      "01010001020201020102010102020102",
+      "01010101020200020102010102020102",
+      "02010102020201020101010101010101",
+      "02010102020201020101010101010201",
+      "02010102020201020101020101010201",
+      "02010102020301020101020101010201"
+    ],
+    "unresolved_modes": [],
+    "classification_counts": {
+      "positive_volume": 8,
+      "infeasible": 45
+    },
+    "classified_modes": [
+      "01010001020100020202010201010101",
+      "01010001020200020101000101020101",
+      "01010001020200020102000102020102",
+      "01010001020200020102010102020102",
+      "01010001020200020202000202010102",
+      "01010001020200020202010202010102",
+      "01010001020201020101000101020101",
+      "01010001020201020101010101020101",
+      "01010001020201020101010101020102",
+      "01010001020201020101010102020101",
+      "01010001020201020101010102020102",
+      "01010001020201020102000102020102",
+      "01010001020201020102010101020101",
+      "01010001020201020102010101020102",
+      "01010001020201020102010102020101",
+      "01010001020201020102010102020102",
+      "01010001020201020202010202010102",
+      "01010101020200020101000101020101",
+      "01010101020200020101010101020101",
+      "01010101020200020102000102020102",
+      "01010101020200020102010101020101",
+      "01010101020200020102010102020102",
+      "01010101020201020101000101020101",
+      "01010101020201020101010101020101",
+      "02010101020200020101000101020101",
+      "02010101020201020101000101020101",
+      "02010101020201020101010101020101",
+      "02010102020201020101010101010101",
+      "02010102020201020101010101010102",
+      "02010102020201020101010101010201",
+      "02010102020201020101010101010202",
+      "02010102020201020101010101020101",
+      "02010102020201020101010101020102",
+      "02010102020201020101010102010101",
+      "02010102020201020101010102010102",
+      "02010102020201020101010102010201",
+      "02010102020201020101010102010202",
+      "02010102020201020101010102020101",
+      "02010102020201020101010102020102",
+      "02010102020201020101020101010201",
+      "02010102020201020101020102010201",
+      "02010102020201020101020102010202",
+      "02010102020301020101010101010201",
+      "02010102020301020101020101010201",
+      "02020102020201020101010101010201",
+      "02020102020201020101010101010202",
+      "02020102020201020101010102010201",
+      "02020102020201020101010102010202",
+      "02020102020201020101020101010201",
+      "02020102020201020101020101010202",
+      "02020102020201020101020102010201",
+      "02020102020201020101020102010202",
+      "02020102020301020101020102010202"
+    ],
+    "classifications_detail": {
+      "01010001020100020202010201010101": {
+        "classification": "positive_volume",
+        "positive_volume_certified": true,
+        "closed_region_feasible": true,
+        "volume": 9.953113177855535e-14,
+        "numerical_volume_available": true,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "-8644886580555219/72057594037927936",
+              "-253348303593603/2251799813685248",
+              "132138692584131/72057594037927936",
+              "296050649501619/36028797018963968"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "64790527876241/4611686018427387904",
+            "minimum_slack": "2024703996133/72057594037927936",
+            "nonconstant_rows": 46
+          },
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "-8377686884836871/72057594037927936",
+              "-4320772553215997/36028797018963968",
+              "4187447993507727/2305843009213693952",
+              "4716315307433595/576460752303423488"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "30410906890577/13835058055282163712",
+            "minimum_slack": "30410906890577/1152921504606846976",
+            "nonconstant_rows": 46
+          }
+        ],
+        "geometry_note": {
+          "reason": "positive_volume",
+          "volume": 9.953113177855535e-14,
+          "vertices": 16,
+          "facets": 56
+        },
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "numeric_geometry_array_bytes_subtotal": 9552,
+        "geometry_state_scope": "named temporary geometry arrays, not online fit or peak memory",
+        "seconds": 0.01480120001360774,
+        "mode": "01010001020100020202010201010101",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020200020101000101020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-6464366880121121/576460752303423488",
+              "6580432320392951/4611686018427387904",
+              "-1086770407029197/144115188075855872",
+              "8201451369817357/576460752303423488"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-49353242402947143/1152921504606846976",
+            "nonconstant_rows": 45
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                35,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-237085060368467718087106721371473/166153499473114484112975882535043072",
+            "lower": "237085060368467718087106721371473/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                35,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                35,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0024209999246522784,
+        "mode": "01010001020200020101000101020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020200020102000102020102": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-1476454161934231/18014398509481984",
+              "142762461124889/144115188075855872",
+              "-2179573128778449/18014398509481984",
+              "3115693366482629/288230376151711744"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-34262990669973481/1152921504606846976",
+            "nonconstant_rows": 45
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                26,
+                "1/32"
+              ],
+              [
+                36,
+                "1/64"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-18273595023985757/18446744073709551616",
+            "lower": "18273595023985757/18446744073709551616",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                26,
+                "1/32"
+              ],
+              [
+                36,
+                "1/64"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-18273595023985757/18446744073709551616",
+            "lower": "18273595023985757/18446744073709551616",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                26,
+                "1/32"
+              ],
+              [
+                36,
+                "1/64"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-18273595023985757/18446744073709551616",
+            "lower": "18273595023985757/18446744073709551616",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022710999473929405,
+        "mode": "01010001020200020102000102020102",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020200020102010102020102": {
+        "classification": "positive_volume",
+        "positive_volume_certified": true,
+        "closed_region_feasible": true,
+        "volume": 1.921905365079038e-12,
+        "numerical_volume_available": true,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "-7303118552139303/576460752303423488",
+              "-2630345039543653/36028797018963968",
+              "2368405196012945/288230376151711744",
+              "-81955978458743/18014398509481984"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "323952639381253/23058430092136939520",
+            "minimum_slack": "16197631969063/576460752303423488",
+            "nonconstant_rows": 46
+          },
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "-3654197932296357/288230376151711744",
+              "-2630425099744951/36028797018963968",
+              "1178284803942677/144115188075855872",
+              "-5245182621359577/1152921504606846976"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "1667391195751/4611686018427387904",
+            "minimum_slack": "5002173587253/1152921504606846976",
+            "nonconstant_rows": 46
+          }
+        ],
+        "geometry_note": {
+          "reason": "positive_volume",
+          "volume": 1.921905365079038e-12,
+          "vertices": 16,
+          "facets": 57
+        },
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "numeric_geometry_array_bytes_subtotal": 9688,
+        "geometry_state_scope": "named temporary geometry arrays, not online fit or peak memory",
+        "seconds": 0.012072199955582619,
+        "mode": "01010001020200020102010102020102",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020200020202000202010102": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-2187432634889373/18014398509481984",
+              "-8870793506977423/288230376151711744",
+              "6580432320392977/4611686018427387904",
+              "512590710613585/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-3084577650184197/72057594037927936",
+            "nonconstant_rows": 45
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                35,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-237085060368467718087106721371473/166153499473114484112975882535043072",
+            "lower": "237085060368467718087106721371473/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                35,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                35,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0023024999536573887,
+        "mode": "01010001020200020202000202010102",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020200020202010202010102": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-2187432634889373/18014398509481984",
+              "6580432320392973/4611686018427387904",
+              "4846673773513273/144115188075855872",
+              "-3615853842273823/72057594037927936"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-49353242402947175/1152921504606846976",
+            "nonconstant_rows": 46
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "300239975158033/18014398509481984"
+              ],
+              [
+                36,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "-1/18014398509481984",
+              "-1/36028797018963968",
+              "1/72057594037927936",
+              "-1/144115188075855872"
+            ],
+            "weighted_rhs": "-474170120736932889249933848676769/332306998946228968225951765070086144",
+            "lower": "474170120736928738732517264027809/332306998946228968225951765070086144",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                36,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                36,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002305599977262318,
+        "mode": "01010001020200020202010202010102",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020201020101000101020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-6464366880121121/576460752303423488",
+              "8459851828362383/2305843009213693952",
+              "-3524527588067671/1152921504606846976",
+              "8201451369817357/576460752303423488"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-49353242402947141/1152921504606846976",
+            "nonconstant_rows": 46
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "2401919801264265/144115188075855872"
+              ],
+              [
+                36,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "1/18014398509481984",
+              "1/36028797018963968",
+              "-1/72057594037927936",
+              "-1/144115188075855872"
+            ],
+            "weighted_rhs": "-474170120736935677255483823115171/332306998946228968225951765070086144",
+            "lower": "474170120736931526738067238466211/332306998946228968225951765070086144",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                36,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                36,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022101999493315816,
+        "mode": "01010001020201020101000101020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020201020101010101020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-939562204107867/9007199254740992",
+              "6972822142484121/72057594037927936",
+              "-2187432634889373/18014398509481984",
+              "-2187432634889373/18014398509481984"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-49353242402947329/1152921504606846976",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                37,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-237085060368467718087106721371473/166153499473114484112975882535043072",
+            "lower": "237085060368467718087106721371473/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002289599971845746,
+        "mode": "01010001020201020101010101020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020201020101010101020102": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-4710604812876835/36028797018963968",
+              "8020754020017163/72057594037927936",
+              "-8159677949838861/72057594037927936",
+              "-4710604812876835/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-371663203777112833/1152921504606846976",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "2401919801264265/144115188075855872"
+              ],
+              [
+                37,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "-1/18014398509481984",
+              "-1/36028797018963968",
+              "1/72057594037927936",
+              "1/144115188075855872"
+            ],
+            "weighted_rhs": "-3570820834214250589822003229200035/332306998946228968225951765070086144",
+            "lower": "3570820834214246439304586644551075/332306998946228968225951765070086144",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-371663203777112833/34587645138205409280",
+            "lower": "371663203777112833/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-371663203777112833/34587645138205409280",
+            "lower": "371663203777112833/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.00223880005069077,
+        "mode": "01010001020201020101010101020102",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020201020101010102020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-4735500224667603/36028797018963968",
+              "2051513762294669/18014398509481984",
+              "-8331116713835749/72057594037927936",
+              "-4735500224667603/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-395562799096249729/1152921504606846976",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                37,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1900220239585599746158305945541073/166153499473114484112975882535043072",
+            "lower": "1900220239585599746158305945541073/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-395562799096249537/34587645138205409280",
+            "lower": "395562799096249537/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-395562799096249537/34587645138205409280",
+            "lower": "395562799096249537/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022995000472292304,
+        "mode": "01010001020201020101010102020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020201020101010102020102": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-4710793420779401/36028797018963968",
+              "4010377010008581/36028797018963968",
+              "-8158169086618335/72057594037927936",
+              "-4710793420779401/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-371844267363576193/1152921504606846976",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                19,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1786280217534352389834525938580817/166153499473114484112975882535043072",
+            "lower": "1786280217534352389834525938580817/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                19,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-371844267363575873/34587645138205409280",
+            "lower": "371844267363575873/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                19,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-371844267363575873/34587645138205409280",
+            "lower": "371844267363575873/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0023182000732049346,
+        "mode": "01010001020201020101010102020102",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020201020102000102020102": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-364652213573405/4503599627370496",
+              "-142762461124889/144115188075855872",
+              "-2179573128778449/18014398509481984",
+              "3115693366482629/288230376151711744"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-34262990669973353/1152921504606846976",
+            "nonconstant_rows": 46
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                27,
+                "1/32"
+              ],
+              [
+                37,
+                "1/64"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-18273595023985757/18446744073709551616",
+            "lower": "18273595023985757/18446744073709551616",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                27,
+                "1/32"
+              ],
+              [
+                37,
+                "1/64"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-18273595023985757/18446744073709551616",
+            "lower": "18273595023985757/18446744073709551616",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                27,
+                "1/32"
+              ],
+              [
+                37,
+                "1/64"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-18273595023985757/18446744073709551616",
+            "lower": "18273595023985757/18446744073709551616",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0023004000540822744,
+        "mode": "01010001020201020102000102020102",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020201020102010101020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-4019817355291835/36028797018963968",
+              "114788929433019/1125899906842624",
+              "-4449599138024565/36028797018963968",
+              "-4449599138024565/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-121097755918933441/1152921504606846976",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                37,
+                "1/64"
+              ],
+              [
+                46,
+                "1/16"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-129170939646862337/36893488147419103232",
+            "lower": "129170939646862337/36893488147419103232",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                37,
+                "1/64"
+              ],
+              [
+                46,
+                "1/16"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-129170939646862337/36893488147419103232",
+            "lower": "129170939646862337/36893488147419103232",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                37,
+                "1/64"
+              ],
+              [
+                46,
+                "1/16"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-129170939646862337/36893488147419103232",
+            "lower": "129170939646862337/36893488147419103232",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022019000025466084,
+        "mode": "01010001020201020102010101020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020201020102010101020102": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-4203603389909977/144115188075855872",
+              "-2873963096685271/288230376151711744",
+              "-1954687672991759/288230376151711744",
+              "-81955978458743/18014398509481984"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-344875571602232561/1152921504606846976",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                37,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1656726928807467878544736173863377/166153499473114484112975882535043072",
+            "lower": "1656726928807467878544736173863377/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-344875571602232513/34587645138205409280",
+            "lower": "344875571602232513/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-344875571602232513/34587645138205409280",
+            "lower": "344875571602232513/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022915999870747328,
+        "mode": "01010001020201020102010101020102",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020201020102010102020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-7568077891996639/288230376151711744",
+              "-3296356659135413/288230376151711744",
+              "-5199188981641825/576460752303423488",
+              "-161082838379001/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-395562799096249577/1152921504606846976",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                37,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1900220239585599746158305945541073/166153499473114484112975882535043072",
+            "lower": "1900220239585599746158305945541073/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-395562799096249537/34587645138205409280",
+            "lower": "395562799096249537/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-395562799096249537/34587645138205409280",
+            "lower": "395562799096249537/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022022000048309565,
+        "mode": "01010001020201020102010102020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020201020102010102020102": {
+        "classification": "positive_volume",
+        "positive_volume_certified": true,
+        "closed_region_feasible": true,
+        "volume": 1.6912427104234767e-12,
+        "numerical_volume_available": true,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "-886061802639783/18014398509481984",
+              "8293187568160495/295147905179352825856",
+              "2357088721859005/288230376151711744",
+              "-161082838379001/36028797018963968"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "10366484460200187/737869762948382064640",
+            "minimum_slack": "8293187568160495/295147905179352825856",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "-510356099722709/4503599627370496",
+              "2314259430610267/36028797018963968",
+              "-1080088990820601/9007199254740992",
+              "-5245182621359577/1152921504606846976"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "323952639381231/23058430092136939520",
+            "minimum_slack": "387459874159/4503599627370496",
+            "nonconstant_rows": 47
+          }
+        ],
+        "geometry_note": {
+          "reason": "positive_volume",
+          "volume": 1.6912427104234767e-12,
+          "vertices": 16,
+          "facets": 56
+        },
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "numeric_geometry_array_bytes_subtotal": 9592,
+        "geometry_state_scope": "named temporary geometry arrays, not online fit or peak memory",
+        "seconds": 0.012780499993823469,
+        "mode": "01010001020201020102010102020102",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010001020201020202010202010102": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-2187432634889373/18014398509481984",
+              "2394695067623143/144115188075855872",
+              "4090910191451327/144115188075855872",
+              "-2187432634889373/18014398509481984"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-49353242402947169/1152921504606846976",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                37,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-237085060368467718087106721371473/166153499473114484112975882535043072",
+            "lower": "237085060368467718087106721371473/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0024115999694913626,
+        "mode": "01010001020201020202010202010102",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010101020200020101000101020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-8109474960219359/576460752303423488",
+              "2056385100122797/288230376151711744",
+              "-543385203514599/72057594037927936",
+              "8201451369817357/576460752303423488"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-49353242402947149/1152921504606846976",
+            "nonconstant_rows": 46
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                36,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-237085060368467718087106721371473/166153499473114484112975882535043072",
+            "lower": "237085060368467718087106721371473/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                36,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                36,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0023286999203264713,
+        "mode": "01010101020200020101000101020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010101020200020101010101020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-2067597792919287/144115188075855872",
+              "1229337814383635/144115188075855872",
+              "-3933881006027633/2305843009213693952",
+              "2909483162978953/288230376151711744"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-59008215090414503/1152921504606846976",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                22,
+                "4803839602528529/36028797018963968"
+              ],
+              [
+                28,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                37,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-283466000525854704981673467570797/166153499473114484112975882535043072",
+            "lower": "283466000525854704981673467570797/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                22,
+                "2/15"
+              ],
+              [
+                28,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-59008215090414493/34587645138205409280",
+            "lower": "59008215090414493/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                22,
+                "2/15"
+              ],
+              [
+                28,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-59008215090414493/34587645138205409280",
+            "lower": "59008215090414493/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0025089000118896365,
+        "mode": "01010101020200020101010101020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010101020200020102000102020102": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-3928985382334897/288230376151711744",
+              "-1345230625226459/18014398509481984",
+              "285524922249777/288230376151711744",
+              "1557846683241315/144115188075855872"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-34262990669973345/1152921504606846976",
+            "nonconstant_rows": 46
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                27,
+                "1/32"
+              ],
+              [
+                37,
+                "1/64"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-18273595023985757/18446744073709551616",
+            "lower": "18273595023985757/18446744073709551616",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                27,
+                "1/32"
+              ],
+              [
+                37,
+                "1/64"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-18273595023985757/18446744073709551616",
+            "lower": "18273595023985757/18446744073709551616",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                27,
+                "1/32"
+              ],
+              [
+                37,
+                "1/64"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-18273595023985757/18446744073709551616",
+            "lower": "18273595023985757/18446744073709551616",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002203800017014146,
+        "mode": "01010101020200020102000102020102",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010101020200020102010101020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "1228639112992181/36028797018963968",
+              "-3474787391481779/36028797018963968",
+              "4496320936869449/72057594037927936",
+              "-4449599138024565/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-121097755918933505/1152921504606846976",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                37,
+                "1/64"
+              ],
+              [
+                46,
+                "1/16"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-129170939646862337/36893488147419103232",
+            "lower": "129170939646862337/36893488147419103232",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                37,
+                "1/64"
+              ],
+              [
+                46,
+                "1/16"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-129170939646862337/36893488147419103232",
+            "lower": "129170939646862337/36893488147419103232",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/64"
+              ],
+              [
+                37,
+                "1/64"
+              ],
+              [
+                46,
+                "1/16"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-129170939646862337/36893488147419103232",
+            "lower": "129170939646862337/36893488147419103232",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022130999714136124,
+        "mode": "01010101020200020102010101020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010101020200020102010102020102": {
+        "classification": "positive_volume",
+        "positive_volume_certified": true,
+        "closed_region_feasible": true,
+        "volume": 1.2391660335172326e-12,
+        "numerical_volume_available": true,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "6293576823793481/576460752303423488",
+              "-8644886580555219/72057594037927936",
+              "1244111968067603/144115188075855872",
+              "-81955978458743/18014398509481984"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "64790527876253/4611686018427387904",
+            "minimum_slack": "2024703996133/72057594037927936",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "3107229815219671/288230376151711744",
+              "-1080192830975191/9007199254740992",
+              "4713482022912927/576460752303423488",
+              "-1311295655339885/288230376151711744"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "7744630725079/13835058055282163712",
+            "minimum_slack": "7744630725079/1152921504606846976",
+            "nonconstant_rows": 47
+          }
+        ],
+        "geometry_note": {
+          "reason": "positive_volume",
+          "volume": 1.2391660335172326e-12,
+          "vertices": 16,
+          "facets": 60
+        },
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "numeric_geometry_array_bytes_subtotal": 10136,
+        "geometry_state_scope": "named temporary geometry arrays, not online fit or peak memory",
+        "seconds": 0.012409699964337051,
+        "mode": "01010101020200020102010102020102",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010101020201020101000101020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "-8109474960219359/576460752303423488",
+              "168911847415221/18014398509481984",
+              "-3524527588067671/1152921504606846976",
+              "8201451369817357/576460752303423488"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-49353242402947145/1152921504606846976",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                37,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-237085060368467718087106721371473/166153499473114484112975882535043072",
+            "lower": "237085060368467718087106721371473/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022791000083088875,
+        "mode": "01010101020201020101000101020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "01010101020201020101010101020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "576952622373181/18014398509481984",
+              "-5967342329379403/72057594037927936",
+              "-414938136085047/18014398509481984",
+              "244007535087443/4503599627370496"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-49353242402947273/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-237085060368467718087106721371473/166153499473114484112975882535043072",
+            "lower": "237085060368467718087106721371473/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002284799935296178,
+        "mode": "01010101020201020101010101020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010101020200020101000101020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "4804561874500933/144115188075855872",
+              "-6485257040618075/72057594037927936",
+              "-634441787458803/36028797018963968",
+              "969373854196169/72057594037927936"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-22565610228066849/1152921504606846976",
+            "nonconstant_rows": 46
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                18,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                36,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-108401572068810206814916760722193/166153499473114484112975882535043072",
+            "lower": "108401572068810206814916760722193/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                18,
+                "1/60"
+              ],
+              [
+                36,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-22565610228066817/34587645138205409280",
+            "lower": "22565610228066817/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                18,
+                "1/60"
+              ],
+              [
+                36,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-22565610228066817/34587645138205409280",
+            "lower": "22565610228066817/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0023218001006171107,
+        "mode": "02010101020200020101000101020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010101020201020101000101020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "1154815211334855/36028797018963968",
+              "-46648298404167/562949953421312",
+              "-4772937058369/562949953421312",
+              "3877495416784675/288230376151711744"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-22565610228066969/1152921504606846976",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                18,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                37,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-108401572068810206814916760722193/166153499473114484112975882535043072",
+            "lower": "108401572068810206814916760722193/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                18,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-22565610228066817/34587645138205409280",
+            "lower": "22565610228066817/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                18,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-22565610228066817/34587645138205409280",
+            "lower": "22565610228066817/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002195600070990622,
+        "mode": "02010101020201020101000101020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010101020201020101010101020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "1154815211334855/36028797018963968",
+              "-46648298404167/562949953421312",
+              "-634549787561591/36028797018963968",
+              "571425279375017/18014398509481984"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-22565610228066945/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                18,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-108401572068810206814916760722193/166153499473114484112975882535043072",
+            "lower": "108401572068810206814916760722193/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                18,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-22565610228066817/34587645138205409280",
+            "lower": "22565610228066817/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                18,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-22565610228066817/34587645138205409280",
+            "lower": "22565610228066817/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0027112000389024615,
+        "mode": "02010101020201020101010101020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101010101010101": {
+        "classification": "positive_volume",
+        "positive_volume_certified": true,
+        "closed_region_feasible": true,
+        "volume": 7.484026787042084e-14,
+        "numerical_volume_available": true,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "2658323175531869/36028797018963968",
+              "-6156283224894889/72057594037927936",
+              "-2161221645138805/18014398509481984",
+              "-3506597030855553/36028797018963968"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "506175999033/36028797018963968",
+            "minimum_slack": "506175999033/18014398509481984",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "2657969535714559/36028797018963968",
+              "-6156283224894889/72057594037927936",
+              "-7835928026085023/72057594037927936",
+              "-2156363233393635/18014398509481984"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "971857918143607/69175290276410818560",
+            "minimum_slack": "5364587744203/18014398509481984",
+            "nonconstant_rows": 48
+          }
+        ],
+        "geometry_note": {
+          "reason": "positive_volume",
+          "volume": 7.484026787042084e-14,
+          "vertices": 16,
+          "facets": 60
+        },
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "numeric_geometry_array_bytes_subtotal": 10176,
+        "geometry_state_scope": "named temporary geometry arrays, not online fit or peak memory",
+        "seconds": 0.01158920000307262,
+        "mode": "02010102020201020101010101010101",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101010101010102": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "2657969535714559/36028797018963968",
+              "-6156283224894889/72057594037927936",
+              "-4735500224667603/36028797018963968",
+              "7036399944625617/72057594037927936"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-395562799096249705/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "2401919801264265/144115188075855872"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "1/18014398509481984",
+              "-1/36028797018963968",
+              "1/72057594037927936",
+              "1/144115188075855872"
+            ],
+            "weighted_rhs": "-3800440479171198119973986444365219/332306998946228968225951765070086144",
+            "lower": "3800440479171193969456569859716259/332306998946228968225951765070086144",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-395562799096249537/34587645138205409280",
+            "lower": "395562799096249537/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-395562799096249537/34587645138205409280",
+            "lower": "395562799096249537/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002886100090108812,
+        "mode": "02010102020201020101010101010102",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101010101010201": {
+        "classification": "positive_volume",
+        "positive_volume_certified": true,
+        "closed_region_feasible": true,
+        "volume": 4.3563629282058607e-13,
+        "numerical_volume_available": true,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "2658323175531869/36028797018963968",
+              "328489766034543/9007199254740992",
+              "8755806437232639/576460752303423488",
+              "8644886580555219/72057594037927936"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "971857918143703/69175290276410818560",
+            "minimum_slack": "2024703996133/72057594037927936",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "5316646351063739/72057594037927936",
+              "5255836256552687/144115188075855872",
+              "5852156870714701/72057594037927936",
+              "-870475551566029/72057594037927936"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "1344753419563/126100789566373888",
+            "minimum_slack": "1344753419563/9007199254740992",
+            "nonconstant_rows": 48
+          }
+        ],
+        "geometry_note": {
+          "reason": "positive_volume",
+          "volume": 4.3563629282058607e-13,
+          "vertices": 16,
+          "facets": 58
+        },
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "numeric_geometry_array_bytes_subtotal": 9904,
+        "geometry_state_scope": "named temporary geometry arrays, not online fit or peak memory",
+        "seconds": 0.011714100022800267,
+        "mode": "02010102020201020101010101010201",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101010101010202": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "1716402463756553/18014398509481984",
+              "-117502219912151/18014398509481984",
+              "-2757217572792903/36028797018963968",
+              "4735500224667603/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-395562799096249665/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1900220239585599746158305945541073/166153499473114484112975882535043072",
+            "lower": "1900220239585599746158305945541073/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-395562799096249537/34587645138205409280",
+            "lower": "395562799096249537/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-395562799096249537/34587645138205409280",
+            "lower": "395562799096249537/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0024880999699234962,
+        "mode": "02010102020201020101010101010202",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101010101020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "593020602517967/18014398509481984",
+              "-6156283224894889/72057594037927936",
+              "-517782149137677/36028797018963968",
+              "227328820475551/9007199254740992"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-14834787270345601/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1566469435607129/144115188075855872"
+              ],
+              [
+                18,
+                "1566469435607129/144115188075855872"
+              ],
+              [
+                31,
+                "1566469435607129/4503599627370496"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-35631969292186045211762492550553/83076749736557242056487941267521536",
+            "lower": "35631969292186045211762492550553/83076749736557242056487941267521536",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/92"
+              ],
+              [
+                18,
+                "1/92"
+              ],
+              [
+                31,
+                "8/23"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-22746673814529857/53034389211914960896",
+            "lower": "22746673814529857/53034389211914960896",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/92"
+              ],
+              [
+                18,
+                "1/92"
+              ],
+              [
+                31,
+                "8/23"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-22746673814529857/53034389211914960896",
+            "lower": "22746673814529857/53034389211914960896",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002282800036482513,
+        "mode": "02010102020201020101010101020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101010101020102": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "3859301206266805/72057594037927936",
+              "-4037513330923543/36028797018963968",
+              "-4349618057472571/36028797018963968",
+              "4735500224667603/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-395562799096249665/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1900220239585599746158305945541073/166153499473114484112975882535043072",
+            "lower": "1900220239585599746158305945541073/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-395562799096249537/34587645138205409280",
+            "lower": "395562799096249537/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-395562799096249537/34587645138205409280",
+            "lower": "395562799096249537/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022591999731957912,
+        "mode": "02010102020201020101010101020102",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101010102010101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "3334160076131165/36028797018963968",
+              "-6157697784164133/72057594037927936",
+              "-4682701029361335/36028797018963968",
+              "-1393040776344055/18014398509481984"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-344875571602232577/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "300239975158033/18014398509481984"
+              ],
+              [
+                38,
+                "2401919801264265/144115188075855872"
+              ]
+            ],
+            "weighted_coefficients": [
+              "1/9007199254740992",
+              "-1/18014398509481984",
+              "1/36028797018963968",
+              "1/72057594037927936"
+            ],
+            "weighted_rhs": "-1656726928807466160964411951987857/166153499473114484112975882535043072",
+            "lower": "1656726928807462010446995367338897/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-344875571602232513/34587645138205409280",
+            "lower": "344875571602232513/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-344875571602232513/34587645138205409280",
+            "lower": "344875571602232513/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002248500008136034,
+        "mode": "02010102020201020101010102010101",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101010102010102": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "1716402463756553/18014398509481984",
+              "-2193291311047469/18014398509481984",
+              "-2193291311047469/18014398509481984",
+              "-1689159183610451/18014398509481984"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-60601900626491393/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                28,
+                "948126237341157/72057594037927936"
+              ],
+              [
+                38,
+                "948126237341157/72057594037927936"
+              ],
+              [
+                43,
+                "948126237341157/4503599627370496"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-72780452554509337657528295271513/41538374868278621028243970633760768",
+            "lower": "72780452554509337657528295271513/41538374868278621028243970633760768",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                28,
+                "1/76"
+              ],
+              [
+                38,
+                "1/76"
+              ],
+              [
+                43,
+                "4/19"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-76762407460222309/43811017175060185088",
+            "lower": "76762407460222309/43811017175060185088",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                28,
+                "1/76"
+              ],
+              [
+                38,
+                "1/76"
+              ],
+              [
+                43,
+                "4/19"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-76762407460222309/43811017175060185088",
+            "lower": "76762407460222309/43811017175060185088",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002301200060173869,
+        "mode": "02010102020201020101010102010102",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101010102010201": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "3334160076131165/36028797018963968",
+              "-75429474120839/72057594037927936",
+              "-2334824010342763/36028797018963968",
+              "4682701029361335/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-344875571602232641/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1656726928807467878544736173863377/166153499473114484112975882535043072",
+            "lower": "1656726928807467878544736173863377/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-344875571602232513/34587645138205409280",
+            "lower": "344875571602232513/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-344875571602232513/34587645138205409280",
+            "lower": "344875571602232513/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002216599998064339,
+        "mode": "02010102020201020101010102010201",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101010102010202": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "1716402463756553/18014398509481984",
+              "-117502219912151/18014398509481984",
+              "8183172244348827/2305843009213693952",
+              "2187432634889373/18014398509481984"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-49353242402947255/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-237085060368467718087106721371473/166153499473114484112975882535043072",
+            "lower": "237085060368467718087106721371473/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0023666999768465757,
+        "mode": "02010102020201020101010102010202",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101010102020101": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "3662011503502923/72057594037927936",
+              "-3853423426986227/36028797018963968",
+              "-1976812046337783/18014398509481984",
+              "4682701029361335/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-344875571602232769/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1656726928807467878544736173863377/166153499473114484112975882535043072",
+            "lower": "1656726928807467878544736173863377/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-344875571602232513/34587645138205409280",
+            "lower": "344875571602232513/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-344875571602232513/34587645138205409280",
+            "lower": "344875571602232513/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022690999321639538,
+        "mode": "02010102020201020101010102020101",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101010102020102": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "1929650603133403/36028797018963968",
+              "-2193291311047469/18014398509481984",
+              "-2418112514242259/72057594037927936",
+              "2291863497869109/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-60601900626491393/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                28,
+                "948126237341157/72057594037927936"
+              ],
+              [
+                38,
+                "948126237341157/72057594037927936"
+              ],
+              [
+                43,
+                "948126237341157/4503599627370496"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-72780452554509337657528295271513/41538374868278621028243970633760768",
+            "lower": "72780452554509337657528295271513/41538374868278621028243970633760768",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                28,
+                "1/76"
+              ],
+              [
+                38,
+                "1/76"
+              ],
+              [
+                43,
+                "4/19"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-76762407460222309/43811017175060185088",
+            "lower": "76762407460222309/43811017175060185088",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                28,
+                "1/76"
+              ],
+              [
+                38,
+                "1/76"
+              ],
+              [
+                43,
+                "4/19"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-76762407460222309/43811017175060185088",
+            "lower": "76762407460222309/43811017175060185088",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002333899959921837,
+        "mode": "02010102020201020101010102020102",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101020101010201": {
+        "classification": "positive_volume",
+        "positive_volume_certified": true,
+        "closed_region_feasible": true,
+        "volume": 5.204065437439469e-14,
+        "numerical_volume_available": true,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "2657969535714559/36028797018963968",
+              "2907966426044279/72057594037927936",
+              "2931457449035603/36028797018963968",
+              "116929910934837/36028797018963968"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "6074111988397/432345564227567616",
+            "minimum_slack": "6074111988397/72057594037927936",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "5316646351063739/72057594037927936",
+              "5269395525611291/144115188075855872",
+              "2930042889766361/36028797018963968",
+              "-1718429662169715/144115188075855872"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "10730150520121/1008806316530991104",
+            "minimum_slack": "10730150520121/72057594037927936",
+            "nonconstant_rows": 48
+          }
+        ],
+        "geometry_note": {
+          "reason": "positive_volume",
+          "volume": 5.204065437439469e-14,
+          "vertices": 16,
+          "facets": 56
+        },
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "numeric_geometry_array_bytes_subtotal": 9632,
+        "geometry_state_scope": "named temporary geometry arrays, not online fit or peak memory",
+        "seconds": 0.012643299996852875,
+        "mode": "02010102020201020101020101010201",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101020102010201": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "2658323175531869/36028797018963968",
+              "8477495926372153/144115188075855872",
+              "4682701029361335/36028797018963968",
+              "4682701029361335/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-344875571602232705/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1656726928807467878544736173863377/166153499473114484112975882535043072",
+            "lower": "1656726928807467878544736173863377/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-344875571602232513/34587645138205409280",
+            "lower": "344875571602232513/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-344875571602232513/34587645138205409280",
+            "lower": "344875571602232513/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0023808999685570598,
+        "mode": "02010102020201020101020102010201",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020201020101020102010202": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "3334160076131165/36028797018963968",
+              "16179254418271/2251799813685248",
+              "2931457449035603/36028797018963968",
+              "95770209841595/2251799813685248"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-49353242402947201/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-237085060368467718087106721371473/166153499473114484112975882535043072",
+            "lower": "237085060368467718087106721371473/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002245799987576902,
+        "mode": "02010102020201020101020102010202",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020301020101010101010201": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "2603183045285399/36028797018963968",
+              "5825251957526869/144115188075855872",
+              "6002614105341107/288230376151711744",
+              "8720431458213313/72057594037927936"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-35289683357740913/1152921504606846976",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                12,
+                "300239975158033/2251799813685248"
+              ],
+              [
+                18,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                28,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "1/18014398509481984",
+              "1/36028797018963968",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-169525978474606481719097883592173/166153499473114484112975882535043072",
+            "lower": "169525978474604821512131249732589/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                12,
+                "2/15"
+              ],
+              [
+                18,
+                "1/60"
+              ],
+              [
+                28,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-35289683357740829/34587645138205409280",
+            "lower": "35289683357740829/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                12,
+                "2/15"
+              ],
+              [
+                18,
+                "1/60"
+              ],
+              [
+                28,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-35289683357740829/34587645138205409280",
+            "lower": "35289683357740829/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022151999874040484,
+        "mode": "02010102020301020101010101010201",
+        "observations": 4,
+        "depth": 4
+      },
+      "02010102020301020101020101010201": {
+        "classification": "positive_volume",
+        "positive_volume_certified": true,
+        "closed_region_feasible": true,
+        "volume": 7.671912768924355e-13,
+        "numerical_volume_available": true,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "3180975291955517/36028797018963968",
+              "5012137674984909/72057594037927936",
+              "6726791866728117/288230376151711744",
+              "8644886580555219/72057594037927936"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "323952639381101/23058430092136939520",
+            "minimum_slack": "2024703996133/72057594037927936",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_interior_cube",
+            "point": [
+              "49733447790949/562949953421312",
+              "1252215609294071/18014398509481984",
+              "6663900133441089/288230376151711744",
+              "8631785629320729/72057594037927936"
+            ],
+            "closed_region_feasible": true,
+            "strict_interior": true,
+            "radius": "194371583628739/13835058055282163712",
+            "minimum_slack": "15125655230623/72057594037927936",
+            "nonconstant_rows": 47
+          }
+        ],
+        "geometry_note": {
+          "reason": "positive_volume",
+          "volume": 7.671912768924355e-13,
+          "vertices": 16,
+          "facets": 58
+        },
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "numeric_geometry_array_bytes_subtotal": 9864,
+        "geometry_state_scope": "named temporary geometry arrays, not online fit or peak memory",
+        "seconds": 0.011947000049985945,
+        "mode": "02010102020301020101020101010201",
+        "observations": 4,
+        "depth": 4
+      },
+      "02020102020201020101010101010201": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "2999141891719003/36028797018963968",
+              "-1138831401948369/288230376151711744",
+              "-8081696221379133/288230376151711744",
+              "4710793420779401/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-371844267363576057/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                19,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1786280217534352389834525938580817/166153499473114484112975882535043072",
+            "lower": "1786280217534352389834525938580817/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                19,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-371844267363575873/34587645138205409280",
+            "lower": "371844267363575873/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                19,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-371844267363575873/34587645138205409280",
+            "lower": "371844267363575873/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022649000165984035,
+        "mode": "02020102020201020101010101010201",
+        "observations": 4,
+        "depth": 4
+      },
+      "02020102020201020101010101010202": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "5948870175661603/72057594037927936",
+              "-3760071037188841/576460752303423488",
+              "-3694952856254743/144115188075855872",
+              "4735500224667603/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-395562799096249713/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1900220239585599746158305945541073/166153499473114484112975882535043072",
+            "lower": "1900220239585599746158305945541073/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-395562799096249537/34587645138205409280",
+            "lower": "395562799096249537/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-395562799096249537/34587645138205409280",
+            "lower": "395562799096249537/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002227199962362647,
+        "mode": "02020102020201020101010101010202",
+        "observations": 4,
+        "depth": 4
+      },
+      "02020102020201020101010102010201": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "5998660999243137/72057594037927936",
+              "-4555325607793473/1152921504606846976",
+              "-8075660768497035/288230376151711744",
+              "4710604812876835/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-371663203777113153/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1785410417107125389816926134512657/166153499473114484112975882535043072",
+            "lower": "1785410417107125389816926134512657/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-371663203777112833/34587645138205409280",
+            "lower": "371663203777112833/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-371663203777112833/34587645138205409280",
+            "lower": "371663203777112833/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002993199974298477,
+        "mode": "02020102020201020101010102010201",
+        "observations": 4,
+        "depth": 4
+      },
+      "02020102020201020101010102010202": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "1667535021359829/18014398509481984",
+              "-7520142074377679/1152921504606846976",
+              "8300825687867855/576460752303423488",
+              "2187432634889373/18014398509481984"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-49353242402947273/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-237085060368467718087106721371473/166153499473114484112975882535043072",
+            "lower": "237085060368467718087106721371473/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002360000042244792,
+        "mode": "02020102020201020101010102010202",
+        "observations": 4,
+        "depth": 4
+      },
+      "02020102020201020101020101010201": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "1689270526508961/18014398509481984",
+              "4584544404406253/144115188075855872",
+              "24585689911075/18014398509481984",
+              "4710793420779401/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-371844267363575937/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                19,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1786280217534352389834525938580817/166153499473114484112975882535043072",
+            "lower": "1786280217534352389834525938580817/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                19,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-371844267363575873/34587645138205409280",
+            "lower": "371844267363575873/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                19,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-371844267363575873/34587645138205409280",
+            "lower": "371844267363575873/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022901000920683146,
+        "mode": "02020102020201020101020101010201",
+        "observations": 4,
+        "depth": 4
+      },
+      "02020102020201020101020101010202": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "6596487880762533/72057594037927936",
+              "1059662287492857/36028797018963968",
+              "92589957592193/9007199254740992",
+              "4735500224667603/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-395562799096249537/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1900220239585599746158305945541073/166153499473114484112975882535043072",
+            "lower": "1900220239585599746158305945541073/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-395562799096249537/34587645138205409280",
+            "lower": "395562799096249537/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                8,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-395562799096249537/34587645138205409280",
+            "lower": "395562799096249537/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0023164000594988465,
+        "mode": "02020102020201020101020101010202",
+        "observations": 4,
+        "depth": 4
+      },
+      "02020102020201020101020102010201": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "1689400194441975/18014398509481984",
+              "4584355796503687/144115188075855872",
+              "24774297813641/18014398509481984",
+              "4710604812876835/36028797018963968"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-371663203777112961/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-1785410417107125389816926134512657/166153499473114484112975882535043072",
+            "lower": "1785410417107125389816926134512657/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-371663203777112833/34587645138205409280",
+            "lower": "371663203777112833/34587645138205409280",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                19,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-371663203777112833/34587645138205409280",
+            "lower": "371663203777112833/34587645138205409280",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022323000011965632,
+        "mode": "02020102020201020101020102010201",
+        "observations": 4,
+        "depth": 4
+      },
+      "02020102020201020101020102010202": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "7588234006706889/72057594037927936",
+              "969503548770643/36028797018963968",
+              "545814870073243/18014398509481984",
+              "2187432634889373/18014398509481984"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-49353242402947201/1152921504606846976",
+            "nonconstant_rows": 48
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "4803839602528529/288230376151711744"
+              ],
+              [
+                38,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-237085060368467718087106721371473/166153499473114484112975882535043072",
+            "lower": "237085060368467718087106721371473/166153499473114484112975882535043072",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                38,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.002241400070488453,
+        "mode": "02020102020201020101020102010202",
+        "observations": 4,
+        "depth": 4
+      },
+      "02020102020301020101020102010202": {
+        "classification": "infeasible",
+        "positive_volume_certified": false,
+        "closed_region_feasible": false,
+        "volume": null,
+        "numerical_volume_available": false,
+        "lp_calls": 1,
+        "certificates": [
+          {
+            "type": "exact_point_check",
+            "point": [
+              "3843706697679529/36028797018963968",
+              "242375887192661/9007199254740992",
+              "893270962842151/36028797018963968",
+              "2187432634889373/18014398509481984"
+            ],
+            "closed_region_feasible": false,
+            "strict_interior": false,
+            "radius": null,
+            "minimum_slack": "-49353242402947329/1152921504606846976",
+            "nonconstant_rows": 47
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "binary64_lp_weights",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "300239975158033/18014398509481984"
+              ],
+              [
+                37,
+                "4803839602528529/288230376151711744"
+              ]
+            ],
+            "weighted_coefficients": [
+              "-1/18014398509481984",
+              "1/36028797018963968",
+              "-1/72057594037927936",
+              "-1/144115188075855872"
+            ],
+            "weighted_rhs": "-474170120736937500935952276064673/332306998946228968225951765070086144",
+            "lower": "474170120736933350418535691415713/332306998946228968225951765070086144",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=4096",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          },
+          {
+            "type": "exact_box_separation",
+            "source": "LP weights rationalized denominator<=1048576",
+            "conclusion": "infeasible",
+            "weights": [
+              [
+                9,
+                "1/60"
+              ],
+              [
+                37,
+                "1/60"
+              ]
+            ],
+            "weighted_coefficients": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "weighted_rhs": "-16451080800982379/11529215046068469760",
+            "lower": "16451080800982379/11529215046068469760",
+            "nonconstant_active_row": true
+          }
+        ],
+        "geometry_note": null,
+        "geometry_repairs": [],
+        "lp_status": 0,
+        "lp_success": true,
+        "seconds": 0.0022797000128775835,
+        "mode": "02020102020301020101020102010202",
+        "observations": 4,
+        "depth": 4
+      }
+    },
+    "geometry_seconds": 0.22023849992547184,
+    "sampling_seconds": 0.001194500015117228,
+    "reading_seconds": 0.01390479994006455,
+    "search_seconds_excluded": true,
+    "full_candidate_set_resolved": true,
+    "conditional_on_output_union": false,
+    "global_geometry_lp_used": true,
+    "geometry_component_requires_global_lp": true,
+    "global_bp_used": false,
+    "query_targets_accessed": false,
+    "mother_trajectory_called": false,
+    "cross_method_cache_used": false,
+    "hidden_recovery_used": false,
+    "exact_bayesian_posterior_claim": false,
+    "particles": 2048,
+    "geometry_numeric_bytes_subtotal": 78544,
+    "returned_array_bytes": 70688,
+    "memory_scope": "Named retained geometry and returned arrays; not RSS peak or all transient state",
+    "charged_readout_seconds": 0.23713559994939715
+  },
+  "search_seconds": 0.04349720000755042,
+  "readout_seconds": 0.23713559994939715,
+  "query_targets_accessed": false,
+  "archived_search_used": false,
+  "global_bp_used": false,
+  "geometry_global_lp_used": true,
+  "cross_method_cache_used": false,
+  "completed": true,
+  "full_candidate_set_resolved": true,
+  "readout_available": true,
+  "returned_array_bytes": 84252,
+  "search_named_bytes_lower_bound": 18956,
+  "geometry_numeric_bytes_subtotal": 78544,
+  "search_archive_retained_during_readout": true,
+  "timing_scope": "Contiguous warm-runtime support-to-prediction, including both wrappers; no disk I/O or independent audit",
+  "memory_scope": "Named state only, not RSS peak or complete native geometry transient workspace",
+  "global_wall_time_budget_enforced": false,
+  "budget_scope": "Search cooperative boundary only; geometry/readout are currently uncapped",
+  "contiguous_seconds": 0.28077399998437613,
+  "selected_rule": "fully_resolved_posterior",
+  "fallback_seconds": 0.02722309995442629,
+  "fallback_metadata": {
+    "persistent_state_bytes": 163840,
+    "noise_variance": 3.333333333333333e-07
+  },
+  "output_clipping": [
+    0.0,
+    1.0
+  ]
+}

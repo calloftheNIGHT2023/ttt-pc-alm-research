@@ -1,0 +1,49 @@
+{
+  "stages": [
+    4,
+    8,
+    16,
+    24
+  ],
+  "support_exposures": 52,
+  "warm_trajectory": true,
+  "named_fast_state_bytes": 1024,
+  "returned_array_bytes": 7576,
+  "query_targets_accessed": false,
+  "total_seconds": 0.002005099900998175,
+  "model_manifest": {
+    "checkpoint_sha256": "64cb0d2a3b7e88c9a9a284c4b7e8a3135fa439ca03a090d243f826d036098c00",
+    "training_config": {
+      "name": "cohort_meta_ridge128",
+      "kind": "ridge",
+      "rank": 128,
+      "learning_rate": 0.001
+    },
+    "training_manifest": {
+      "method": "cohort_meta_ridge128",
+      "outer_training_seconds": 18.85754880006425,
+      "outer_tasks": 32000,
+      "unique_outer_query_values": 2048000,
+      "outer_query_loss_exposures": 8192000,
+      "validation_events": 9,
+      "validation_query_loss_exposures": 294912,
+      "trainable_parameters": 33028,
+      "selected_step": 500,
+      "best_validation_raw_mse": 0.045527918117421004,
+      "checkpoint_sha256": "64cb0d2a3b7e88c9a9a284c4b7e8a3135fa439ca03a090d243f826d036098c00",
+      "consumed_batches_sha256": "52ad89049ea9594b03a76e1133099262002ac655342fbf9b8c90e95a35a45a1e",
+      "cuda_peak_allocated_bytes": 119735296,
+      "cuda_peak_reserved_bytes": 127926272,
+      "memory_scope": "CUDA allocator process-wide; not total driver/host memory",
+      "new_task_query_targets_accessed": false
+    },
+    "named_shared_model_bytes": 272416
+  },
+  "fallback_seconds": 0.02593280002474785,
+  "fallback_metadata": {
+    "persistent_state_bytes": 163840,
+    "noise_variance": 3.333333333333333e-07
+  },
+  "support_prefix": 24,
+  "end_to_end_seconds": 0.027952600037679076
+}
