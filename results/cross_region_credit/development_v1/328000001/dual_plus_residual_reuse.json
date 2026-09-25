@@ -1,0 +1,164 @@
+{
+  "proofs": [
+    {
+      "index": 6,
+      "step": 113,
+      "mode": "01020101010101010201010202020101",
+      "lower": "396131460161130922609099298532721/20769187434139310514121985316880384",
+      "structural_empty": false,
+      "source_index": null,
+      "kind": "local"
+    },
+    {
+      "index": 8,
+      "step": 120,
+      "mode": "01020101010101010201010202010101",
+      "lower": "396131460161130922609099298532721/20769187434139310514121985316880384",
+      "structural_empty": false,
+      "source_index": 6,
+      "kind": "transfer"
+    },
+    {
+      "index": 10,
+      "step": 122,
+      "mode": "01020101010101020101020202020201",
+      "lower": "4081338671327324067992689292450857/41538374868278621028243970633760768",
+      "structural_empty": false,
+      "source_index": null,
+      "kind": "local"
+    },
+    {
+      "index": 11,
+      "step": 128,
+      "mode": "01020101010101020101020202010201",
+      "lower": "4081338671327324067992689292450857/41538374868278621028243970633760768",
+      "structural_empty": false,
+      "source_index": 10,
+      "kind": "transfer"
+    }
+  ],
+  "traces": [
+    {
+      "step": 1,
+      "rejected": 0,
+      "disabled": 0,
+      "local_response_pairs": 12,
+      "transfer_response_pairs": 0,
+      "elapsed_seconds": 0.0005501999985426664
+    },
+    {
+      "step": 4,
+      "rejected": 0,
+      "disabled": 0,
+      "local_response_pairs": 48,
+      "transfer_response_pairs": 0,
+      "elapsed_seconds": 0.0016181000974029303
+    },
+    {
+      "step": 16,
+      "rejected": 0,
+      "disabled": 0,
+      "local_response_pairs": 192,
+      "transfer_response_pairs": 0,
+      "elapsed_seconds": 0.005326200043782592
+    },
+    {
+      "step": 64,
+      "rejected": 0,
+      "disabled": 0,
+      "local_response_pairs": 768,
+      "transfer_response_pairs": 0,
+      "elapsed_seconds": 0.018637900007888675
+    },
+    {
+      "step": 128,
+      "rejected": 4,
+      "disabled": 0,
+      "local_response_pairs": 1507,
+      "transfer_response_pairs": 20,
+      "elapsed_seconds": 0.03662270004861057
+    }
+  ],
+  "directions": [
+    {
+      "source_index": 6,
+      "learned_step": 113,
+      "credit": [
+        [
+          3.6674108997016868,
+          0.2750840542196713,
+          -2.506328029936343,
+          -0.6918208038053748
+        ],
+        [
+          1.6358057618395172,
+          0.061618829552796406,
+          -1.3366994871112443,
+          -0.3309545612863654
+        ],
+        [
+          -0.4251952909633875,
+          0.10953902428188036,
+          -0.6862435602850155,
+          -0.014836114564178327
+        ],
+        [
+          0.19118545986327767,
+          0.07148314145899712,
+          -0.49672444030061835,
+          0.064313192199317
+        ]
+      ],
+      "used_step": 120,
+      "targets_tested": 11
+    },
+    {
+      "source_index": 10,
+      "learned_step": 122,
+      "credit": [
+        [
+          -3.805065602694653,
+          0.44600483795234136,
+          3.4799525944782603,
+          0.7648373443533357
+        ],
+        [
+          -1.8820194229789402,
+          0.09272171913647986,
+          1.7618096580039828,
+          -0.10154732378515324
+        ],
+        [
+          -0.6723545083187765,
+          0.1304700649522215,
+          -0.6451979508167908,
+          -0.005298366920047426
+        ],
+        [
+          -0.22069604201197132,
+          0.09343299144646705,
+          0.14609875440254308,
+          -0.0025892387908269254
+        ]
+      ],
+      "used_step": 128,
+      "targets_tested": 9
+    }
+  ],
+  "exact_calls": 4,
+  "local_response_pairs": 1507,
+  "transfer_response_pairs": 20,
+  "total_response_pairs": 1527,
+  "oracle_seconds": 0.03158869955223054,
+  "exact_seconds": 0.00038700015284121037,
+  "update_seconds": 0.002405100385658443,
+  "transfer_seconds_including_transfer_exact": 0.0006826998433098197,
+  "total_seconds": 0.03662820009049028,
+  "named_array_bytes_subtotal_max": 21504,
+  "output_array_bytes": 3132,
+  "propagate": true,
+  "steps": 128,
+  "query_targets_accessed": false,
+  "geometry_accessed": false,
+  "state_scope": "Named NumPy subtotal; Python proof objects and allocator peak excluded"
+}
