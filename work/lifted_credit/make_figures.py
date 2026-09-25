@@ -112,7 +112,7 @@ def fig_stream():
     ax.set_xlabel('context examples seen, in units of d  (d = 64, chunks of 16)')
     ax.set_ylabel('tasks solved (query MSE < 0.05)'); ax.set_ylim(-0.03, 1.03)
     ax.set_title('D  streaming inner loop, 10 inner iterations per chunk', loc='left', fontsize=10, color=INK)
-    ax.legend(fontsize=8.5, loc='center right')
+    ax.legend(fontsize=8.5, ncol=2, loc='upper center', bbox_to_anchor=(0.5, -0.18))
     fig.tight_layout(); fig.savefig(FIG / 'fig2_streaming.png', bbox_inches='tight'); plt.close(fig)
 
 
