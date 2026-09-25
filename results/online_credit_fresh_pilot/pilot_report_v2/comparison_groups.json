@@ -1,0 +1,196 @@
+[
+  {
+    "candidate": "online_first_fit_dual",
+    "group": "同触发的四种非乘子信用",
+    "controls": [
+      "online_first_fit_residual",
+      "online_first_fit_bp",
+      "online_first_fit_random_sign",
+      "online_first_fit_zero"
+    ],
+    "adjusted_negative": 0,
+    "total": 4,
+    "negative_mean": 3,
+    "worst_adjusted_upper": 0.0007718952730365746,
+    "all_worst_leave_one_out_negative": false
+  },
+  {
+    "candidate": "online_first_fit_dual",
+    "group": "线性、核、固定特征及元训练岭回归",
+    "controls": [
+      "cold__linear_ls",
+      "cold__residual_linear_ls",
+      "cold__residual_linear_ridge",
+      "cold__residual_linear_rls",
+      "cold__rbf_loocv",
+      "cold__prior4096_ridge",
+      "cold__prior16384_ridge",
+      "cold__prior65536_ridge",
+      "cold__meta_ridge64",
+      "cold__meta_ridge128"
+    ],
+    "adjusted_negative": 10,
+    "total": 10,
+    "negative_mean": 10,
+    "worst_adjusted_upper": -0.012374950538569471,
+    "all_worst_leave_one_out_negative": true
+  },
+  {
+    "candidate": "online_first_fit_dual",
+    "group": "元训练浅层头",
+    "controls": [
+      "cold__meta_shallow64_5",
+      "cold__meta_shallow64_20"
+    ],
+    "adjusted_negative": 2,
+    "total": 2,
+    "negative_mean": 2,
+    "worst_adjusted_upper": -0.033831462700172045,
+    "all_worst_leave_one_out_negative": true
+  },
+  {
+    "candidate": "online_first_fit_dual",
+    "group": "同前缀全部Adam步数",
+    "controls": [
+      "probe_then_adam60_33",
+      "probe_then_adam120_33",
+      "probe_then_adam240_33",
+      "probe_then_adam480_33",
+      "probe_then_adam960_33",
+      "probe_then_adam1920_33",
+      "probe_then_adam3840_33"
+    ],
+    "adjusted_negative": 0,
+    "total": 7,
+    "negative_mean": 7,
+    "worst_adjusted_upper": 0.0019009912423000527,
+    "all_worst_leave_one_out_negative": false
+  },
+  {
+    "candidate": "online_first_fit_dual",
+    "group": "同前缀普通PC",
+    "controls": [
+      "probe_then_pc33",
+      "probe_pc64_33",
+      "probe_pc128_33",
+      "probe_pc256_33"
+    ],
+    "adjusted_negative": 1,
+    "total": 4,
+    "negative_mean": 4,
+    "worst_adjusted_upper": 0.0002302247584996747,
+    "all_worst_leave_one_out_negative": true
+  },
+  {
+    "candidate": "online_first_fit_dual",
+    "group": "同前缀无乘子局部更新",
+    "controls": [
+      "probe_then_nodual33",
+      "probe_nodual64_33",
+      "probe_nodual128_33",
+      "probe_nodual256_33"
+    ],
+    "adjusted_negative": 4,
+    "total": 4,
+    "negative_mean": 4,
+    "worst_adjusted_upper": -0.0001851091793210039,
+    "all_worst_leave_one_out_negative": true
+  },
+  {
+    "candidate": "online_uniform_state_dual_plus_residual",
+    "group": "同触发的四种非乘子信用",
+    "controls": [
+      "online_uniform_state_residual",
+      "online_uniform_state_bp",
+      "online_uniform_state_random_sign",
+      "online_uniform_state_zero"
+    ],
+    "adjusted_negative": 0,
+    "total": 4,
+    "negative_mean": 3,
+    "worst_adjusted_upper": 4.9057601402449096e-05,
+    "all_worst_leave_one_out_negative": false
+  },
+  {
+    "candidate": "online_uniform_state_dual_plus_residual",
+    "group": "线性、核、固定特征及元训练岭回归",
+    "controls": [
+      "cold__linear_ls",
+      "cold__residual_linear_ls",
+      "cold__residual_linear_ridge",
+      "cold__residual_linear_rls",
+      "cold__rbf_loocv",
+      "cold__prior4096_ridge",
+      "cold__prior16384_ridge",
+      "cold__prior65536_ridge",
+      "cold__meta_ridge64",
+      "cold__meta_ridge128"
+    ],
+    "adjusted_negative": 10,
+    "total": 10,
+    "negative_mean": 10,
+    "worst_adjusted_upper": -0.0123308325827677,
+    "all_worst_leave_one_out_negative": true
+  },
+  {
+    "candidate": "online_uniform_state_dual_plus_residual",
+    "group": "元训练浅层头",
+    "controls": [
+      "cold__meta_shallow64_5",
+      "cold__meta_shallow64_20"
+    ],
+    "adjusted_negative": 2,
+    "total": 2,
+    "negative_mean": 2,
+    "worst_adjusted_upper": -0.033824616896072836,
+    "all_worst_leave_one_out_negative": true
+  },
+  {
+    "candidate": "online_uniform_state_dual_plus_residual",
+    "group": "同前缀全部Adam步数",
+    "controls": [
+      "probe_then_adam60_33",
+      "probe_then_adam120_33",
+      "probe_then_adam240_33",
+      "probe_then_adam480_33",
+      "probe_then_adam960_33",
+      "probe_then_adam1920_33",
+      "probe_then_adam3840_33"
+    ],
+    "adjusted_negative": 0,
+    "total": 7,
+    "negative_mean": 7,
+    "worst_adjusted_upper": 0.0019251989923374814,
+    "all_worst_leave_one_out_negative": false
+  },
+  {
+    "candidate": "online_uniform_state_dual_plus_residual",
+    "group": "同前缀普通PC",
+    "controls": [
+      "probe_then_pc33",
+      "probe_pc64_33",
+      "probe_pc128_33",
+      "probe_pc256_33"
+    ],
+    "adjusted_negative": 1,
+    "total": 4,
+    "negative_mean": 4,
+    "worst_adjusted_upper": 0.00028806964113892625,
+    "all_worst_leave_one_out_negative": true
+  },
+  {
+    "candidate": "online_uniform_state_dual_plus_residual",
+    "group": "同前缀无乘子局部更新",
+    "controls": [
+      "probe_then_nodual33",
+      "probe_nodual64_33",
+      "probe_nodual128_33",
+      "probe_nodual256_33"
+    ],
+    "adjusted_negative": 4,
+    "total": 4,
+    "negative_mean": 4,
+    "worst_adjusted_upper": -0.00013862456477527451,
+    "all_worst_leave_one_out_negative": true
+  }
+]
