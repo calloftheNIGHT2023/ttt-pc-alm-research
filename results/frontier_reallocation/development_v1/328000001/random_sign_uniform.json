@@ -1,0 +1,202 @@
+{
+  "strategy": "uniform",
+  "steps": 128,
+  "geometry_budget": 8,
+  "budget_limit": 1536,
+  "base_processed": 12,
+  "base_response_pairs": 1498,
+  "base_calls": [
+    {
+      "begin": 0,
+      "end": 12,
+      "metadata": {
+        "proofs": [
+          {
+            "index": 11,
+            "step": 103,
+            "mode": "01020101010101020101020202010201",
+            "lower": "121753768259580398205378737159763/2596148429267413814265248164610048",
+            "structural_empty": false
+          },
+          {
+            "index": 6,
+            "step": 115,
+            "mode": "01020101010101010201010202020101",
+            "lower": "995457049592976348598578742304651/20769187434139310514121985316880384",
+            "structural_empty": false
+          }
+        ],
+        "traces": [
+          {
+            "step": 1,
+            "rejected": 0,
+            "disabled": 0,
+            "response_pairs": 12,
+            "elapsed_seconds": 0.00040369993075728416
+          },
+          {
+            "step": 4,
+            "rejected": 0,
+            "disabled": 0,
+            "response_pairs": 48,
+            "elapsed_seconds": 0.0014748999383300543
+          },
+          {
+            "step": 16,
+            "rejected": 0,
+            "disabled": 0,
+            "response_pairs": 192,
+            "elapsed_seconds": 0.0041522999526932836
+          },
+          {
+            "step": 64,
+            "rejected": 0,
+            "disabled": 0,
+            "response_pairs": 768,
+            "elapsed_seconds": 0.017146999947726727
+          },
+          {
+            "step": 128,
+            "rejected": 2,
+            "disabled": 0,
+            "response_pairs": 1498,
+            "elapsed_seconds": 0.03338939999230206
+          }
+        ],
+        "exact_calls": 2,
+        "exact_empty_calls": 0,
+        "response_pairs": 1498,
+        "oracle_seconds": 0.02950599987525493,
+        "exact_seconds": 0.00022980000358074903,
+        "update_seconds": 0.002226799726486206,
+        "total_seconds": 0.033390299999155104,
+        "named_array_bytes_subtotal_max": 21504,
+        "output_array_bytes": 3132,
+        "memory_scope": "Named arrays subtotal, not allocator peak; loaded credit generation excluded",
+        "query_targets_accessed": false,
+        "geometry_accessed": false
+      }
+    }
+  ],
+  "continuation_rounds": 4,
+  "trace": [
+    {
+      "round": 1,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10
+      ],
+      "certified": [],
+      "disabled": [],
+      "response_pairs": 1508
+    },
+    {
+      "round": 2,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10
+      ],
+      "certified": [
+        8
+      ],
+      "disabled": [],
+      "response_pairs": 1518
+    },
+    {
+      "round": 3,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9,
+        10
+      ],
+      "certified": [],
+      "disabled": [],
+      "response_pairs": 1527
+    },
+    {
+      "round": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9,
+        10
+      ],
+      "certified": [],
+      "disabled": [],
+      "response_pairs": 1536
+    }
+  ],
+  "proofs": [
+    {
+      "index": 11,
+      "step": 103,
+      "mode": "01020101010101020101020202010201",
+      "lower": "121753768259580398205378737159763/2596148429267413814265248164610048",
+      "structural_empty": false,
+      "stage": "base",
+      "kind": "local",
+      "source_index": null
+    },
+    {
+      "index": 6,
+      "step": 115,
+      "mode": "01020101010101010201010202020101",
+      "lower": "995457049592976348598578742304651/20769187434139310514121985316880384",
+      "structural_empty": false,
+      "stage": "base",
+      "kind": "local",
+      "source_index": null
+    },
+    {
+      "index": 8,
+      "step": 130,
+      "mode": "01020101010101010201010202010101",
+      "lower": "3325650980722914695823908381997/649037107316853453566312041152512",
+      "structural_empty": false,
+      "stage": "continued",
+      "round": 2,
+      "kind": "local",
+      "source_index": null
+    }
+  ],
+  "total_response_pairs": 1536,
+  "local_response_pairs": 1536,
+  "transfer_response_pairs": 0,
+  "exact_calls": 3,
+  "continued_exact_calls": 1,
+  "directions": [],
+  "total_seconds": 0.03451389994006604,
+  "query_targets_accessed": false,
+  "geometry_accessed": false,
+  "named_continuation_array_bytes_subtotal_max": 20438,
+  "output_array_bytes": 5048,
+  "input_generation_excluded": true,
+  "state_scope": "Named continuation arrays and outputs separately; Python trace/objects and allocator peak not measured"
+}

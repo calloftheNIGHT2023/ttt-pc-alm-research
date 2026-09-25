@@ -1,0 +1,108 @@
+"""364 report after all frozen predictions, scores, independent and attribution checks."""
+from pathlib import Path
+from report_search_radius_development_v1 import read,sha,save,write,complete,table
+
+BASE='results/frontier_online';PRIMARY='frontier_dual_frontier_g8'
+ENTRY='outputs/ttt-pc-alm-research/364_frontier_online_results_v1.md'
+CHANNELS=['dual','dual_plus_residual','residual','bp','random_sign','zero']
+
+
+def main():
+    root=Path(__file__).resolve().parents[2];base=root/BASE
+    ps=complete(base/'development_predictions_v1');es=complete(base/'development_evaluation_v1');audit=complete(base/'development_audit_v1')
+    attribution=complete(base/'attribution_v1');component=complete(root/'results/frontier_reallocation/audit_v1')
+    assert audit['prediction_summary_sha256']==sha(base/'development_predictions_v1/summary.json')
+    assert audit['evaluation_summary_sha256']==sha(base/'development_evaluation_v1/summary.json')
+    p=read(base/'development_predictions_v1/protocol.json');assert p['primary']==PRIMARY
+    for name,digest in p['source_sha256'].items():assert sha(root/name)==digest
+    by={m['method']:m for m in read(base/'development_evaluation_v1/methods.json')}
+    comps={(c['candidate'],c['control'],c['metric']):c for c in read(base/'development_evaluation_v1/comparisons.json')}
+    mechanisms=read(base/'development_audit_v1/mechanisms.json');out=base/'report_v1';out.mkdir(parents=True,exist_ok=False)
+    current=[];figmethods=[]
+    for cfg in p['configs']:
+        name=cfg['name'];m=by[name];c=None if name==PRIMARY else comps[PRIMARY,name,'mse257']
+        mm=[r for r in mechanisms if r['method']==name]
+        current.append([name,f"{m['metrics']['mse257']:.10f}",f"{m['mean_current_seconds']:.6f}",str(m['failures']),
+            str(sum(r['response_pairs'] for r in mm)) if mm else '—',
+            '—' if c is None else f"{c['mean_difference']:+.10f}",
+            '—' if c is None else f"{c['improved']}/{c['equal']}/{c['worse']}"])
+        figmethods.append(dict(method=name,mse=m['metrics']['mse257'],seconds=m['mean_current_seconds']))
+    refs=['cross_dual_reuse_g8','cross_zero_independent256_g8','unvisited_dual','strong_native_alm128','strong_native_alm256',
+          'strong_native_pc64','strong_native_pc256','strong_native_nodual256','strong_native_adam3840',
+          'cold__prior16384_ridge','cold__meta_ridge128','cold__meta_shallow64_20']
+    references=[]
+    for name in refs:
+        c=comps[PRIMARY,name,'mse257']
+        references.append([name,f"{by[name]['metrics']['mse257']:.10f}",f"{c['mean_difference']:+.10f}",
+            f"{c['improved']}/{c['equal']}/{c['worse']}",f"{c['worst_leave_one_out_mean']:+.10f}"])
+    components=[]
+    for ch in CHANNELS:
+        u=component['totals'][ch+'_uniform'];f=component['totals'][ch+'_frontier']
+        components.append([ch,u['total_response_pairs'],f['total_response_pairs'],u['selected_positive'],f['selected_positive'],
+                           u['rejected'],f['rejected'],f"{u['total_seconds']:.6f}",f"{f['total_seconds']:.6f}"])
+    main=by[PRIMARY];uniform=comps[PRIMARY,'frontier_dual_uniform_g8','mse257'];zero=comps[PRIMARY,'frontier_zero_frontier_g8','mse257']
+    residual=comps[PRIMARY,'frontier_residual_frontier_g8','mse257'];adam=comps[PRIMARY,'frontier_native_adam240','mse257']
+    same=next(g for g in attribution['identical_predictor_groups'] if PRIMARY in g)
+    nondual=[n for n in same if n in ['frontier_residual_frontier_g8','frontier_zero_frontier_g8','frontier_bp_frontier_g8','frontier_random_sign_frontier_g8']]
+    attribution_conclusion=('本轮实际主预测已被以下非乘子信用控制逐位复现：`'+'`, `'.join(nondual)+'`。因此，即使主优于zero或uniform，也没有建立ALM乘子的独立预测收益。' if nondual else
+        '本轮未发现上述非乘子控制在全部任务逐位复现主预测；这只说明预测不同，不能单独证明ALM独立优势。仍须结合误差、强对照、资源和新任务确认。')
+    title=f"主配置 MSE257 **{main['metrics']['mse257']:.10f}**；主−均匀分配 **{uniform['mean_difference']:+.10f}**，主−同增强zero **{zero['mean_difference']:+.10f}**，主−残差信用 **{residual['mean_difference']:+.10f}**，主−同期Adam240 **{adam['mean_difference']:+.10f}**。负值表示主方法误差更低。"
+    save(out/'table_data.json',dict(current=current,references=references,component=components))
+    save(out/'figure_data.json',dict(methods=figmethods,component={c:{s:component['totals'][c+'_'+s]['selected_positive'] for s in ['uniform','frontier']} for c in CHANNELS}))
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    import numpy as np
+    fig,axes=plt.subplots(1,2,figsize=(13.5,8));yy=np.arange(17)
+    labels=[m['method'].removeprefix('frontier_').replace('_',' ') for m in figmethods]
+    colors=['#147d75' if m['method']==PRIMARY else '#8ea7bc' for m in figmethods]
+    axes[0].barh(yy,[m['mse'] for m in figmethods],color=colors);axes[1].barh(yy,[m['seconds'] for m in figmethods],color=colors)
+    for ax in axes:
+        ax.set_yticks(yy,labels if ax is axes[0] else []);ax.invert_yaxis();ax.spines[['top','right']].set_visible(False);ax.grid(axis='x',alpha=.18)
+    axes[0].set_title('Fixed primary and all 16 concurrent controls',loc='left',pad=13)
+    axes[1].set_title('Complete fit, including local and global work',loc='left',pad=13)
+    axes[0].set_xlabel('Mean unseen-query MSE (lower is better)');axes[1].set_xlabel('Mean full fit seconds (one repetition)')
+    fig.subplots_adjust(left=.255,right=.98,bottom=.16,top=.93,wspace=.15)
+    fig.text(.255,.065,'32 exposed development tasks. B=128M matches a response ceiling, not all resources.',fontsize=10)
+    fig.text(.255,.025,'No archived trajectory, feasibility label or query answer is a candidate input.',fontsize=10)
+    fig.savefig(out/'frontier_risk_cost.png',dpi=160);plt.close(fig)
+    text=['# 364｜把节省的计算投入关键前缀：真实在线结果','',title,'',
+        f"本轮 {ps['counts']['new_calls']} 次新完整fit，{es['methods']} 方法、{es['scored_predictors']} 个预测器，失败 {ps['checks']['failures']}。全部查询预测封存后评分，再做独立核验。固定主不因其它方法结果更好而替换；这是32任务开发结果，不是新任务确认。",'',
+        '## 1. 数学机制及可检验判断','',
+        '给定由支持信息产生的有序候选，区域j进入G个名额的充要条件是j−c(j)≤G，c(j)是其前缀中严格不可行证书数。360已经证明不传播的独立求解可以只执行必要前缀、保持原T128的选择不变。362在此基础上把省下的工作预算重新用于当前前G个未排除区域，延续信用状态而不重启。','',
+        '每任务总响应上限B=128M（M为现场候选数）；所有信用同增强。uniform强控制则先执行全池T128，余量继续所有未排除区域。两者每轮都不超过剩余响应预算。严格证明只能剔除不可行区域，因此原T128选中的可行区域不会丢失检查名额；增加区域不保证预测误差单调下降。','',
+        '```text\n本次支持观察 → 本次母轨迹与必要候选池\n                     ↓\n           初段：原T128关键前缀（候选等价）\n                     ↓\n          剩余B预算：继续当前前G个未排除区域\n                     ↓\n        精确不可行证明 → 释放名额 → 引入后续区域\n                     ↓\n           实际几何 + 2048粒子 → 未见查询预测\n```','',
+        '候选从未读取已知可行性标签或后验参考；BP只在明确控制中生成初始信用。后续全局几何公开计费，不称整个系统没有全局优化。调度方法通用于任何信用，不是PC-ALM独有理论。','',
+        '预测机制的数学边界：若有界预测f∈[0,1]，截断后验遗漏质量为ε，则它与完整工作后验条件均值的平方偏差上界为ε²。只有工作后验确实给出评估目标条件均值时，这才是相应的Bayes超额风险界。更多区域不必意味着更大的概率质量，更小上界也不保证每个实际查询误差下降。运行期间另写的[后验覆盖附录](../../../outputs/ttt-pc-alm-research/363_posterior_coverage_bound_appendix.md)给出推导与反例，不改变冻结算法或评分规则。','',
+        '## 2. 相同响应上限下，覆盖确实发生变化','',
+        table(['信用','均匀响应对','前缀响应对','均匀到达正区域','前缀到达正区域','均匀证书','前缀证书','均匀组件总秒','前缀组件总秒'],components),'',
+        '数据均为32任务组件总计。在同一种信用内，本批两调度实际响应总数相同；上限均为76,928，少用部分来自已无可执行区域而提前结束。ALM前缀到达25个正体积区域，比均匀的19个多6个；zero前缀到达24个，但残差也到达25个。更多全池证书未必等于更多有效前缀覆盖，且当前小批次前缀循环使组件时间增加。','',
+        '组件使用保存的支持/信用/池，生成费用不计入该表。下一节真实在线重新生成全部输入。B仅匹配局部响应上限，并不匹配精确验证次数、状态、FLOPs或墙钟；元数据保留命名数组subtotal和输出字节，Python对象/trace与分配器峰值没有测量。','',
+        '## 3. 17个同期真实在线配置','',
+        table(['方法','MSE257','完整均秒','失败','局部响应总数','主−该方法','主改善/同/变差'],current),'',
+        '![查询误差与完整运行成本](frontier_risk_cost.png)','',
+        '每个新fit都重算629起点母流程、触发、必要语言池、筛选、实际几何、采样与读出。C20-G16/完整池和同期Adam240是明确的强控制，不把几何调用数量相等冒充全部资源相等。计时每任务一次，未做重复置信或峰值内存比较。','',
+        '## 4. 归因：分清调度、信用初始化和任务竞争力','',
+        f"主对同初始化uniform：均差{uniform['mean_difference']:+.10f}，改善/同/差{uniform['improved']}/{uniform['equal']}/{uniform['worse']}，最差留一{uniform['worst_leave_one_out_mean']:+.10f}。这项差异对应预算分配，不能直接归因于ALM本身。",'',
+        f"主对同增强zero：均差{zero['mean_difference']:+.10f}，改善/同/差{zero['improved']}/{zero['equal']}/{zero['worse']}，最差留一{zero['worst_leave_one_out_mean']:+.10f}。主对残差信用：{residual['mean_difference']:+.10f}。",'',
+        '对所有32任务，与主配置拥有完全相同粒子、分配与预测数组的整组方法为：`'+'`, `'.join(same)+'`。该分组根据封存数组dtype/shape/原始字节计算，不是仅比较平均误差。若非乘子控制在此组中，就不能把主预测收益称作ALM乘子独占。','',
+        attribution_conclusion,'',
+        f"主对同期Adam240：均差{adam['mean_difference']:+.10f}，改善/同/差{adam['improved']}/{adam['equal']}/{adam['worse']}。直接C20完整池MSE为{by['frontier_c20_all']['metrics']['mse257']:.10f}、完整均秒{by['frontier_c20_all']['mean_current_seconds']:.6f}，不可省略这个竞争对照。",'',
+        '当前结果只建立本表能直接支持的调度/初始化差异。单个已暴露任务的差异、组件覆盖保证或优于部分回归头，都不足以完成PC-ALM独立任务优势这一核心目标。','',
+        '## 5. 原有强回归、浅层头及同参数优化器','',
+        table(['历史冻结对照','MSE257','主−对照','主改善/同/变差','最差留一均差'],references),'',
+        '全部168方法、四指标、11,356条配对比较保留。旧方法秒数为None，不拼接历史时间得出同期加速结论；数学条件也没有排除任意闭式估计器。','',
+        '## 6. 核验与下一步边界','',
+        f"独立重算{audit['counts']['risk_fields']:,}风险字段、{audit['counts']['comparison_rows']:,}配对结果，最大标量差{audit['maximum_scalar_risk_gap']:.3g}；核验{audit['counts']['fraction_certificates']:,}严格信用证明、{audit['counts']['rounds']:,}调度轮次、{audit['counts']['geometry_certificates']:,}真实几何证书。母轨迹、输入不变量、原有效池保留、支持粒子及完整候选池包含均验证。",'',
+        '362组件原语包括空池/不足名额/一般池：12例、288逐行原求解器数组和132重复数组通过。384组件调用后才进入363；首任务17方法通过后再跑32任务，全部预测先封存再评分。没有重试换种子、查询指导选择或把组件几何标签输入候选。','',
+        '截至本报告，官方TTT-MLP、LLM/VLM及真实下游验证未完成，核心研究目标保持ACTIVE。后续必须在新机制和新冻结任务上继续检查非乘子同增强对照与实际资源，不能以组件成功代替论文贡献。','',
+        '[362数学协议](../../../outputs/ttt-pc-alm-research/362_frontier_reallocation_protocol_v1.md) · [363在线协议](../../../outputs/ttt-pc-alm-research/363_frontier_online_protocol_v1.md) · [全部方法](../development_evaluation_v1/methods.json) · [全部比较](../development_evaluation_v1/comparisons.json) · [独立核验](../development_audit_v1/summary.json) · [逐位归因](../attribution_v1/summary.json)','']
+    write(out/'report.md','\n'.join(text));write(root/ENTRY,'# 364｜预算前缀再分配的在线结果\n\n'+title+'\n\n[完整图文与对照](../../results/frontier_online/report_v1/report.md)\n')
+    save(out/'manifest.json',dict(passed=True,source_sha256=sha(Path(__file__)),entry_file=ENTRY,entry_sha256=sha(root/ENTRY),
+        input_summary_sha256={BASE+'/development_audit_v1/summary.json':sha(base/'development_audit_v1/summary.json'),
+                              BASE+'/attribution_v1/summary.json':sha(base/'attribution_v1/summary.json')},
+        outputs_sha256={n:sha(out/n) for n in ['report.md','table_data.json','figure_data.json','frontier_risk_cost.png']}))
+    print(dict(passed=True,report=str(out/'report.md')),flush=True)
+
+
+if __name__=='__main__':main()
