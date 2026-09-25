@@ -1,0 +1,28 @@
+{
+  "source_sha256": {
+    "census_support_boundary_events_v1.py": "94a1b2908d2e4f33683d5bb1321e2e88a0900427526f9a7ab39ef0d90acfa55f",
+    "diagnose_gradient_flat_split_states_v1.py": "ac68f7465ba552e9059d42479139d102aa082a1fbdc567a6cdc02591d9d60c88",
+    "diagnose_counterfactual_conditional_risk_v1.py": "61b00c5b6a73e54213c134ad74e7c59cdfd54f766fb94af8527d2b63c3c62b7d"
+  },
+  "rules": [
+    "boundary_entry",
+    "forward_stasis",
+    "boundary_and_forward_stasis",
+    "primal_stasis"
+  ],
+  "policies": [
+    "all",
+    "first",
+    "onset"
+  ],
+  "design_sha256": "9dd65bd3717ddd9b1b39917e03f5bf7ef0a08d99db86e1af6aadd5ca0581fe0c",
+  "threshold": 1e-08,
+  "support_error": 0.001001,
+  "split_residual": 1e-06,
+  "bound": 0.12,
+  "selected_using_gradients": false,
+  "selected_using_certificates": false,
+  "query_targets_accessed": false,
+  "reference_accessed": false,
+  "new_adaptation": false
+}
