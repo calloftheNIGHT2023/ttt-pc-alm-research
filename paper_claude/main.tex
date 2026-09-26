@@ -183,7 +183,7 @@ If inputs are isotropic Gaussian, keys are an orthogonal projection $k=Px$, and 
 
 \begin{proposition}[R2: identifiability]
 \label{prop:b3}
-(a) If $n<d$, for every sign pattern the set of directions consistent with a noiseless context is an affine subspace of dimension at least $d-n$; under a prior with a density, every learner has strictly positive risk.
+(a) If $n<d$, for every sign pattern the set of directions consistent with a noiseless context is an affine subspace of dimension at least $d-n$; under a prior with a density, every learner has strictly positive risk. For $u\sim\mathcal N(0,d^{-1}I)$ and $k\sim\mathcal N(0,I)$, every learner---even one told the signs of all $k_i^\top u$---has $\mathrm{NMSE}\geq1-n/d$.
 (b) For $n\leq2d-2$, $w\mapsto|Kw|$ is not injective modulo sign for any $K$, so no learner recovers every direction; for $n\geq2d-1$ it is injective for generic $K$ \citep{balan2006phase}.
 \end{proposition}
 
@@ -264,6 +264,48 @@ Theorems~\ref{thm:l1} and \ref{thm:l2} predict the matching: $\nu=0$ calls for t
 \State \Return $\sum_r\omega_r\hat y_q^{(r)}$
 \end{algorithmic}
 \end{algorithm}
+
+\section{Mechanism experiments: every prediction against its measurement}
+\label{sec:mech}
+
+Each theorem makes a numerical prediction that can be checked in seconds with true keys and exact arithmetic (float64, 64--512 tasks per point). Table~\ref{tab:mech} and Figure~\ref{fig:mech} put every prediction next to its measurement.
+
+\begin{table}[t]
+\caption{\textbf{Mechanism experiments.} Every prediction next to its measurement (true keys, float64).}
+\label{tab:mech}
+\centering\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llll}
+\toprule
+Claim & Setting & Predicted & Measured\\
+\midrule
+Theorem~\ref{thm:features} is tight at $M=d$ & $d=8/16/32/64$, optimal features & .700/.833/.912/.955 & .697/.831/.914/.954\\
+R1: the Bayes oracle sits on $\flr(\nu)$ & $\nu=0.1/0.3/0.5$ & .223/.550/.776 & .224/.552/.778\\
+R1: no learner goes below $\flr(\nu)$ & $\nu\in[0.05,0.6]$, four learners & ratio $\geq1$ & minimum ratio 1.04\\
+R2: $\mathrm{NMSE}\geq1-n/d$ for $n<d$ & $n/d=0.5/0.75$, signs revealed & $\geq$ .50/.25 & .75/.45\\
+R3: ERM inflation $\alpha^\star=1+c_\sigma$ & $\sigma=0.2/0.5/0.8$, $n=64d$ & 1.0017/1.0232/1.0797 & 1.0025/1.0246/1.0862\\
+R5: fixed point $=$ ridge$(\mu_v)$ & $v\in\{0,\dots,10\}$, converged tasks & 0 & $\leq1.2\times10^{-15}$\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/fig_mechanisms.pdf}
+\caption{\textbf{Mechanism experiments.}
+(a) R1: on bases with known $\nu$ the Bayes oracle $F_s(u^\top k)$ lies on the theoretical floor (largest deviation 0.004); an oracle $|u^\top k|$ probe, self-iteration, the quadratic closed form and TTT gradient updates all stay above it ($n=4d$, $d=16$).
+(b) R2: noiseless contexts; even the Bayes predictor told every sign cannot beat $1-n/d$ below $n=d$; self-iteration (16 chains) solves from $n\approx2d$ (0.048 at $2d$, 0 from $2.5d$), full-batch gradient updates do not.
+(c) R3: norm of the ERM fixed point started at $w^\star$ (mean $\pm2$ s.e., 128 tasks, $n=64d$) follows $\alpha^\star(\sigma)$; posterior inversion stays at 1; the remaining excess shrinks with $n$.
+(d) R5: at every converged fixed point of the leaky iteration, $w$ equals ridge regression with $\mu_v$ to machine precision, while the unleaked ridge differs by up to 6\%; the percentage of tasks that converge rises from 60\% ($v=0$) to 100\% ($v=10$), since the leak removes limit cycles of the nonconvex iteration.
+(e) Theorem~\ref{thm:features}: with the optimal $M=d$ features $x_i(\|x\|^2-d-2)$ the oracle-fit error equals the bound; random ReLU features stay above it.}
+\label{fig:mech}
+\end{figure}
+
+\paragraph{What the checks establish.}
+The floor of R1 is not an upper estimate: the Bayes oracle attains it, so any learner on a base with $\nu=0.5$ is limited to NMSE $\geq0.78$, whatever it iterates.
+The R2 bound holds with every sign revealed, so it binds every learner that sees less.
+The fixed-point theorem of R5 is exact, and it explains a second effect of the leak visible in (d): beyond regularizing, it turns cycling nonconvex iterations into convergent ones.
+The ERM inflation of R3 and the tightness of Theorem~\ref{thm:features} are matched to three decimals.
 
 \section{Verification on controlled bases}
 \label{sec:verify}
@@ -406,7 +448,7 @@ Generative AI tools were used to polish writing, to retrieve and discover relate
 With $x\sim\mathcal N(0,I)$ and $P$ an orthogonal projection, $u^\top x=u_\parallel^\top x+u_\perp^\top x$ where $u_\perp^\top x$ is independent of $Px$. For a learner that sees only $Px$, $u_\perp^\top x$ is indistinguishable from the base residual, so the undecodable variance is $\nu+(1-\nu)\|u_\perp\|^2/\|u\|^2$ of the attribute variance and Theorem~\ref{thm:b1} applies.
 
 \subsection{Proposition~\ref{prop:b3}}
-(a) For a fixed sign pattern $b$, noiseless consistency means $Kw=b\odot y$, whose solution set is empty or an affine subspace of dimension $d-\mathrm{rank}K\geq d-n$. Under a prior with a density the posterior then has positive variance along this subspace, so $k_q^\top w$ has positive posterior variance for almost every $k_q$, and every predictor has positive excess risk. (b) is the complement-property characterization of \citet{balan2006phase}.
+(a) For a fixed sign pattern $b$, noiseless consistency means $Kw=b\odot y$, whose solution set is empty or an affine subspace of dimension $d-\mathrm{rank}K\geq d-n$. Under a prior with a density the posterior then has positive variance along this subspace, so $k_q^\top w$ has positive posterior variance for almost every $k_q$, and every predictor has positive excess risk. Quantitatively, reveal the signs, so that the context determines $Ku$ exactly; a learner with less information cannot do better. With $u\sim\mathcal N(0,d^{-1}I)$ the posterior of $m_q=k_q^\top u$ is $\mathcal N(\mu_q,v_q)$ with $v_q=\|P_\perp k_q\|^2/d$, $P_\perp$ the projection onto the null space of $K$, so $\E v_q=(d-n)/d$. The variance of a folded normal $|\mathcal N(\mu,v)|$ is minimized at $\mu=0$, where it equals $(1-2/\pi)v$; hence $\E\,\mathrm{Var}(y_q\mid D,\text{signs})\geq(1-2/\pi)(d-n)/d$, while $\mathrm{Var}(y_q)=(1-2/\pi)\E m_q^2=1-2/\pi$. Dividing gives $\mathrm{NMSE}\geq1-n/d$. (b) is the complement-property characterization of \citet{balan2006phase}.
 
 \subsection{Theorem~\ref{thm:features}}
 \label{app:features}

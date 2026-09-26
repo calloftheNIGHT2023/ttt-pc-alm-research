@@ -209,4 +209,59 @@ ax.set_xlabel('measurements $n$'); ax.set_ylabel('test-image NMSE'); ax.set_titl
 legend_panel(axes[3], handles + [hf], ['matched self-iteration\n(TTT$\\times$PC-ALM)', 'TTT, full-batch GD', 'TTT, official GD',
                                         'closed form,\nquadratic features', 'Transformer', 'base floor (CV)'])
 finalize(fig, 'fig_real')
+# ============================================================ Figure 4: mechanism experiments, theory vs measurement
+M = json.loads((RES / 'q2_mechanisms' / 'results.json').read_text())
+Mb = json.loads((RES / 'q2_mechanisms' / 'results_b.json').read_text())
+M4 = json.loads((RES / 'q2_mechanisms' / 'results_b_m4.json').read_text())['m4_fixed_points']
+fig, axes = plt.subplots(1, 5, figsize=(33, 6.8))
+
+ax = axes[0]; rows = M['m1_floor']; nu_ = [r['nu'] for r in rows]
+ax.fill_between(nu_, 0, [r['floor_theory'] for r in rows], color=PALETTE['red_1'], alpha=0.75, lw=0)
+ax.plot(nu_, [r['floor_theory'] for r in rows], color=PALETTE['red_strong'], lw=3, label=r'theory floor$(\nu)$')
+ax.plot(nu_, [r['bayes_oracle'] for r in rows], 'o', color='white', markeredgecolor='black', mew=2, ms=9, label='Bayes oracle (measured)')
+for key, lab, col, mk in (('oracle_probe_abs', r'oracle $|u^\top k|$', ROLE['ref'], 's'), ('self_iteration', 'self-iteration', ROLE['self'], 'D'),
+                          ('quad_closed_form', 'closed form, quadratic', ROLE['quad'], '^'), ('ttt_gd_full', 'TTT, full-batch GD', ROLE['gd_full'], 'v')):
+    ax.plot(nu_, [min(r[key], 2.05) for r in rows], '-' + mk, color=col, label=lab, ms=7)
+ax.set_xlabel(r'base noise ratio $\nu$'); ax.set_ylabel('NMSE ($n=4d$)'); ax.set_ylim(0, 2.1)
+ax.set_title('(a) R1: floor is exact and binding', fontsize=16); ax.legend(fontsize=11.5, loc='upper left')
+
+ax = axes[1]; rows = M['m2_identifiability']; x = [r['n_over_d'] for r in rows]
+xs = np.linspace(0.5, 1.0, 20); ax.fill_between(xs, 0, 1 - xs, color=PALETTE['red_1'], alpha=0.75, lw=0)
+ax.plot(xs, 1 - xs, color=PALETTE['red_strong'], lw=3, label=r'theory $1-n/d$ (any learner)')
+ax.plot(x, [r['bayes_with_signs'] for r in rows], '-o', color=ROLE['ref'], label='Bayes, signs revealed')
+ax.plot(x, [min(r['self_iteration'], 3.0) for r in rows], '-D', color=ROLE['self'], label='self-iteration (16 chains)')
+ax.plot(x, [min(r['ttt_gd_full'], 3.0) for r in rows], '-v', color=ROLE['gd_full'], label='TTT, full-batch GD')
+ax.axvline(2 - 1 / 32, color='k', ls=':', lw=1.5); ax.text(2.05, 0.25, '$n=2d-1$', fontsize=13)
+ax.set_ylim(0, 3.05); ax.set_xlabel('context size $n/d$'); ax.set_ylabel('NMSE (clipped at 3)')
+ax.set_title('(b) R2: identifiability', fontsize=16); ax.legend(fontsize=11.5, loc='upper right', bbox_to_anchor=(1.0, 0.93))
+
+ax = axes[2]; rows = M['m3_bias']; sg = [r['sigma'] for r in rows]
+ax.plot(sg, [r['alpha_star_theory'] for r in rows], color=PALETTE['red_strong'], lw=3, label=r'theory $\alpha^\star=1+c_\sigma$')
+ax.errorbar(sg, [r['erm_norm'] for r in rows], yerr=[2 * r['erm_norm_se'] for r in rows], fmt='o', color=ROLE['gd_full'], ms=8, capsize=4, lw=2, label='ERM fixed point (measured)')
+ax.plot(sg, [r['posterior_norm'] for r in rows], '-D', color=ROLE['self'], label='posterior inversion')
+ax.axhline(1, color=ROLE['ref'], lw=1.5, ls=':')
+ax.set_xlabel(r'noise $\sigma$'); ax.set_ylabel(r'$\|\hat w\|/\|w^\star\|$ ($n=64d$)')
+ax.set_title('(c) R3: predicted inflation', fontsize=16); ax.legend(fontsize=12.5, loc='upper left')
+
+ax = axes[3]; vs = [r['v'] for r in M4]; xpos = np.arange(len(vs))
+ax.bar(xpos - 0.2, [max(r['rel_err_converged_max'], 1e-17) for r in M4], 0.4, color=ROLE['self'], edgecolor='black', linewidth=1.5, label=r'$\|w-\mathrm{ridge}(\mu_v)\|$ (theorem)')
+ax.bar(xpos + 0.2, [r['rel_diff_vs_unleaked_ridge'] for r in M4], 0.4, color=ROLE['gd_full'], edgecolor='black', linewidth=1.5, label=r'$\|w-\mathrm{ridge}(\rho\mu/2)\|$')
+for xi, r in zip(xpos, M4):
+    ax.text(xi, 3e-1, f"{100 * r['frac_converged']:.0f}%", ha='center', fontsize=12)
+ax.set_yscale('log'); ax.set_ylim(1e-17, 3); ax.set_xticks(xpos); ax.set_xticklabels([f'{v:g}' for v in vs])
+ax.set_xlabel('multiplier leak $v$  (converged tasks shown in %)'); ax.set_ylabel('relative difference')
+ax.set_title('(d) R5: fixed points = ridge($\\mu_v$)', fontsize=16); ax.legend(fontsize=12, loc='center right')
+
+ax = axes[4]
+opt = Mb['m5_optimal_features']; rel = M['m5_fixed_features']
+lo = [r['lower_bound_theory'] for r in opt]
+ax.plot([0, 1], [0, 1], color='k', lw=1.5, ls=':')
+ax.scatter([r['lower_bound_theory'] for r in rel if r['features'] == 'random_relu'], [r['measured_nmse'] for r in rel if r['features'] == 'random_relu'],
+           s=110, color=ROLE['gd_full'], edgecolor='black', linewidth=1.3, label='random ReLU features')
+ax.scatter(lo, [r['measured_nmse'] for r in opt], s=150, marker='D', color=ROLE['self'], edgecolor='black', linewidth=1.3, label='optimal $M=d$ features')
+for r in opt:
+    ax.annotate(f"d={r['d']}", (r['lower_bound_theory'], r['measured_nmse']), textcoords='offset points', xytext=(-48, 8), fontsize=12)
+ax.set_xlim(-0.03, 1.02); ax.set_ylim(0, 1.1); ax.set_xlabel('Theorem 1 lower bound'); ax.set_ylabel('measured error (oracle fit)')
+ax.set_title('(e) Theorem 1: bound is tight', fontsize=16); ax.legend(fontsize=12.5, loc='upper left')
+finalize(fig, 'fig_mechanisms')
 print('written:', sorted(p.name for p in FIG.glob('fig_*')))
