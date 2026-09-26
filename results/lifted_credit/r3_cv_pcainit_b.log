@@ -1,0 +1,63 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+PCA-64 residual energy on test images: 0.0262
+floor (true image projected on PCA basis): {'nmse_mean': 0.0665728971362114, 'nmse_median': 0.05739119276404381}
+/workspace/lifted_credit/exp_pr_ttt.py:231: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  curve.append(dict(step=step, loss=float(loss))); print(f'{name} step {step} nloss {float(loss):.4f}', flush=True)
+ttt_gd_soft step 0 nloss 0.7625
+ttt_gd_soft step 250 nloss 0.2806
+ttt_gd_soft step 500 nloss 0.2659
+ttt_gd_soft step 750 nloss 0.2704
+ttt_gd_soft step 1000 nloss 0.2501
+ttt_gd_soft step 1250 nloss 0.2172
+ttt_gd_soft step 1500 nloss 0.2668
+ttt_gd_soft step 1750 nloss 0.2758
+ttt_gd_soft step 2000 nloss 0.2196
+ttt_gd_soft step 2250 nloss 0.2580
+ttt_gd_soft step 2500 nloss 0.2589
+ttt_gd_soft step 2750 nloss 0.2193
+ttt_gd_soft step 2999 nloss 0.2058
+== ttt_gd_soft: n=2.0m: nmse 0.368/0.260 succ 0.01  n=3.0m: nmse 0.217/0.168 succ 0.03  n=4.0m: nmse 0.192/0.153 succ 0.05  n=6.0m: nmse 0.180/0.142 succ 0.07  (752s)
+ttt_gd_full step 0 nloss 1.4479
+ttt_gd_full step 250 nloss 0.9972
+ttt_gd_full step 500 nloss 1.0030
+ttt_gd_full step 750 nloss 0.9969
+ttt_gd_full step 1000 nloss 0.9974
+ttt_gd_full step 1250 nloss 0.9979
+ttt_gd_full step 1500 nloss 1.0012
+ttt_gd_full step 1750 nloss 1.0007
+ttt_gd_full step 2000 nloss 0.9948
+ttt_gd_full step 2250 nloss 0.9969
+ttt_gd_full step 2500 nloss 0.9935
+ttt_gd_full step 2750 nloss 0.9983
+ttt_gd_full step 2999 nloss 1.0003
+== ttt_gd_full: n=2.0m: nmse 1.001/0.998 succ 0.00  n=3.0m: nmse 0.997/0.994 succ 0.00  n=4.0m: nmse 0.993/0.991 succ 0.00  n=6.0m: nmse 0.983/0.988 succ 0.00  (169s)
+ttt_gd_official step 0 nloss 1.0918
+ttt_gd_official step 250 nloss 0.2749
+ttt_gd_official step 500 nloss 0.2822
+ttt_gd_official step 750 nloss 0.3216
+ttt_gd_official step 1000 nloss 0.3126
+ttt_gd_official step 1250 nloss 0.2850
+ttt_gd_official step 1500 nloss 0.3938
+ttt_gd_official step 1750 nloss 0.3505
+ttt_gd_official step 2000 nloss 0.3472
+ttt_gd_official step 2250 nloss 0.3628
+ttt_gd_official step 2500 nloss 0.2768
+ttt_gd_official step 2750 nloss 0.3570
+ttt_gd_official step 2999 nloss 0.3072
+== ttt_gd_official: n=2.0m: nmse 0.454/0.346 succ 0.00  n=3.0m: nmse 0.282/0.230 succ 0.00  n=4.0m: nmse 0.245/0.201 succ 0.01  n=6.0m: nmse 0.212/0.181 succ 0.01  (31s)
+ttt_quad_ridge step 0 nloss 0.8737
+ttt_quad_ridge step 250 nloss 0.2266
+ttt_quad_ridge step 500 nloss 0.2492
+ttt_quad_ridge step 750 nloss 0.3064
+ttt_quad_ridge step 1000 nloss 0.2756
+ttt_quad_ridge step 1250 nloss 0.2503
+ttt_quad_ridge step 1500 nloss 0.2675
+ttt_quad_ridge step 1750 nloss 0.2802
+ttt_quad_ridge step 2000 nloss 0.2593
+ttt_quad_ridge step 2250 nloss 0.2698
+ttt_quad_ridge step 2500 nloss 0.2102
+ttt_quad_ridge step 2750 nloss 0.1915
+ttt_quad_ridge step 2999 nloss 0.1946
+== ttt_quad_ridge: n=2.0m: nmse 0.206/0.182 succ 0.03  n=3.0m: nmse 0.182/0.158 succ 0.05  n=4.0m: nmse 0.182/0.158 succ 0.06  n=6.0m: nmse 0.174/0.148 succ 0.06  (67s)
+DONE

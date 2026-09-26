@@ -1,0 +1,758 @@
+{
+ "names": [
+  "Number of Letters",
+  "Number of Phonemes",
+  "Number of Syllables",
+  "KF Written Frequency",
+  "KF Number of Categories",
+  "KF Number of Samples",
+  "Thorndike-Lorge Frequency",
+  "Brown Verbal Frequency",
+  "Familiarity",
+  "Concreteness",
+  "Imageability",
+  "Meaningfulness: Coloradao Norms",
+  "Age of Acquisition Rating"
+ ],
+ "train": [
+  "Number of Letters",
+  "Number of Phonemes",
+  "Number of Syllables",
+  "Familiarity",
+  "Concreteness",
+  "Imageability",
+  "Meaningfulness: Coloradao Norms"
+ ],
+ "test": [
+  "KF Written Frequency",
+  "KF Number of Categories",
+  "KF Number of Samples",
+  "Thorndike-Lorge Frequency",
+  "Age of Acquisition Rating"
+ ],
+ "results": {
+  "ttt_pcalm": {
+   "train_seconds": 109.27083446132019,
+   "curve": [
+    {
+     "step": 0,
+     "loss": 1.3676031827926636
+    },
+    {
+     "step": 250,
+     "loss": 0.8506823778152466
+    },
+    {
+     "step": 500,
+     "loss": 0.7852579355239868
+    },
+    {
+     "step": 750,
+     "loss": 0.7519334554672241
+    },
+    {
+     "step": 1000,
+     "loss": 0.7759199738502502
+    },
+    {
+     "step": 1250,
+     "loss": 0.7712810039520264
+    },
+    {
+     "step": 1500,
+     "loss": 0.7543612718582153
+    },
+    {
+     "step": 1750,
+     "loss": 0.7675840258598328
+    },
+    {
+     "step": 2000,
+     "loss": 0.7122324705123901
+    },
+    {
+     "step": 2250,
+     "loss": 0.7588101625442505
+    },
+    {
+     "step": 2500,
+     "loss": 0.7676588296890259
+    },
+    {
+     "step": 2750,
+     "loss": 0.7642961740493774
+    },
+    {
+     "step": 2999,
+     "loss": 0.7600136995315552
+    }
+   ],
+   "eval_test": {
+    "2.0": {
+     "per_attribute": {
+      "KF Written Frequency": {
+       "nmse_mean": 0.972584068775177,
+       "nmse_median": 0.9778291583061218
+      },
+      "KF Number of Categories": {
+       "nmse_mean": 0.970242977142334,
+       "nmse_median": 0.9741114974021912
+      },
+      "KF Number of Samples": {
+       "nmse_mean": 0.9742084741592407,
+       "nmse_median": 0.9753034114837646
+      },
+      "Thorndike-Lorge Frequency": {
+       "nmse_mean": 0.9688295125961304,
+       "nmse_median": 0.9718083143234253
+      },
+      "Age of Acquisition Rating": {
+       "nmse_mean": 0.9719535112380981,
+       "nmse_median": 0.978158712387085
+      }
+     },
+     "pooled_nmse_mean": 0.971563708782196,
+     "pooled_nmse_median": 0.9754422187805176
+    },
+    "4.0": {
+     "per_attribute": {
+      "KF Written Frequency": {
+       "nmse_mean": 0.9871354103088379,
+       "nmse_median": 0.9841585755348206
+      },
+      "KF Number of Categories": {
+       "nmse_mean": 0.9862966537475586,
+       "nmse_median": 0.9838951826095581
+      },
+      "KF Number of Samples": {
+       "nmse_mean": 0.9844760894775391,
+       "nmse_median": 0.9869753122329712
+      },
+      "Thorndike-Lorge Frequency": {
+       "nmse_mean": 0.9834575057029724,
+       "nmse_median": 0.9837809205055237
+      },
+      "Age of Acquisition Rating": {
+       "nmse_mean": 0.96565842628479,
+       "nmse_median": 0.9796846508979797
+      }
+     },
+     "pooled_nmse_mean": 0.9814048171043396,
+     "pooled_nmse_median": 0.9836989283561707
+    },
+    "8.0": {
+     "per_attribute": {
+      "KF Written Frequency": {
+       "nmse_mean": 0.9914363622665405,
+       "nmse_median": 0.9901881814002991
+      },
+      "KF Number of Categories": {
+       "nmse_mean": 0.9911096096038818,
+       "nmse_median": 0.9888588786125183
+      },
+      "KF Number of Samples": {
+       "nmse_mean": 0.9895623326301575,
+       "nmse_median": 0.9887584447860718
+      },
+      "Thorndike-Lorge Frequency": {
+       "nmse_mean": 0.9742369055747986,
+       "nmse_median": 0.986065685749054
+      },
+      "Age of Acquisition Rating": {
+       "nmse_mean": 0.9631427526473999,
+       "nmse_median": 0.9825530648231506
+      }
+     },
+     "pooled_nmse_mean": 0.9818975925445557,
+     "pooled_nmse_median": 0.9872848510742187
+    }
+   },
+   "eval_train": {
+    "2.0": {
+     "per_attribute": {
+      "Number of Letters": {
+       "nmse_mean": 0.9922690391540527,
+       "nmse_median": 0.9860280156135559
+      },
+      "Number of Phonemes": {
+       "nmse_mean": 0.9968223571777344,
+       "nmse_median": 0.9904913306236267
+      },
+      "Number of Syllables": {
+       "nmse_mean": 1.0036884546279907,
+       "nmse_median": 0.9921470284461975
+      },
+      "Familiarity": {
+       "nmse_mean": 0.9753518104553223,
+       "nmse_median": 0.9762325286865234
+      },
+      "Concreteness": {
+       "nmse_mean": 0.9802173972129822,
+       "nmse_median": 0.9826303720474243
+      },
+      "Imageability": {
+       "nmse_mean": 0.985041618347168,
+       "nmse_median": 0.9809725880622864
+      },
+      "Meaningfulness: Coloradao Norms": {
+       "nmse_mean": 0.9836112260818481,
+       "nmse_median": 0.9825009107589722
+      }
+     },
+     "pooled_nmse_mean": 0.9881431290081569,
+     "pooled_nmse_median": 0.9844289677483695
+    },
+    "4.0": {
+     "per_attribute": {
+      "Number of Letters": {
+       "nmse_mean": 0.9935158491134644,
+       "nmse_median": 0.9886821508407593
+      },
+      "Number of Phonemes": {
+       "nmse_mean": 0.9927870035171509,
+       "nmse_median": 0.988872230052948
+      },
+      "Number of Syllables": {
+       "nmse_mean": 0.9971655607223511,
+       "nmse_median": 0.9899782538414001
+      },
+      "Familiarity": {
+       "nmse_mean": 0.990433394908905,
+       "nmse_median": 0.9852074980735779
+      },
+      "Concreteness": {
+       "nmse_mean": 0.9844977855682373,
+       "nmse_median": 0.9852577447891235
+      },
+      "Imageability": {
+       "nmse_mean": 0.9926232099533081,
+       "nmse_median": 0.9882153272628784
+      },
+      "Meaningfulness: Coloradao Norms": {
+       "nmse_mean": 0.9844968318939209,
+       "nmse_median": 0.9835987091064453
+      }
+     },
+     "pooled_nmse_mean": 0.9907885193824768,
+     "pooled_nmse_median": 0.9871159877095904
+    },
+    "8.0": {
+     "per_attribute": {
+      "Number of Letters": {
+       "nmse_mean": 0.9978147149085999,
+       "nmse_median": 0.9911423325538635
+      },
+      "Number of Phonemes": {
+       "nmse_mean": 0.994324803352356,
+       "nmse_median": 0.9879834651947021
+      },
+      "Number of Syllables": {
+       "nmse_mean": 0.9962186217308044,
+       "nmse_median": 0.9892106056213379
+      },
+      "Familiarity": {
+       "nmse_mean": 0.9904077053070068,
+       "nmse_median": 0.9877683520317078
+      },
+      "Concreteness": {
+       "nmse_mean": 0.9923938512802124,
+       "nmse_median": 0.9876662492752075
+      },
+      "Imageability": {
+       "nmse_mean": 0.9926584959030151,
+       "nmse_median": 0.9895541667938232
+      },
+      "Meaningfulness: Coloradao Norms": {
+       "nmse_mean": 0.992362380027771,
+       "nmse_median": 0.9871928095817566
+      }
+     },
+     "pooled_nmse_mean": 0.9937400817871094,
+     "pooled_nmse_median": 0.9886454258646283
+    }
+   }
+  },
+  "ttt_gd_full": {
+   "train_seconds": 38.826493985019624,
+   "curve": [
+    {
+     "step": 0,
+     "loss": 1.2687499523162842
+    },
+    {
+     "step": 250,
+     "loss": 0.809999406337738
+    },
+    {
+     "step": 500,
+     "loss": 0.7386345267295837
+    },
+    {
+     "step": 750,
+     "loss": 0.6774990558624268
+    },
+    {
+     "step": 1000,
+     "loss": 0.729346752166748
+    },
+    {
+     "step": 1250,
+     "loss": 0.6978759169578552
+    },
+    {
+     "step": 1500,
+     "loss": 0.6792826652526855
+    },
+    {
+     "step": 1750,
+     "loss": 0.6964588165283203
+    },
+    {
+     "step": 2000,
+     "loss": 0.6427177786827087
+    },
+    {
+     "step": 2250,
+     "loss": 0.6760557889938354
+    },
+    {
+     "step": 2500,
+     "loss": 0.7044973969459534
+    },
+    {
+     "step": 2750,
+     "loss": 0.6725913882255554
+    },
+    {
+     "step": 2999,
+     "loss": 0.695809543132782
+    }
+   ],
+   "eval_test": {
+    "2.0": {
+     "per_attribute": {
+      "KF Written Frequency": {
+       "nmse_mean": 0.8751387596130371,
+       "nmse_median": 0.833739161491394
+      },
+      "KF Number of Categories": {
+       "nmse_mean": 0.8475006818771362,
+       "nmse_median": 0.8116776347160339
+      },
+      "KF Number of Samples": {
+       "nmse_mean": 0.8401980400085449,
+       "nmse_median": 0.7966153025627136
+      },
+      "Thorndike-Lorge Frequency": {
+       "nmse_mean": 0.7714987993240356,
+       "nmse_median": 0.7093099355697632
+      },
+      "Age of Acquisition Rating": {
+       "nmse_mean": 0.8270031809806824,
+       "nmse_median": 0.8025885820388794
+      }
+     },
+     "pooled_nmse_mean": 0.8322678923606872,
+     "pooled_nmse_median": 0.7907861232757568
+    },
+    "4.0": {
+     "per_attribute": {
+      "KF Written Frequency": {
+       "nmse_mean": 0.8245308995246887,
+       "nmse_median": 0.7787148356437683
+      },
+      "KF Number of Categories": {
+       "nmse_mean": 0.813046932220459,
+       "nmse_median": 0.7645357251167297
+      },
+      "KF Number of Samples": {
+       "nmse_mean": 0.7975859642028809,
+       "nmse_median": 0.7542580962181091
+      },
+      "Thorndike-Lorge Frequency": {
+       "nmse_mean": 0.7211089730262756,
+       "nmse_median": 0.6879911422729492
+      },
+      "Age of Acquisition Rating": {
+       "nmse_mean": 0.7572506666183472,
+       "nmse_median": 0.7394726872444153
+      }
+     },
+     "pooled_nmse_mean": 0.7827046871185303,
+     "pooled_nmse_median": 0.7449944972991943
+    },
+    "8.0": {
+     "per_attribute": {
+      "KF Written Frequency": {
+       "nmse_mean": 0.7655010223388672,
+       "nmse_median": 0.738234281539917
+      },
+      "KF Number of Categories": {
+       "nmse_mean": 0.7577086091041565,
+       "nmse_median": 0.7337580919265747
+      },
+      "KF Number of Samples": {
+       "nmse_mean": 0.744103193283081,
+       "nmse_median": 0.7052096128463745
+      },
+      "Thorndike-Lorge Frequency": {
+       "nmse_mean": 0.6699585318565369,
+       "nmse_median": 0.6473663449287415
+      },
+      "Age of Acquisition Rating": {
+       "nmse_mean": 0.7336977124214172,
+       "nmse_median": 0.7177039384841919
+      }
+     },
+     "pooled_nmse_mean": 0.7341938138008117,
+     "pooled_nmse_median": 0.7084544539451599
+    }
+   },
+   "eval_train": {
+    "2.0": {
+     "per_attribute": {
+      "Number of Letters": {
+       "nmse_mean": 1.0133330821990967,
+       "nmse_median": 0.997042179107666
+      },
+      "Number of Phonemes": {
+       "nmse_mean": 0.997942328453064,
+       "nmse_median": 0.9888047575950623
+      },
+      "Number of Syllables": {
+       "nmse_mean": 1.0079364776611328,
+       "nmse_median": 0.9986889958381653
+      },
+      "Familiarity": {
+       "nmse_mean": 0.8035504817962646,
+       "nmse_median": 0.7683834433555603
+      },
+      "Concreteness": {
+       "nmse_mean": 0.8536303043365479,
+       "nmse_median": 0.8260278105735779
+      },
+      "Imageability": {
+       "nmse_mean": 0.9184998273849487,
+       "nmse_median": 0.8955274820327759
+      },
+      "Meaningfulness: Coloradao Norms": {
+       "nmse_mean": 0.8741629719734192,
+       "nmse_median": 0.8405140042304993
+      }
+     },
+     "pooled_nmse_mean": 0.9241507819720677,
+     "pooled_nmse_median": 0.902141238961901
+    },
+    "4.0": {
+     "per_attribute": {
+      "Number of Letters": {
+       "nmse_mean": 0.9829357862472534,
+       "nmse_median": 0.9735336303710938
+      },
+      "Number of Phonemes": {
+       "nmse_mean": 0.9577255249023438,
+       "nmse_median": 0.9528530836105347
+      },
+      "Number of Syllables": {
+       "nmse_mean": 0.9763491153717041,
+       "nmse_median": 0.9680718779563904
+      },
+      "Familiarity": {
+       "nmse_mean": 0.7664133310317993,
+       "nmse_median": 0.746767520904541
+      },
+      "Concreteness": {
+       "nmse_mean": 0.7960321307182312,
+       "nmse_median": 0.7669742107391357
+      },
+      "Imageability": {
+       "nmse_mean": 0.8912571668624878,
+       "nmse_median": 0.8825105428695679
+      },
+      "Meaningfulness: Coloradao Norms": {
+       "nmse_mean": 0.8167295455932617,
+       "nmse_median": 0.7988682389259338
+      }
+     },
+     "pooled_nmse_mean": 0.8839203715324402,
+     "pooled_nmse_median": 0.8699398721967425
+    },
+    "8.0": {
+     "per_attribute": {
+      "Number of Letters": {
+       "nmse_mean": 0.9498140811920166,
+       "nmse_median": 0.9424651265144348
+      },
+      "Number of Phonemes": {
+       "nmse_mean": 0.9267688989639282,
+       "nmse_median": 0.9241085648536682
+      },
+      "Number of Syllables": {
+       "nmse_mean": 0.9527758955955505,
+       "nmse_median": 0.9396013617515564
+      },
+      "Familiarity": {
+       "nmse_mean": 0.7485615015029907,
+       "nmse_median": 0.7349470853805542
+      },
+      "Concreteness": {
+       "nmse_mean": 0.7497632503509521,
+       "nmse_median": 0.7196633219718933
+      },
+      "Imageability": {
+       "nmse_mean": 0.8595162630081177,
+       "nmse_median": 0.8479976654052734
+      },
+      "Meaningfulness: Coloradao Norms": {
+       "nmse_mean": 0.7967481017112732,
+       "nmse_median": 0.784187912940979
+      }
+     },
+     "pooled_nmse_mean": 0.8548497131892613,
+     "pooled_nmse_median": 0.8418530055454799
+    }
+   }
+  },
+  "ttt_gd_official": {
+   "train_seconds": 12.292617928702384,
+   "curve": [
+    {
+     "step": 0,
+     "loss": 1.2499682903289795
+    },
+    {
+     "step": 250,
+     "loss": 0.7293211817741394
+    },
+    {
+     "step": 500,
+     "loss": 0.7046853303909302
+    },
+    {
+     "step": 750,
+     "loss": 0.6908421516418457
+    },
+    {
+     "step": 1000,
+     "loss": 0.7250175476074219
+    },
+    {
+     "step": 1250,
+     "loss": 0.6900011897087097
+    },
+    {
+     "step": 1500,
+     "loss": 0.6898775100708008
+    },
+    {
+     "step": 1750,
+     "loss": 0.7033499479293823
+    },
+    {
+     "step": 2000,
+     "loss": 0.6590619087219238
+    },
+    {
+     "step": 2250,
+     "loss": 0.680447518825531
+    },
+    {
+     "step": 2500,
+     "loss": 0.7085826992988586
+    },
+    {
+     "step": 2750,
+     "loss": 0.6962182521820068
+    },
+    {
+     "step": 2999,
+     "loss": 0.7232005000114441
+    }
+   ],
+   "eval_test": {
+    "2.0": {
+     "per_attribute": {
+      "KF Written Frequency": {
+       "nmse_mean": 0.9639663100242615,
+       "nmse_median": 0.9596474170684814
+      },
+      "KF Number of Categories": {
+       "nmse_mean": 0.9395386576652527,
+       "nmse_median": 0.9532820582389832
+      },
+      "KF Number of Samples": {
+       "nmse_mean": 0.9446214437484741,
+       "nmse_median": 0.9349510073661804
+      },
+      "Thorndike-Lorge Frequency": {
+       "nmse_mean": 0.8732008934020996,
+       "nmse_median": 0.8565711379051208
+      },
+      "Age of Acquisition Rating": {
+       "nmse_mean": 0.9001467823982239,
+       "nmse_median": 0.8778666257858276
+      }
+     },
+     "pooled_nmse_mean": 0.9242948174476624,
+     "pooled_nmse_median": 0.9164636492729187
+    },
+    "4.0": {
+     "per_attribute": {
+      "KF Written Frequency": {
+       "nmse_mean": 0.8792791366577148,
+       "nmse_median": 0.8377525806427002
+      },
+      "KF Number of Categories": {
+       "nmse_mean": 0.8698728084564209,
+       "nmse_median": 0.8472238183021545
+      },
+      "KF Number of Samples": {
+       "nmse_mean": 0.8716898560523987,
+       "nmse_median": 0.848395049571991
+      },
+      "Thorndike-Lorge Frequency": {
+       "nmse_mean": 0.7855195999145508,
+       "nmse_median": 0.750505805015564
+      },
+      "Age of Acquisition Rating": {
+       "nmse_mean": 0.8053670525550842,
+       "nmse_median": 0.7811682224273682
+      }
+     },
+     "pooled_nmse_mean": 0.8423456907272339,
+     "pooled_nmse_median": 0.8130090951919555
+    },
+    "8.0": {
+     "per_attribute": {
+      "KF Written Frequency": {
+       "nmse_mean": 0.8200091123580933,
+       "nmse_median": 0.7870951294898987
+      },
+      "KF Number of Categories": {
+       "nmse_mean": 0.796855628490448,
+       "nmse_median": 0.7690202593803406
+      },
+      "KF Number of Samples": {
+       "nmse_mean": 0.7693288326263428,
+       "nmse_median": 0.7452532052993774
+      },
+      "Thorndike-Lorge Frequency": {
+       "nmse_mean": 0.7088415622711182,
+       "nmse_median": 0.6919150352478027
+      },
+      "Age of Acquisition Rating": {
+       "nmse_mean": 0.7662239074707031,
+       "nmse_median": 0.7530154585838318
+      }
+     },
+     "pooled_nmse_mean": 0.7722518086433411,
+     "pooled_nmse_median": 0.7492598176002503
+    }
+   },
+   "eval_train": {
+    "2.0": {
+     "per_attribute": {
+      "Number of Letters": {
+       "nmse_mean": 0.9909144639968872,
+       "nmse_median": 0.9868507385253906
+      },
+      "Number of Phonemes": {
+       "nmse_mean": 0.9870105385780334,
+       "nmse_median": 0.9905520081520081
+      },
+      "Number of Syllables": {
+       "nmse_mean": 0.9916952252388,
+       "nmse_median": 0.9852670431137085
+      },
+      "Familiarity": {
+       "nmse_mean": 0.8799268007278442,
+       "nmse_median": 0.851847231388092
+      },
+      "Concreteness": {
+       "nmse_mean": 0.8976521492004395,
+       "nmse_median": 0.8854775428771973
+      },
+      "Imageability": {
+       "nmse_mean": 0.9391361474990845,
+       "nmse_median": 0.92753005027771
+      },
+      "Meaningfulness: Coloradao Norms": {
+       "nmse_mean": 0.8933971524238586,
+       "nmse_median": 0.8680318593978882
+      }
+     },
+     "pooled_nmse_mean": 0.9399617825235639,
+     "pooled_nmse_median": 0.9279366391045707
+    },
+    "4.0": {
+     "per_attribute": {
+      "Number of Letters": {
+       "nmse_mean": 0.9839110374450684,
+       "nmse_median": 0.9726159572601318
+      },
+      "Number of Phonemes": {
+       "nmse_mean": 0.9619511365890503,
+       "nmse_median": 0.9598960876464844
+      },
+      "Number of Syllables": {
+       "nmse_mean": 0.9787986278533936,
+       "nmse_median": 0.9757193922996521
+      },
+      "Familiarity": {
+       "nmse_mean": 0.8333353996276855,
+       "nmse_median": 0.8083147406578064
+      },
+      "Concreteness": {
+       "nmse_mean": 0.8440325260162354,
+       "nmse_median": 0.8196535110473633
+      },
+      "Imageability": {
+       "nmse_mean": 0.9169658422470093,
+       "nmse_median": 0.907230794429779
+      },
+      "Meaningfulness: Coloradao Norms": {
+       "nmse_mean": 0.8486425876617432,
+       "nmse_median": 0.828764796257019
+      }
+     },
+     "pooled_nmse_mean": 0.9096624510628837,
+     "pooled_nmse_median": 0.8960278970854623
+    },
+    "8.0": {
+     "per_attribute": {
+      "Number of Letters": {
+       "nmse_mean": 0.9590158462524414,
+       "nmse_median": 0.9536219239234924
+      },
+      "Number of Phonemes": {
+       "nmse_mean": 0.9345955848693848,
+       "nmse_median": 0.9328068494796753
+      },
+      "Number of Syllables": {
+       "nmse_mean": 0.9642466306686401,
+       "nmse_median": 0.9553848505020142
+      },
+      "Familiarity": {
+       "nmse_mean": 0.7901684045791626,
+       "nmse_median": 0.7717940807342529
+      },
+      "Concreteness": {
+       "nmse_mean": 0.782878041267395,
+       "nmse_median": 0.7627097368240356
+      },
+      "Imageability": {
+       "nmse_mean": 0.8752496242523193,
+       "nmse_median": 0.8621851801872253
+      },
+      "Meaningfulness: Coloradao Norms": {
+       "nmse_mean": 0.8172227740287781,
+       "nmse_median": 0.8129553198814392
+      }
+     },
+     "pooled_nmse_mean": 0.8747681294168744,
+     "pooled_nmse_median": 0.8644939916474479
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,91 @@
+/workspace/lifted_credit/exp_real_ttt.py:187: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  curve.append(dict(step=step, loss=float(loss))); print(f'{name} step {step} loss {float(loss):.4f}', flush=True)
+ttt_pcalm step 0 loss 1.4318
+ttt_pcalm step 250 loss 1.2339
+ttt_pcalm step 500 loss 1.2301
+ttt_pcalm step 750 loss 1.2463
+ttt_pcalm step 1000 loss 1.2748
+ttt_pcalm step 1250 loss 1.1970
+ttt_pcalm step 1500 loss 1.3246
+ttt_pcalm step 1750 loss 1.2632
+ttt_pcalm step 2000 loss 1.1919
+ttt_pcalm step 2250 loss 1.3332
+ttt_pcalm step 2500 loss 1.2317
+ttt_pcalm step 2750 loss 1.2157
+ttt_pcalm step 2999 loss 1.2315
+== ttt_pcalm: held-out attrs pooled NMSE n=2.0d 2.829/2.440  n=4.0d 1.476/1.418  n=8.0d 1.270/1.145  | train attrs n=4d 1.637  (156s)
+ttt_gd_full step 0 loss 1.2687
+ttt_gd_full step 250 loss 1.0630
+ttt_gd_full step 500 loss 0.9108
+ttt_gd_full step 750 loss 0.8425
+ttt_gd_full step 1000 loss 0.9108
+ttt_gd_full step 1250 loss 0.8625
+ttt_gd_full step 1500 loss 0.8274
+ttt_gd_full step 1750 loss 0.9080
+ttt_gd_full step 2000 loss 0.8044
+ttt_gd_full step 2250 loss 0.8421
+ttt_gd_full step 2500 loss 0.9142
+ttt_gd_full step 2750 loss 0.8551
+ttt_gd_full step 2999 loss 0.8728
+== ttt_gd_full: held-out attrs pooled NMSE n=2.0d 1.079/0.995  n=4.0d 0.958/0.864  n=8.0d 0.860/0.802  | train attrs n=4d 1.126  (48s)
+ttt_gd_official step 0 loss 1.2500
+ttt_gd_official step 250 loss 0.9541
+ttt_gd_official step 500 loss 0.9193
+ttt_gd_official step 750 loss 0.8634
+ttt_gd_official step 1000 loss 0.9444
+ttt_gd_official step 1250 loss 0.8637
+ttt_gd_official step 1500 loss 0.8519
+ttt_gd_official step 1750 loss 0.9080
+ttt_gd_official step 2000 loss 0.8525
+ttt_gd_official step 2250 loss 0.8748
+ttt_gd_official step 2500 loss 0.9258
+ttt_gd_official step 2750 loss 0.8859
+ttt_gd_official step 2999 loss 0.9868
+== ttt_gd_official: held-out attrs pooled NMSE n=2.0d 1.378/1.361  n=4.0d 1.135/1.086  n=8.0d 0.951/0.881  | train attrs n=4d 1.186  (19s)
+ttt_ridge step 0 loss 1.0405
+ttt_ridge step 250 loss 1.0400
+ttt_ridge step 500 loss 1.0898
+ttt_ridge step 750 loss 1.0236
+ttt_ridge step 1000 loss 0.8962
+ttt_ridge step 1250 loss 0.8786
+ttt_ridge step 1500 loss 0.8114
+ttt_ridge step 1750 loss 0.8342
+ttt_ridge step 2000 loss 0.7637
+ttt_ridge step 2250 loss 0.7860
+ttt_ridge step 2500 loss 0.7990
+ttt_ridge step 2750 loss 0.7827
+ttt_ridge step 2999 loss 0.7919
+== ttt_ridge: held-out attrs pooled NMSE n=2.0d 1.051/1.022  n=4.0d 1.024/1.010  n=8.0d 1.015/1.006  | train attrs n=4d 1.024  (17s)
+ttt_quad_ridge step 0 loss 1.9718
+ttt_quad_ridge step 250 loss 1.4125
+ttt_quad_ridge step 500 loss 1.4477
+ttt_quad_ridge step 750 loss 1.3646
+ttt_quad_ridge step 1000 loss 1.0852
+ttt_quad_ridge step 1250 loss 0.6639
+ttt_quad_ridge step 1500 loss 0.6516
+ttt_quad_ridge step 1750 loss 0.6765
+ttt_quad_ridge step 2000 loss 0.6352
+ttt_quad_ridge step 2250 loss 0.6448
+ttt_quad_ridge step 2500 loss 0.6743
+ttt_quad_ridge step 2750 loss 0.6492
+ttt_quad_ridge step 2999 loss 0.6655
+== ttt_quad_ridge: held-out attrs pooled NMSE n=2.0d 0.877/0.863  n=4.0d 0.771/0.767  n=8.0d 0.727/0.719  | train attrs n=4d 0.859  (22s)
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/transformer.py:392: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+transformer step 0 loss 1.8387
+transformer step 250 loss 0.6438
+transformer step 500 loss 0.6134
+transformer step 750 loss 0.5670
+transformer step 1000 loss 0.5482
+transformer step 1250 loss 0.4914
+transformer step 1500 loss 0.4644
+transformer step 1750 loss 0.4849
+transformer step 2000 loss 0.4296
+transformer step 2250 loss 0.4297
+transformer step 2500 loss 0.4230
+transformer step 2750 loss 0.4029
+transformer step 2999 loss 0.4015
+== transformer: held-out attrs pooled NMSE n=2.0d 0.986/0.960  n=4.0d 0.953/0.942  n=8.0d 0.922/0.901  | train attrs n=4d 0.537  (33s)
+== probe_reference: held-out attrs pooled NMSE n=2.0d 0.580/0.568  n=4.0d 0.574/0.562  n=8.0d 0.580/0.566  | train attrs n=4d 0.984  (0s)
+DONE

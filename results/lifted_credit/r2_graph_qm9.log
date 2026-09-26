@@ -1,0 +1,60 @@
+/workspace/lifted_credit/exp_real_ttt_v2.py:192: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  curve.append(dict(step=step, loss=float(loss))); print(f'{name} step {step} loss {float(loss):.4f}', flush=True)
+ttt_pcalm step 0 loss 1.0892
+ttt_pcalm step 250 loss 0.2175
+ttt_pcalm step 500 loss 0.1792
+ttt_pcalm step 750 loss 0.2180
+ttt_pcalm step 1000 loss 0.1982
+ttt_pcalm step 1250 loss 0.1402
+ttt_pcalm step 1500 loss 0.1627
+ttt_pcalm step 1750 loss 0.1429
+ttt_pcalm step 2000 loss 0.0883
+ttt_pcalm step 2250 loss 0.0996
+ttt_pcalm step 2500 loss 0.1339
+ttt_pcalm step 2750 loss 0.1462
+ttt_pcalm step 2999 loss 0.1372
+== ttt_pcalm: held-out attrs pooled NMSE n=2.0d 1.074/1.001  n=4.0d 1.053/0.969  n=8.0d 1.087/0.961  | train attrs n=4d 70.396  (133s)
+ttt_gd_full step 0 loss 1.0094
+ttt_gd_full step 250 loss 0.5126
+ttt_gd_full step 500 loss 0.2544
+ttt_gd_full step 750 loss 0.3086
+ttt_gd_full step 1000 loss 0.2852
+ttt_gd_full step 1250 loss 0.2074
+ttt_gd_full step 1500 loss 0.2460
+ttt_gd_full step 1750 loss 0.2354
+ttt_gd_full step 2000 loss 0.2043
+ttt_gd_full step 2250 loss 319.5629
+ttt_gd_full step 2500 loss 0.2009
+ttt_gd_full step 2750 loss 0.1002
+ttt_gd_full step 2999 loss 0.1952
+== ttt_gd_full: held-out attrs pooled NMSE n=2.0d 1.167/1.076  n=4.0d 0.984/0.898  n=8.0d 0.881/0.804  | train attrs n=4d 70.613  (43s)
+ttt_gd_official step 0 loss 0.9656
+ttt_gd_official step 250 loss 0.3998
+ttt_gd_official step 500 loss 0.2032
+ttt_gd_official step 750 loss 0.2516
+ttt_gd_official step 1000 loss 0.2693
+ttt_gd_official step 1250 loss 0.2706
+ttt_gd_official step 1500 loss 0.2917
+ttt_gd_official step 1750 loss 0.2150
+ttt_gd_official step 2000 loss 0.2954
+ttt_gd_official step 2250 loss 0.2291
+ttt_gd_official step 2500 loss 0.2383
+ttt_gd_official step 2750 loss 0.2921
+ttt_gd_official step 2999 loss 0.2414
+== ttt_gd_official: held-out attrs pooled NMSE n=2.0d 1.230/1.165  n=4.0d 1.120/1.007  n=8.0d 1.087/0.935  | train attrs n=4d 71.088  (14s)
+ttt_quad_ridge step 0 loss 0.9936
+ttt_quad_ridge step 250 loss 0.1185
+ttt_quad_ridge step 500 loss 0.0855
+ttt_quad_ridge step 750 loss 0.0800
+ttt_quad_ridge step 1000 loss 0.0731
+ttt_quad_ridge step 1250 loss 0.0739
+ttt_quad_ridge step 1500 loss 0.0662
+ttt_quad_ridge step 1750 loss 0.0722
+ttt_quad_ridge step 2000 loss 0.0513
+ttt_quad_ridge step 2250 loss 0.0540
+ttt_quad_ridge step 2500 loss 0.0898
+ttt_quad_ridge step 2750 loss 0.0448
+ttt_quad_ridge step 2999 loss 0.0541
+== ttt_quad_ridge: held-out attrs pooled NMSE n=2.0d 1.162/1.065  n=4.0d 1.029/0.953  n=8.0d 0.902/0.823  | train attrs n=4d 0.538  (16s)
+DONE

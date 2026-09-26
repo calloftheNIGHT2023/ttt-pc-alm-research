@@ -1,0 +1,94 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+PCA-64 residual energy on test images: 0.0262
+floor (true image projected on PCA basis): {'nmse_mean': 0.0665728971362114, 'nmse_median': 0.05739119276404381}
+== pca_pcalm_reference: n=2.0m: nmse 2.483/2.507 succ 0.01  n=3.0m: nmse 0.434/0.122 succ 0.16  n=4.0m: nmse 0.136/0.089 succ 0.23  n=6.0m: nmse 0.100/0.080 succ 0.29  (1s)
+/workspace/lifted_credit/exp_pr_ttt.py:179: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  curve.append(dict(step=step, loss=float(loss))); print(f'{name} step {step} nloss {float(loss):.4f}', flush=True)
+ttt_pcalm step 0 nloss 2.1232
+ttt_pcalm step 250 nloss 1.0246
+ttt_pcalm step 500 nloss 0.7811
+ttt_pcalm step 750 nloss 0.9159
+ttt_pcalm step 1000 nloss 0.6918
+ttt_pcalm step 1250 nloss 0.6489
+ttt_pcalm step 1500 nloss 0.6355
+ttt_pcalm step 1750 nloss 0.7046
+ttt_pcalm step 2000 nloss 0.5876
+ttt_pcalm step 2250 nloss 0.7142
+ttt_pcalm step 2500 nloss 0.4686
+ttt_pcalm step 2750 nloss 0.5523
+ttt_pcalm step 2999 nloss 0.5970
+== ttt_pcalm: n=2.0m: nmse 2.343/2.273 succ 0.00  n=3.0m: nmse 0.511/0.297 succ 0.01  n=4.0m: nmse 0.308/0.239 succ 0.02  n=6.0m: nmse 0.249/0.203 succ 0.04  (310s)
+ttt_gd_full step 0 nloss 1.8168
+ttt_gd_full step 250 nloss 1.6254
+ttt_gd_full step 500 nloss 1.4249
+ttt_gd_full step 750 nloss 1.2778
+ttt_gd_full step 1000 nloss 0.7705
+ttt_gd_full step 1250 nloss 0.7020
+ttt_gd_full step 1500 nloss 0.5625
+ttt_gd_full step 1750 nloss 0.4296
+ttt_gd_full step 2000 nloss 0.3224
+ttt_gd_full step 2250 nloss 0.3972
+ttt_gd_full step 2500 nloss 0.4856
+ttt_gd_full step 2750 nloss 0.3621
+ttt_gd_full step 2999 nloss 0.3048
+== ttt_gd_full: n=2.0m: nmse 0.503/0.301 succ 0.00  n=3.0m: nmse 0.338/0.204 succ 0.01  n=4.0m: nmse 0.273/0.185 succ 0.02  n=6.0m: nmse 0.213/0.158 succ 0.05  (108s)
+ttt_gd_official step 0 nloss 1.7094
+ttt_gd_official step 250 nloss 0.3034
+ttt_gd_official step 500 nloss 0.2640
+ttt_gd_official step 750 nloss 0.3035
+ttt_gd_official step 1000 nloss 0.2864
+ttt_gd_official step 1250 nloss 0.2570
+ttt_gd_official step 1500 nloss 0.2962
+ttt_gd_official step 1750 nloss 0.3753
+ttt_gd_official step 2000 nloss 0.2928
+ttt_gd_official step 2250 nloss 0.3990
+ttt_gd_official step 2500 nloss 0.3397
+ttt_gd_official step 2750 nloss 0.2853
+ttt_gd_official step 2999 nloss 0.2794
+== ttt_gd_official: n=2.0m: nmse 0.498/0.374 succ 0.00  n=3.0m: nmse 0.324/0.239 succ 0.00  n=4.0m: nmse 0.258/0.214 succ 0.00  n=6.0m: nmse 0.233/0.199 succ 0.01  (15s)
+ttt_ridge step 0 nloss 1.5412
+ttt_ridge step 250 nloss 1.5500
+ttt_ridge step 500 nloss 1.5088
+ttt_ridge step 750 nloss 1.4292
+ttt_ridge step 1000 nloss 1.5848
+ttt_ridge step 1250 nloss 1.5074
+ttt_ridge step 1500 nloss 1.5455
+ttt_ridge step 1750 nloss 1.5958
+ttt_ridge step 2000 nloss 1.5777
+ttt_ridge step 2250 nloss 1.5582
+ttt_ridge step 2500 nloss 1.5349
+ttt_ridge step 2750 nloss 1.5549
+ttt_ridge step 2999 nloss 1.4740
+== ttt_ridge: n=2.0m: nmse 2.073/1.980 succ 0.00  n=3.0m: nmse 1.540/1.516 succ 0.00  n=4.0m: nmse 1.350/1.334 succ 0.00  n=6.0m: nmse 1.221/1.205 succ 0.00  (7s)
+ttt_quad_ridge step 0 nloss 1.2927
+ttt_quad_ridge step 250 nloss 0.2821
+ttt_quad_ridge step 500 nloss 0.2658
+ttt_quad_ridge step 750 nloss 0.3311
+ttt_quad_ridge step 1000 nloss 0.2994
+ttt_quad_ridge step 1250 nloss 0.2673
+ttt_quad_ridge step 1500 nloss 0.2890
+ttt_quad_ridge step 1750 nloss 0.2722
+ttt_quad_ridge step 2000 nloss 0.2585
+ttt_quad_ridge step 2250 nloss 0.2952
+ttt_quad_ridge step 2500 nloss 0.2411
+ttt_quad_ridge step 2750 nloss 0.2407
+ttt_quad_ridge step 2999 nloss 0.2484
+== ttt_quad_ridge: n=2.0m: nmse 0.242/0.215 succ 0.01  n=3.0m: nmse 0.229/0.201 succ 0.02  n=4.0m: nmse 0.239/0.210 succ 0.01  n=6.0m: nmse 0.256/0.225 succ 0.01  (43s)
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/transformer.py:392: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+transformer step 0 nloss 4.4464
+transformer step 250 nloss 0.3110
+transformer step 500 nloss 0.3333
+transformer step 750 nloss 0.4028
+transformer step 1000 nloss 0.4136
+transformer step 1250 nloss 0.3491
+transformer step 1500 nloss 0.4018
+transformer step 1750 nloss 0.4224
+transformer step 2000 nloss 0.3553
+transformer step 2250 nloss 0.3521
+transformer step 2500 nloss 0.2991
+transformer step 2750 nloss 0.2854
+transformer step 2999 nloss 0.3073
+== transformer: n=2.0m: nmse 0.273/0.243 succ 0.01  n=3.0m: nmse 0.263/0.233 succ 0.01  n=4.0m: nmse 0.269/0.238 succ 0.01  n=6.0m: nmse 0.272/0.239 succ 0.02  (22s)
+DONE

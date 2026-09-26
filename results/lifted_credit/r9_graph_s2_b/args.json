@@ -1,0 +1,31 @@
+{
+ "data": "/workspace/features/graph_qm9.npz",
+ "train_attrs": null,
+ "v2": true,
+ "test_attrs": null,
+ "df_correct": true,
+ "g_init": 10.0,
+ "v3": true,
+ "D": 64,
+ "d": 16,
+ "n_over_d": 4,
+ "steps": 3000,
+ "batch": 64,
+ "K": 30,
+ "lr": 0.003,
+ "models": [
+  "ttt_gd_full",
+  "ttt_quad_ridge",
+  "ttt_gd_official",
+  "transformer"
+ ],
+ "eval_n_over_d": [
+  2,
+  4,
+  8
+ ],
+ "eval_seqs": 1024,
+ "seed": 449002,
+ "device": "cuda:0",
+ "out": "/workspace/runs/r9_graph_s2_b"
+}

@@ -1,0 +1,28 @@
+{
+ "data": "/workspace/features/nlp_mrc.npz",
+ "D": 64,
+ "d": 16,
+ "n_over_d": 4,
+ "steps": 3000,
+ "batch": 64,
+ "K": 30,
+ "lr": 0.003,
+ "models": [
+  "ttt_pcalm",
+  "ttt_gd_full",
+  "ttt_gd_official",
+  "ttt_ridge",
+  "ttt_quad_ridge",
+  "transformer",
+  "probe_reference"
+ ],
+ "eval_n_over_d": [
+  2,
+  4,
+  8
+ ],
+ "eval_seqs": 1024,
+ "seed": 449001,
+ "device": "cuda:0",
+ "out": "/workspace/runs/r_nlp_mrc"
+}

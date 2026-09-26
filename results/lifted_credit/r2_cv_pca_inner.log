@@ -1,0 +1,25 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+PCA-64 residual energy on test images: 0.0262
+floor (true image projected on PCA basis): {'nmse_mean': 0.0665728971362114, 'nmse_median': 0.05739119276404381}
+/workspace/lifted_credit/exp_pr_ttt_v2.py:181: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  curve.append(dict(step=step, loss=float(loss))); print(f'{name} step {step} nloss {float(loss):.4f}', flush=True)
+pca_gd_full step 0 nloss 1.7001
+pca_gd_full step 250 nloss 1.5322
+pca_gd_full step 500 nloss 1.5543
+pca_gd_full step 750 nloss 1.5382
+pca_gd_full step 999 nloss 1.5644
+== pca_gd_full: n=2.0m: nmse 1.594/1.585 succ 0.00  n=3.0m: nmse 1.566/1.567 succ 0.00  n=4.0m: nmse 1.561/1.562 succ 0.00  n=6.0m: nmse 1.517/1.533 succ 0.00  (24s)
+pca_gd_official step 0 nloss 1.3569
+pca_gd_official step 250 nloss 1.5028
+pca_gd_official step 500 nloss 1.3580
+pca_gd_official step 750 nloss 1.4300
+pca_gd_official step 999 nloss 1.4248
+== pca_gd_official: n=2.0m: nmse 1.512/1.512 succ 0.00  n=3.0m: nmse 1.411/1.420 succ 0.00  n=4.0m: nmse 1.332/1.374 succ 0.00  n=6.0m: nmse 1.103/1.101 succ 0.00  (3s)
+pca_quad_ridge step 0 nloss 0.8737
+pca_quad_ridge step 250 nloss 0.8391
+pca_quad_ridge step 500 nloss 0.8938
+pca_quad_ridge step 750 nloss 0.9061
+pca_quad_ridge step 999 nloss 0.8419
+== pca_quad_ridge: n=2.0m: nmse 0.916/0.903 succ 0.00  n=3.0m: nmse 0.886/0.871 succ 0.00  n=4.0m: nmse 0.866/0.846 succ 0.00  n=6.0m: nmse 0.826/0.809 succ 0.00  (6s)
+DONE

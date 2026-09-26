@@ -1,0 +1,24 @@
+{
+ "m": 64,
+ "n_over_m": 3,
+ "steps": 1000,
+ "batch": 32,
+ "K": 100,
+ "lr": 0.003,
+ "sigma": 0.01,
+ "models": [
+  "pca_gd_full",
+  "pca_gd_official",
+  "pca_quad_ridge"
+ ],
+ "eval_n_over_m": [
+  2.0,
+  3.0,
+  4.0,
+  6.0
+ ],
+ "eval_seqs": 1024,
+ "seed": 449101,
+ "device": "cuda:0",
+ "out": "/workspace/runs/r2_cv_pca_inner"
+}

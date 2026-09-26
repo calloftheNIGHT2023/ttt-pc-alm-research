@@ -1,0 +1,62 @@
+/workspace/lifted_credit/exp_real_ttt.py:265: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  curve.append(dict(step=step, loss=float(loss))); print(f'{name} step {step} loss {float(loss):.4f}', flush=True)
+ttt_gd_full step 0 loss 0.8468
+ttt_gd_full step 250 loss 0.2922
+ttt_gd_full step 500 loss 0.1902
+ttt_gd_full step 750 loss 0.2090
+ttt_gd_full step 1000 loss 0.1416
+ttt_gd_full step 1250 loss 0.1937
+ttt_gd_full step 1500 loss 0.1078
+ttt_gd_full step 1750 loss 0.1690
+ttt_gd_full step 2000 loss 0.1353
+ttt_gd_full step 2250 loss 0.1571
+ttt_gd_full step 2500 loss 0.0815
+ttt_gd_full step 2750 loss 0.1933
+ttt_gd_full step 2999 loss 0.1307
+== ttt_gd_full: held-out attrs pooled NMSE n=2.0d 1.021/0.934  n=4.0d 0.862/0.796  n=8.0d 0.760/0.726  | train attrs n=4d 58.917  (128s)
+ttt_quad_ridge step 0 loss 1.0212
+ttt_quad_ridge step 250 loss 0.0711
+ttt_quad_ridge step 500 loss 0.0791
+ttt_quad_ridge step 750 loss 0.0743
+ttt_quad_ridge step 1000 loss 0.0719
+ttt_quad_ridge step 1250 loss 0.0578
+ttt_quad_ridge step 1500 loss 0.0726
+ttt_quad_ridge step 1750 loss 0.0868
+ttt_quad_ridge step 2000 loss 0.0658
+ttt_quad_ridge step 2250 loss 0.0988
+ttt_quad_ridge step 2500 loss 0.0583
+ttt_quad_ridge step 2750 loss 0.0892
+ttt_quad_ridge step 2999 loss 0.0738
+== ttt_quad_ridge: held-out attrs pooled NMSE n=2.0d 1.177/1.077  n=4.0d 1.018/0.944  n=8.0d 0.878/0.825  | train attrs n=4d 0.845  (104s)
+ttt_gd_official step 0 loss 0.7297
+ttt_gd_official step 250 loss 0.2858
+ttt_gd_official step 500 loss 0.2699
+ttt_gd_official step 750 loss 0.2502
+ttt_gd_official step 1000 loss 0.2316
+ttt_gd_official step 1250 loss 0.2054
+ttt_gd_official step 1500 loss 0.2290
+ttt_gd_official step 1750 loss 0.2169
+ttt_gd_official step 2000 loss 0.2422
+ttt_gd_official step 2250 loss 0.2240
+ttt_gd_official step 2500 loss 0.2081
+ttt_gd_official step 2750 loss 0.2557
+ttt_gd_official step 2999 loss 0.1839
+== ttt_gd_official: held-out attrs pooled NMSE n=2.0d 1.123/0.981  n=4.0d 0.966/0.896  n=8.0d 0.898/0.811  | train attrs n=4d 69.904  (100s)
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/transformer.py:392: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+transformer step 0 loss 3.7685
+transformer step 250 loss 0.0711
+transformer step 500 loss 0.0468
+transformer step 750 loss 0.0410
+transformer step 1000 loss 0.0406
+transformer step 1250 loss 0.0261
+transformer step 1500 loss 0.0320
+transformer step 1750 loss 0.0430
+transformer step 2000 loss 0.0320
+transformer step 2250 loss 0.0445
+transformer step 2500 loss 0.0266
+transformer step 2750 loss 0.0391
+transformer step 2999 loss 0.0320
+== transformer: held-out attrs pooled NMSE n=2.0d 1.077/1.041  n=4.0d 1.115/1.068  n=8.0d 1.119/1.091  | train attrs n=4d 56.053  (51s)
+DONE

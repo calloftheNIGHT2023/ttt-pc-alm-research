@@ -1,0 +1,37 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+PCA-64 residual energy on test images: 0.0262
+floor (true image projected on PCA basis): {'nmse_mean': 0.0665728971362114, 'nmse_median': 0.05739119276404381}
+/workspace/lifted_credit/exp_pr_ttt.py:267: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  curve.append(dict(step=step, loss=float(loss))); print(f'{name} step {step} nloss {float(loss):.4f}', flush=True)
+ttt_quad_ridge step 0 nloss 0.8737
+ttt_quad_ridge step 250 nloss 0.2266
+ttt_quad_ridge step 500 nloss 0.2492
+ttt_quad_ridge step 750 nloss 0.3064
+ttt_quad_ridge step 1000 nloss 0.2756
+ttt_quad_ridge step 1250 nloss 0.2503
+ttt_quad_ridge step 1500 nloss 0.2675
+ttt_quad_ridge step 1750 nloss 0.2802
+ttt_quad_ridge step 2000 nloss 0.2593
+ttt_quad_ridge step 2250 nloss 0.2698
+ttt_quad_ridge step 2500 nloss 0.2102
+ttt_quad_ridge step 2750 nloss 0.1915
+ttt_quad_ridge step 2999 nloss 0.1946
+== ttt_quad_ridge: n=2.0m: nmse 0.206/0.182 succ 0.03  n=3.0m: nmse 0.182/0.158 succ 0.05  n=4.0m: nmse 0.182/0.158 succ 0.06  n=6.0m: nmse 0.174/0.148 succ 0.06  (79s)
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/transformer.py:392: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+transformer step 0 nloss 4.4464
+transformer step 250 nloss 0.3158
+transformer step 500 nloss 0.3316
+transformer step 750 nloss 0.4027
+transformer step 1000 nloss 0.4094
+transformer step 1250 nloss 0.3484
+transformer step 1500 nloss 0.4091
+transformer step 1750 nloss 0.4241
+transformer step 2000 nloss 0.3517
+transformer step 2250 nloss 0.4005
+transformer step 2500 nloss 0.3051
+transformer step 2750 nloss 0.2816
+transformer step 2999 nloss 0.2930
+== transformer: n=2.0m: nmse 0.284/0.254 succ 0.00  n=3.0m: nmse 0.272/0.243 succ 0.00  n=4.0m: nmse 0.281/0.250 succ 0.00  n=6.0m: nmse 0.282/0.251 succ 0.01  (49s)
+DONE

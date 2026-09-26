@@ -1,0 +1,46 @@
+/workspace/lifted_credit/exp_real_ttt_v2.py:190: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  curve.append(dict(step=step, loss=float(loss))); print(f'{name} step {step} loss {float(loss):.4f}', flush=True)
+ttt_pcalm step 0 loss 1.3676
+ttt_pcalm step 250 loss 0.8507
+ttt_pcalm step 500 loss 0.7853
+ttt_pcalm step 750 loss 0.7519
+ttt_pcalm step 1000 loss 0.7759
+ttt_pcalm step 1250 loss 0.7713
+ttt_pcalm step 1500 loss 0.7544
+ttt_pcalm step 1750 loss 0.7676
+ttt_pcalm step 2000 loss 0.7122
+ttt_pcalm step 2250 loss 0.7588
+ttt_pcalm step 2500 loss 0.7677
+ttt_pcalm step 2750 loss 0.7643
+ttt_pcalm step 2999 loss 0.7600
+== ttt_pcalm: held-out attrs pooled NMSE n=2.0d 0.972/0.975  n=4.0d 0.981/0.984  n=8.0d 0.982/0.987  | train attrs n=4d 0.991  (109s)
+ttt_gd_full step 0 loss 1.2687
+ttt_gd_full step 250 loss 0.8100
+ttt_gd_full step 500 loss 0.7386
+ttt_gd_full step 750 loss 0.6775
+ttt_gd_full step 1000 loss 0.7293
+ttt_gd_full step 1250 loss 0.6979
+ttt_gd_full step 1500 loss 0.6793
+ttt_gd_full step 1750 loss 0.6965
+ttt_gd_full step 2000 loss 0.6427
+ttt_gd_full step 2250 loss 0.6761
+ttt_gd_full step 2500 loss 0.7045
+ttt_gd_full step 2750 loss 0.6726
+ttt_gd_full step 2999 loss 0.6958
+== ttt_gd_full: held-out attrs pooled NMSE n=2.0d 0.832/0.791  n=4.0d 0.783/0.745  n=8.0d 0.734/0.708  | train attrs n=4d 0.884  (39s)
+ttt_gd_official step 0 loss 1.2500
+ttt_gd_official step 250 loss 0.7293
+ttt_gd_official step 500 loss 0.7047
+ttt_gd_official step 750 loss 0.6908
+ttt_gd_official step 1000 loss 0.7250
+ttt_gd_official step 1250 loss 0.6900
+ttt_gd_official step 1500 loss 0.6899
+ttt_gd_official step 1750 loss 0.7033
+ttt_gd_official step 2000 loss 0.6591
+ttt_gd_official step 2250 loss 0.6804
+ttt_gd_official step 2500 loss 0.7086
+ttt_gd_official step 2750 loss 0.6962
+ttt_gd_official step 2999 loss 0.7232
+== ttt_gd_official: held-out attrs pooled NMSE n=2.0d 0.924/0.916  n=4.0d 0.842/0.813  n=8.0d 0.772/0.749  | train attrs n=4d 0.910  (12s)
+DONE

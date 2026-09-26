@@ -1,0 +1,27 @@
+{
+ "m": 64,
+ "n_over_m": 3,
+ "steps": 3000,
+ "batch": 32,
+ "K": 100,
+ "lr": 0.003,
+ "sigma": 0.01,
+ "models": [
+  "ttt_gd_soft",
+  "ttt_gd_full",
+  "ttt_gd_official",
+  "ttt_quad_ridge"
+ ],
+ "eval_n_over_m": [
+  2.0,
+  3.0,
+  4.0,
+  6.0
+ ],
+ "eval_seqs": 1024,
+ "seed": 449101,
+ "device": "cuda:0",
+ "v3": true,
+ "theta_init": "pca",
+ "out": "/workspace/runs/r3_cv_pcainit_b"
+}
