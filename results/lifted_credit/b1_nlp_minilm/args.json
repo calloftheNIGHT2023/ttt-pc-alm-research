@@ -1,0 +1,48 @@
+{
+ "data": "/workspace/features/nlp_mrc.npz",
+ "train_attrs": [
+  "Number of Letters",
+  "Number of Phonemes",
+  "Number of Syllables",
+  "Familiarity",
+  "Concreteness",
+  "Imageability",
+  "Meaningfulness: Coloradao Norms"
+ ],
+ "v2": true,
+ "test_attrs": [
+  "KF Written Frequency",
+  "KF Number of Categories",
+  "KF Number of Samples",
+  "Thorndike-Lorge Frequency",
+  "Age of Acquisition Rating"
+ ],
+ "df_correct": true,
+ "prox_noise": false,
+ "snr_rule": "none",
+ "g_init": 10.0,
+ "v3": true,
+ "D": 64,
+ "d": 16,
+ "n_over_d": 4,
+ "steps": 3000,
+ "batch": 64,
+ "K": 30,
+ "lr": 0.003,
+ "models": [
+  "probe_reference",
+  "ttt_pcalm_prox",
+  "ttt_gd_full",
+  "ttt_quad_ridge",
+  "transformer"
+ ],
+ "eval_n_over_d": [
+  2,
+  4,
+  8
+ ],
+ "eval_seqs": 1024,
+ "seed": 449002,
+ "device": "cuda:0",
+ "out": "/workspace/runs/b1_nlp_minilm"
+}
