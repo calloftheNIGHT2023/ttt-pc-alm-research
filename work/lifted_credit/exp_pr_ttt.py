@@ -37,6 +37,10 @@ ap.add_argument('--device', default='cuda:0')
 ap.add_argument('--df_correct', action='store_true', help='report 450: unbiased noise estimate RSS/(n - df), df = tr((G+mu I)^-1 G)')
 ap.add_argument('--ens', type=int, default=1, help='report 450: evaluate also with R chains from different inits, weighted by in-context likelihood')
 ap.add_argument('--prox_noise', action='store_true', help='report 450: proximal weight also scales with r2/E[y^2], so it vanishes in the exact regime')
+ap.add_argument('--snr_rule', default='none', choices=['none', 'leak', 'both'],
+                help='report 450: scale the slack variance (leak) and optionally the branch temperature by the in-context '
+                     'noise-to-signal ratio nu/(1-nu), nu = r2/E[y^2] (df-corrected): exact regime -> hard ALM, noisy -> relaxed')
+ap.add_argument('--val_train', action='store_true', help='report 450: also evaluate on TRAIN-split images (model selection without test data)')
 ap.add_argument('--g_init', type=float, default=1.0, help='initial multiplier leak (slack variance / residual variance); large = near no multiplier')
 ap.add_argument('--v3', action='store_true')
 ap.add_argument('--theta_init', default='random', choices=['random', 'pca'])
@@ -162,9 +166,14 @@ class TTT(nn.Module):
             for _ in range(args.K):
                 pred = torch.einsum('bnd,bd->bn', K, w)
                 r2 = infl * ((y - pred.abs()) ** 2).mean(-1, keepdim=True).detach()
-                s = soft_activity(y, pred - lam / rho, rho, self.log_c.exp() * r2 + 1e-6)
+                nsr = torch.ones_like(r2)
+                if args.snr_rule != 'none':
+                    nu = (r2 / (y ** 2).mean(-1, keepdim=True).clamp_min(1e-8)).clamp(0, 0.95)
+                    nsr = nu / (1 - nu)                              # in-context noise-to-signal ratio
+                tau = self.log_c.exp() * r2 * (nsr if args.snr_rule == 'both' else 1) + 1e-6
+                s = soft_activity(y, pred - lam / rho, rho, tau)
                 if self.kind != 'pcalm_prox_nolam':
-                    lam = (lam + rho * (s - pred)) / (1 + rho * self.log_g.exp() * r2)
+                    lam = (lam + rho * (s - pred)) / (1 + rho * self.log_g.exp() * r2 * nsr)
                 if self.kind == 'pcalm_robust':
                     bound = self.log_kappa.exp() / (self.log_g.exp() * r2.sqrt() + 1e-6)
                     lam = torch.maximum(torch.minimum(lam, bound), -bound)
@@ -209,14 +218,15 @@ def w_init(B, gen):
     return 0.1 * torch.randn(B, m, generator=gen, device=dev) / math.sqrt(m)
 
 
-def evaluate(model, ens=1):
+def evaluate(model, ens=1, pool=None):
+    pool = Xte if pool is None else pool
     egen = torch.Generator(device=dev).manual_seed(args.seed + 999); res = {}
     xgen = torch.Generator(device=dev).manual_seed(args.seed + 4242)   # extra chains: separate stream, eval set unchanged
     with torch.no_grad():
         for nm_ in args.eval_n_over_m:
             n = int(nm_ * m); errs = []
             for _ in range(max(1, args.eval_seqs // 128)):
-                a, y, aq, yq = sample(128, n, 64, Xte, egen)
+                a, y, aq, yq = sample(128, n, 64, pool, egen)
                 p = model(a, y, aq, w_init(128, egen))
                 if ens > 1:          # posterior-weighted mixture over modes: weight_r ~ exp(-n r2_r / (2 min_r r2_r))
                     Ps, R2 = [p], [model.last_r2]
@@ -274,6 +284,9 @@ for name in args.models:
     ev = evaluate(model)
     if args.ens > 1 and isinstance(model, TTT) and model.kind not in ('ridge', 'quad'):
         results.setdefault('ensemble', {})[name] = evaluate(model, args.ens)
+        if args.val_train:
+            results.setdefault('val_train_ensemble', {})[name] = evaluate(model, args.ens, Xtr)
+            print(f'   {name} VAL(train images) ens={args.ens}: ' + '  '.join(f"n={k}m: {v['nmse_mean']:.3f}" for k, v in results['val_train_ensemble'][name].items()), flush=True)
         print(f'   {name} ens={args.ens}: ' + '  '.join(f"n={k}m: nmse {v['nmse_mean']:.3f}/{v['nmse_median']:.3f}" for k, v in results['ensemble'][name].items()), flush=True)
     learned = {k: float(v.exp()) if k.startswith('log_') else v.tolist() for k, v in model.named_parameters() if v.numel() <= 2}
     results[name] = dict(train_seconds=time.perf_counter() - t0, curve=curve, eval_test_images=ev, learned_scalars=learned)

@@ -1,0 +1,15 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+PCA-64 residual energy on test images: 0.0262
+floor (true image projected on PCA basis): {'nmse_mean': 0.0665728971362114, 'nmse_median': 0.05739119276404381}
+/workspace/lifted_credit/exp_pr_ttt.py:282: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  curve.append(dict(step=step, loss=float(loss))); print(f'{name} step {step} nloss {float(loss):.4f}', flush=True)
+pca_pcalm_v3 step 0 nloss 0.2034
+pca_pcalm_v3 step 250 nloss 0.3781
+pca_pcalm_v3 step 500 nloss 0.4814
+pca_pcalm_v3 step 750 nloss 0.4333
+pca_pcalm_v3 step 999 nloss 0.3966
+   pca_pcalm_v3 VAL(train images) ens=8: n=2.0m: 0.989  n=3.0m: 0.127  n=4.0m: 0.117  n=6.0m: 0.107
+   pca_pcalm_v3 ens=8: n=2.0m: nmse 0.922/0.423  n=3.0m: nmse 0.126/0.108  n=4.0m: nmse 0.115/0.098  n=6.0m: nmse 0.108/0.095
+== pca_pcalm_v3: n=2.0m: nmse 1.869/1.873 succ 0.01  n=3.0m: nmse 0.351/0.128 succ 0.07  n=4.0m: nmse 0.148/0.108 succ 0.10  n=6.0m: nmse 0.116/0.100 succ 0.11  (191s)
+DONE

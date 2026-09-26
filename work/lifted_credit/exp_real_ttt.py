@@ -36,6 +36,9 @@ ap.add_argument('--v2', action='store_true', help='post-hoc (report 449): learne
 ap.add_argument('--test_attrs', nargs='*', default=None)
 ap.add_argument('--df_correct', action='store_true', help='report 450: unbiased noise estimate RSS/(n - df), df = tr((G+mu I)^-1 G)')
 ap.add_argument('--prox_noise', action='store_true', help='report 450: proximal weight also scales with r2/E[y^2], so it vanishes in the exact regime')
+ap.add_argument('--snr_rule', default='none', choices=['none', 'leak', 'both'],
+                help='report 450: scale the slack variance (leak) and optionally the branch temperature by the in-context '
+                     'noise-to-signal ratio nu/(1-nu), nu = r2/E[y^2] (df-corrected): exact regime -> hard ALM, noisy -> relaxed')
 ap.add_argument('--g_init', type=float, default=1.0, help='initial multiplier leak (slack variance / residual variance); large = near no multiplier')
 ap.add_argument('--v3', action='store_true', help='report 450: noise-calibrated models + folded-normal readout (implies --v2)')
 ap.add_argument('--D', type=int, default=64)
@@ -177,9 +180,14 @@ class TTT(nn.Module):
             for _ in range(args.K):
                 pred = torch.einsum('bnd,bd->bn', K, w)
                 r2 = infl * ((y - pred.abs()) ** 2).mean(-1, keepdim=True).detach()
-                s = soft_activity(y, pred - lam / rho, rho, self.log_c.exp() * r2 + 1e-4)
+                nsr = torch.ones_like(r2)
+                if args.snr_rule != 'none':
+                    nu = (r2 / (y ** 2).mean(-1, keepdim=True).clamp_min(1e-8)).clamp(0, 0.95)
+                    nsr = nu / (1 - nu)                              # in-context noise-to-signal ratio
+                tau = self.log_c.exp() * r2 * (nsr if args.snr_rule == 'both' else 1) + 1e-4
+                s = soft_activity(y, pred - lam / rho, rho, tau)
                 if self.kind != 'pcalm_prox_nolam':
-                    lam = (lam + rho * (s - pred)) / (1 + rho * self.log_g.exp() * r2)
+                    lam = (lam + rho * (s - pred)) / (1 + rho * self.log_g.exp() * r2 * nsr)
                 if self.kind == 'pcalm_robust':
                     bound = self.log_kappa.exp() / (self.log_g.exp() * r2.sqrt() + 1e-6)
                     lam = torch.maximum(torch.minimum(lam, bound), -bound)

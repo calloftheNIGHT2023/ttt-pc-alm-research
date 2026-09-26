@@ -1,0 +1,14 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+PCA-64 residual energy on test images: 0.0262
+floor (true image projected on PCA basis): {'nmse_mean': 0.0665728971362114, 'nmse_median': 0.05739119276404381}
+/workspace/lifted_credit/exp_pr_ttt.py:280: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  curve.append(dict(step=step, loss=float(loss))); print(f'{name} step {step} nloss {float(loss):.4f}', flush=True)
+pca_pcalm_prox step 0 nloss 0.2663
+pca_pcalm_prox step 250 nloss 0.3711
+pca_pcalm_prox step 500 nloss 0.2498
+pca_pcalm_prox step 750 nloss 0.3815
+pca_pcalm_prox step 999 nloss 0.3069
+   pca_pcalm_prox ens=8: n=2.0m: nmse 0.390/0.170  n=3.0m: nmse 0.123/0.105  n=4.0m: nmse 0.111/0.097  n=6.0m: nmse 0.105/0.092
+== pca_pcalm_prox: n=2.0m: nmse 0.753/0.363 succ 0.03  n=3.0m: nmse 0.274/0.113 succ 0.07  n=4.0m: nmse 0.167/0.100 succ 0.09  n=6.0m: nmse 0.111/0.093 succ 0.11  (412s)
+DONE
