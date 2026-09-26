@@ -1,0 +1,29 @@
+{
+ "d": 32,
+ "n_over_d": 4,
+ "steps": 2000,
+ "batch": 64,
+ "K": 30,
+ "lr": 0.003,
+ "decorr": 0,
+ "rho_init": 1.0,
+ "grid_pts": 241,
+ "models": [
+  "oracle_pcalm",
+  "ttt_pcalm",
+  "ttt_gd_full",
+  "ttt_gd_official",
+  "ttt_ridge",
+  "transformer"
+ ],
+ "eval_n_over_d": [
+  2,
+  3,
+  4,
+  6
+ ],
+ "eval_seqs": 2048,
+ "seed": 448001,
+ "device": "cuda:0",
+ "out": "/workspace/runs/m1_ttt_model_d32"
+}

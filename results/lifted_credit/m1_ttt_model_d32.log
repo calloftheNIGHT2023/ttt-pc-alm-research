@@ -1,0 +1,117 @@
+/workspace/lifted_credit/exp_ttt_model.py:208: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  learned=dict(step=float(model.log_step.exp()), rho=float(model.log_rho.exp()), mu=float(model.log_mu.exp()))
+== oracle_pcalm: n=2d: succ 0.23 nmse_med 0.256  n=3d: succ 0.86 nmse_med 0.022  n=4d: succ 0.96 nmse_med 0.013  n=6d: succ 0.99 nmse_med 0.007  overlap 1.0  train 0s
+ttt_pcalm step 0 loss 5.6141 overlap 0.4933856725692749
+ttt_pcalm step 100 loss 5.8833 overlap 0.532995343208313
+ttt_pcalm step 200 loss 4.1390 overlap 0.5657492280006409
+ttt_pcalm step 300 loss 3.0404 overlap 0.6092207431793213
+ttt_pcalm step 400 loss 2.0335 overlap 0.6675941348075867
+ttt_pcalm step 500 loss 1.8092 overlap 0.7252730131149292
+ttt_pcalm step 600 loss 1.2018 overlap 0.8000497817993164
+ttt_pcalm step 700 loss 0.8763 overlap 0.8908114433288574
+ttt_pcalm step 800 loss 0.7065 overlap 0.9521845579147339
+ttt_pcalm step 900 loss 0.6710 overlap 0.9710568189620972
+ttt_pcalm step 1000 loss 0.8220 overlap 0.9812486171722412
+ttt_pcalm step 1100 loss 1.1345 overlap 0.978789210319519
+ttt_pcalm step 1200 loss 0.9895 overlap 0.9718047380447388
+ttt_pcalm step 1300 loss 1.2994 overlap 0.9678943753242493
+ttt_pcalm step 1400 loss 1.2382 overlap 0.9653527736663818
+ttt_pcalm step 1500 loss 1.0347 overlap 0.9647156000137329
+ttt_pcalm step 1600 loss 0.8817 overlap 0.9638733267784119
+ttt_pcalm step 1700 loss 1.0710 overlap 0.9633821845054626
+ttt_pcalm step 1800 loss 1.3396 overlap 0.9630069732666016
+ttt_pcalm step 1900 loss 1.0162 overlap 0.9628128409385681
+ttt_pcalm step 1999 loss 0.9407 overlap 0.962795078754425
+== ttt_pcalm: n=2d: succ 0.00 nmse_med 1.082  n=3d: succ 0.00 nmse_med 1.056  n=4d: succ 0.00 nmse_med 1.048  n=6d: succ 0.00 nmse_med 1.034  overlap 0.962795078754425  train 157s
+ttt_gd_full step 0 loss 0.9033 overlap 0.49258172512054443
+ttt_gd_full step 100 loss 1.4330 overlap 0.4847099781036377
+ttt_gd_full step 200 loss 1.0177 overlap 0.49491095542907715
+ttt_gd_full step 300 loss 0.9276 overlap 0.5045844912528992
+ttt_gd_full step 400 loss 0.8500 overlap 0.491813063621521
+ttt_gd_full step 500 loss 0.9603 overlap 0.4787418842315674
+ttt_gd_full step 600 loss 1.2238 overlap 0.5004165172576904
+ttt_gd_full step 700 loss 0.8687 overlap 0.5011684894561768
+ttt_gd_full step 800 loss 0.9084 overlap 0.5301744937896729
+ttt_gd_full step 900 loss 1.0760 overlap 0.5017808675765991
+ttt_gd_full step 1000 loss 0.7842 overlap 0.4983466863632202
+ttt_gd_full step 1100 loss 0.8082 overlap 0.49423331022262573
+ttt_gd_full step 1200 loss 0.9366 overlap 0.4998447895050049
+ttt_gd_full step 1300 loss 1.1216 overlap 0.49891695380210876
+ttt_gd_full step 1400 loss 1.1279 overlap 0.506260871887207
+ttt_gd_full step 1500 loss 0.9073 overlap 0.494048535823822
+ttt_gd_full step 1600 loss 0.7806 overlap 0.5113444328308105
+ttt_gd_full step 1700 loss 1.0191 overlap 0.4950942397117615
+ttt_gd_full step 1800 loss 1.2703 overlap 0.5050404667854309
+ttt_gd_full step 1900 loss 0.9685 overlap 0.5135775208473206
+ttt_gd_full step 1999 loss 0.9055 overlap 0.48936447501182556
+== ttt_gd_full: n=2d: succ 0.00 nmse_med 0.997  n=3d: succ 0.00 nmse_med 0.996  n=4d: succ 0.00 nmse_med 0.996  n=6d: succ 0.00 nmse_med 0.996  overlap 0.48936447501182556  train 32s
+ttt_gd_official step 0 loss 161906032640.0000 overlap 0.4926048517227173
+ttt_gd_official step 100 loss 1.4273 overlap 0.49189135432243347
+ttt_gd_official step 200 loss 0.9878 overlap 0.4894404411315918
+ttt_gd_official step 300 loss 0.9006 overlap 0.4855138659477234
+ttt_gd_official step 400 loss 0.8361 overlap 0.4799405634403229
+ttt_gd_official step 500 loss 0.9571 overlap 0.47829049825668335
+ttt_gd_official step 600 loss 1.2259 overlap 0.47924891114234924
+ttt_gd_official step 700 loss 0.8687 overlap 0.4776242971420288
+ttt_gd_official step 800 loss 0.9103 overlap 0.478431761264801
+ttt_gd_official step 900 loss 1.0757 overlap 0.4768437147140503
+ttt_gd_official step 1000 loss 0.7854 overlap 0.47069302201271057
+ttt_gd_official step 1100 loss 0.8096 overlap 0.47105443477630615
+ttt_gd_official step 1200 loss 0.9372 overlap 0.4785473942756653
+ttt_gd_official step 1300 loss 1.1219 overlap 0.47899681329727173
+ttt_gd_official step 1400 loss 1.1275 overlap 0.48524343967437744
+ttt_gd_official step 1500 loss 0.9064 overlap 0.49254700541496277
+ttt_gd_official step 1600 loss 0.7792 overlap 0.5010090470314026
+ttt_gd_official step 1700 loss 1.0186 overlap 0.5027337074279785
+ttt_gd_official step 1800 loss 1.2693 overlap 0.4925000071525574
+ttt_gd_official step 1900 loss 0.9685 overlap 0.5087724924087524
+ttt_gd_official step 1999 loss 0.9055 overlap 0.5092366933822632
+== ttt_gd_official: n=2d: succ 0.00 nmse_med 0.995  n=3d: succ 0.00 nmse_med 0.995  n=4d: succ 0.00 nmse_med 0.995  n=6d: succ 0.00 nmse_med 0.995  overlap 0.5092366933822632  train 10s
+ttt_ridge step 0 loss 1.1599 overlap 0.4929966330528259
+ttt_ridge step 100 loss 1.6824 overlap 0.47461506724357605
+ttt_ridge step 200 loss 1.3365 overlap 0.45888182520866394
+ttt_ridge step 300 loss 1.2383 overlap 0.4495637118816376
+ttt_ridge step 400 loss 1.2433 overlap 0.4296736717224121
+ttt_ridge step 500 loss 1.2444 overlap 0.42070823907852173
+ttt_ridge step 600 loss 1.5468 overlap 0.40752747654914856
+ttt_ridge step 700 loss 1.2756 overlap 0.3968551754951477
+ttt_ridge step 800 loss 1.2375 overlap 0.39465004205703735
+ttt_ridge step 900 loss 1.3981 overlap 0.3849325478076935
+ttt_ridge step 1000 loss 1.1269 overlap 0.37790772318840027
+ttt_ridge step 1100 loss 1.1181 overlap 0.3652034401893616
+ttt_ridge step 1200 loss 1.1086 overlap 0.35033485293388367
+ttt_ridge step 1300 loss 1.1943 overlap 0.36907073855400085
+ttt_ridge step 1400 loss 1.1869 overlap 0.3956013023853302
+ttt_ridge step 1500 loss 0.9386 overlap 0.390317440032959
+ttt_ridge step 1600 loss 0.7914 overlap 0.3916285037994385
+ttt_ridge step 1700 loss 1.0219 overlap 0.4059601128101349
+ttt_ridge step 1800 loss 1.2705 overlap 0.40809720754623413
+ttt_ridge step 1900 loss 0.9672 overlap 0.41822922229766846
+ttt_ridge step 1999 loss 0.9058 overlap 0.420803427696228
+== ttt_ridge: n=2d: succ 0.00 nmse_med 0.994  n=3d: succ 0.00 nmse_med 0.994  n=4d: succ 0.00 nmse_med 0.994  n=6d: succ 0.00 nmse_med 0.995  overlap 0.420803427696228  train 3s
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/transformer.py:392: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+transformer step 0 loss 1.0627 overlap None
+transformer step 100 loss 1.3934 overlap None
+transformer step 200 loss 0.9530 overlap None
+transformer step 300 loss 0.8842 overlap None
+transformer step 400 loss 0.8309 overlap None
+transformer step 500 loss 0.9557 overlap None
+transformer step 600 loss 1.2247 overlap None
+transformer step 700 loss 0.8682 overlap None
+transformer step 800 loss 0.9090 overlap None
+transformer step 900 loss 1.0750 overlap None
+transformer step 1000 loss 0.7849 overlap None
+transformer step 1100 loss 0.8086 overlap None
+transformer step 1200 loss 0.9369 overlap None
+transformer step 1300 loss 1.1223 overlap None
+transformer step 1400 loss 1.1255 overlap None
+transformer step 1500 loss 0.9074 overlap None
+transformer step 1600 loss 0.7806 overlap None
+transformer step 1700 loss 1.0197 overlap None
+transformer step 1800 loss 1.2697 overlap None
+transformer step 1900 loss 0.9701 overlap None
+transformer step 1999 loss 0.9076 overlap None
+== transformer: n=2d: succ 0.00 nmse_med 0.997  n=3d: succ 0.00 nmse_med 0.997  n=4d: succ 0.00 nmse_med 0.996  n=6d: succ 0.00 nmse_med 0.997  overlap None  train 19s
+DONE
