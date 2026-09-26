@@ -11,6 +11,7 @@ from pathlib import Path
 import numpy as np
 
 REF = 'pcalm_deepjoint_8x2+adam'
+EXTRA_PAIRS = [('pcalm_deepjoint_2x2+adam', 'amp_full_em_4x2+adam'), ('amp_full_em_16x2+adam', 'amp_full_em_4x2+adam')]
 
 
 def mcnemar_exact(b, c):
@@ -58,6 +59,12 @@ def main(dirs):
                 print(f'   {REF} vs {m}: diff={p["diff"]:+.3f} CI[{p["ci"][0]:+.3f},{p["ci"][1]:+.3f}] '
                       f'discordant {p["A_only"]}/{p["B_only"]} McNemar p={p["mcnemar_p"]:.3g}  '
                       f'nmse diff={p["nmse_diff"]:+.4f} CI[{p["nmse_ci"][0]:+.4f},{p["nmse_ci"][1]:+.4f}]')
+            for A, Bm in EXTRA_PAIRS:
+                if A in rr and Bm in rr:
+                    p = paired(rr[A][0], rr[Bm][0], rng); res[f'{A} vs {Bm}'] = p
+                    print(f'   {A} vs {Bm}: diff={p["diff"]:+.3f} CI[{p["ci"][0]:+.3f},{p["ci"][1]:+.3f}] '
+                          f'discordant {p["A_only"]}/{p["B_only"]} McNemar p={p["mcnemar_p"]:.3g}  '
+                          f'nmse diff={p["nmse_diff"]:+.4f} CI[{p["nmse_ci"][0]:+.4f},{p["nmse_ci"][1]:+.4f}]')
             out[rn] = res
     Path(dirs[0]).parent.joinpath('k_paired_summary.json').write_text(json.dumps(out, indent=1))
 

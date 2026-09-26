@@ -167,6 +167,30 @@ def gamp_diag_oracle(X, y, a_true, b_true, W0, T, damp, G=41, zlim=5.0):
     return xh
 
 
+# ---------------------------------------------------------------- closed-form 2x2 linear algebra (no batched cuSOLVER:
+# syevBatched rejected batch 65536 with INVALID_VALUE on the first full run; see report 447)
+def inv2(M):
+    a, b, c, e = M[..., 0, 0], M[..., 0, 1], M[..., 1, 0], M[..., 1, 1]
+    det = a * e - b * c
+    det = torch.where(det.abs() < 1e-300, torch.full_like(det, 1e-300), det)
+    return torch.stack([torch.stack([e, -b], -1), torch.stack([-c, a], -1)], -2) / det[..., None, None]
+
+
+def psd2(M, eps):
+    """Projection of a symmetric 2x2 matrix onto {eigenvalues >= eps}, analytic eigen-decomposition."""
+    p, r = M[..., 0, 0], M[..., 1, 1]; q = 0.5 * (M[..., 0, 1] + M[..., 1, 0])
+    mid = 0.5 * (p + r); rad = torch.sqrt((0.5 * (p - r)) ** 2 + q ** 2)
+    l1, l2 = mid + rad, mid - rad
+    vx, vy = q, l1 - p
+    nrm = torch.sqrt(vx ** 2 + vy ** 2)
+    dflt = nrm < 1e-150
+    vx = torch.where(dflt, torch.ones_like(vx), vx / nrm.clamp_min(1e-300))
+    vy = torch.where(dflt, torch.zeros_like(vy), vy / nrm.clamp_min(1e-300))
+    P1 = torch.stack([torch.stack([vx * vx, vx * vy], -1), torch.stack([vx * vy, vy * vy], -1)], -2)
+    I2 = torch.eye(2, dtype=M.dtype, device=M.device)
+    return l1.clamp_min(eps)[..., None, None] * P1 + l2.clamp_min(eps)[..., None, None] * (I2 - P1)
+
+
 # ---------------------------------------------------------------- full-covariance committee AMP
 def amp_full(X, y, W0, a0, b0, T, damp, em, em_start=10, em_damp=0.5, G=51, zlim=5.0):
     """Vector GAMP for the K=2 committee (Aubin et al. 2018 form) with FULL 2x2 covariances.
@@ -188,7 +212,7 @@ def amp_full(X, y, W0, a0, b0, T, damp, em, em_start=10, em_damp=0.5, G=51, zlim
     gh = torch.zeros(R, E, n, K, dtype=dt, device=dev)
     for t in range(T):
         V = torch.einsum('end,redkl->renkl', X2, Cc) + 1e-10 * I2
-        Pm = torch.linalg.inv(V)
+        Pm = inv2(V)
         omega = torch.einsum('end,rekd->renk', X, W) - (V @ gh.unsqueeze(-1)).squeeze(-1)
         zhat = torch.empty_like(omega); Sig = torch.empty_like(V)
         for q in range(R):
@@ -218,13 +242,11 @@ def amp_full(X, y, W0, a0, b0, T, damp, em, em_start=10, em_damp=0.5, G=51, zlim
         # per-example PSD projection of -dg BEFORE summation (the matrix analogue of the scalar clamp
         # tau_s = (1 - tau_z/tau_p)/tau_p >= 1e-8 used by the diagonal GAMP); multi-branch posteriors can have
         # posterior covariance larger than the prior, and summing those contributions first cancels information
-        Dm = -0.5 * (dg + dg.transpose(-1, -2))
-        ev, U = torch.linalg.eigh(Dm)
-        Dm = U @ torch.diag_embed(ev.clamp_min(1e-8)) @ U.transpose(-1, -2)
+        Dm = psd2(torch.nan_to_num(-dg), 1e-8)
         A = torch.einsum('end,renkl->redkl', X2, Dm)
         Wi = W.transpose(-1, -2)                                                                                     # (R,E,d,K)
         B = torch.einsum('end,renk->redk', X, gh) + (A @ Wi.unsqueeze(-1)).squeeze(-1)
-        Cn = torch.linalg.inv(I2 / v0 + A)
+        Cn = inv2(I2 / v0 + A)
         Wn = (Cn @ B.unsqueeze(-1)).squeeze(-1).transpose(-1, -2)
         W = torch.nan_to_num(damp * Wn + (1 - damp) * W)
         Cc = damp * Cn + (1 - damp) * Cc
@@ -254,12 +276,26 @@ def em_inits(k):
 res, tm = {}, {}
 
 
+vq = yq.var(-1); rows = []
+
+
+def evaluate(name):
+    W, a, b = res[name]
+    m = ((model(Xq, W, a, b)[0] - yq) ** 2).mean(-1) / vq
+    Pw = torch.einsum('erd,ejd->ejr', Wt, W[0]); ov = (Pw.norm(dim=-1) / W[0].norm(dim=-1).clamp_min(1e-12)).mean(-1)
+    rows.append(dict(d=d, alpha=args.alpha, n=n, method=name, success=float((m < .05).float().mean()),
+                     nmse_mean=float(m.mean()), nmse_median=float(m.median()), subspace_overlap=float(ov.mean()),
+                     seconds=tm[name], per_task_nmse=[float(v) for v in m], per_task_overlap=[float(v) for v in ov]))
+    (out / 'rows.json').write_text(json.dumps(rows, indent=1))      # saved after every method (evaluator only)
+
+
 def run(name, fn):
     if args.only is not None and name not in args.only:
         return
     torch.cuda.synchronize(); t0 = time.perf_counter(); res[name] = fn(); torch.cuda.synchronize()
     tm[name] = time.perf_counter() - t0
-    print(f'  {name}: {tm[name]:.0f}s', flush=True)
+    evaluate(name)
+    print(f"  {name}: {tm[name]:.0f}s  success={rows[-1]['success']:.2f}  ov={rows[-1]['subspace_overlap']:.2f}", flush=True)
 
 
 run('pcalm_deepjoint_2x2+adam', lambda: polish(X, y, pick(X, y, cat([pcalm_deep_joint(X, y, init(2), args.T, .1, True, r2) for r2 in [10., 30.]]))))
@@ -288,13 +324,6 @@ for k in [1, 4]:
         [amp_full(X, y, *em_inits(k), args.amp_T, dm, em=True) for dm in [.3, .6]]))))
 run('bp_adam_64x3', lambda: pick(X, y, cat([adam(X, y, init(64), 1000, lr) for lr in [.003, .01, .03]])))
 
-vq = yq.var(-1); rows = []
-for name, (W, a, b) in res.items():
-    m = ((model(Xq, W, a, b)[0] - yq) ** 2).mean(-1) / vq
-    Pw = torch.einsum('erd,ejd->ejr', Wt, W[0]); ov = (Pw.norm(dim=-1) / W[0].norm(dim=-1).clamp_min(1e-12)).mean(-1)
-    rows.append(dict(d=d, alpha=args.alpha, n=n, method=name, success=float((m < .05).float().mean()),
-                     nmse_mean=float(m.mean()), nmse_median=float(m.median()), subspace_overlap=float(ov.mean()),
-                     seconds=tm[name], per_task_nmse=[float(v) for v in m], per_task_overlap=[float(v) for v in ov]))
 print(f'd={d} alpha={args.alpha} n={n}: ' + '  '.join(f"{x['method']}={x['success']:.2f}/{x['subspace_overlap']:.2f}({x['seconds']:.0f}s)" for x in rows), flush=True)
 (out / 'rows.json').write_text(json.dumps(rows, indent=1))
 print('DONE')

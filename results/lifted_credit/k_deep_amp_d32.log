@@ -1,0 +1,19 @@
+  pcalm_deepjoint_2x2+adam: 88s
+  pcalm_deepjoint_8x2+adam: 344s
+  nomult_deepjoint_2x2+adam: 88s
+Traceback (most recent call last):
+  File "/workspace/lifted_credit/exp_deep_amp.py", line 277, in <module>
+    run('amp_full_oracle_8x2+adam', lambda: polish(X, y, oracle_full(8)))
+  File "/workspace/lifted_credit/exp_deep_amp.py", line 260, in run
+    torch.cuda.synchronize(); t0 = time.perf_counter(); res[name] = fn(); torch.cuda.synchronize()
+                                                                    ^^^^
+  File "/workspace/lifted_credit/exp_deep_amp.py", line 277, in <lambda>
+    run('amp_full_oracle_8x2+adam', lambda: polish(X, y, oracle_full(8)))
+                                                         ^^^^^^^^^^^^^^
+  File "/workspace/lifted_credit/exp_deep_amp.py", line 271, in oracle_full
+    Ws = [amp_full(X, y, 0.1 * W0[:k], at.unsqueeze(0).expand(k, -1, -1).clone(), bt.unsqueeze(0).expand(k, -1).clone(),
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/lifted_credit/exp_deep_amp.py", line 222, in amp_full
+    ev, U = torch.linalg.eigh(Dm)
+            ^^^^^^^^^^^^^^^^^^^^^
+torch._C._LinAlgError: cusolver error: CUSOLVER_STATUS_INVALID_VALUE, when calling `cusolverDnXsyevBatched_bufferSize( handle, params, jobz, uplo, n, CUDA_R_64F, reinterpret_cast<const void*>(A), lda, CUDA_R_64F, reinterpret_cast<const void*>(W), CUDA_R_64F, workspaceInBytesOnDevice, workspaceInBytesOnHost, batchSize)`. This error may appear if the input matrix contains NaN. If you keep seeing this error, you may use `torch.backends.cuda.preferred_linalg_library()` to try linear algebra operators with other supported backends. See https://pytorch.org/docs/stable/backends.html#torch.backends.cuda.preferred_linalg_library
