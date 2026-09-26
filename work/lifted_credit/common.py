@@ -134,6 +134,74 @@ def _activity_step(link, y, a, rho, grid):
     return s
 
 
+CERT_LOG = []   # per-call certification summaries (appended when activity='certified')
+
+
+def _activity_certified_he3(y, a, rho, iters=60):
+    """Certified global minimiser of F(s) = (He3(s)/sqrt6 - y)^2 + rho/2 (s-a)^2 per example.
+
+    F'(s) = (s^3 - 3s - c)(s^2 - 1) + rho (s - a) = s^5 - 4 s^3 - c s^2 + (3+rho) s + (c - rho a),  c = sqrt6 y.
+    F is coercive, so its global minimiser is a real root of this quintic. All five complex roots are found
+    simultaneously (batched Aberth-Ehrlich); every root with |Im| <= tol is Newton-polished on the real line and
+    F is compared over these candidates. Entries whose Aberth iteration does not converge fall back to companion-
+    matrix eigenvalues. Returns s and a dict of certificate statistics.
+    """
+    shp = y.shape
+    c = (math.sqrt(6.0) * y).reshape(-1).to(torch.float64)
+    av = a.reshape(-1).to(torch.float64)
+    p1 = torch.full_like(c, 3.0 + rho)
+    p0 = c - rho * av
+    coef = torch.stack([torch.ones_like(c), torch.zeros_like(c), torch.full_like(c, -4.0), -c, p1, p0], -1)  # high->low
+    ccoef = coef.to(torch.complex128)
+
+    def P(z):
+        v = torch.zeros_like(z)
+        for k in range(6):
+            v = v * z + ccoef[:, k:k + 1]
+        return v
+
+    def dP(z):
+        v = torch.zeros_like(z)
+        for k in range(5):
+            v = v * z + (5 - k) * ccoef[:, k:k + 1]
+        return v
+
+    bound = 1 + coef[:, 1:].abs().max(-1).values                       # Cauchy bound on |roots|
+    ang = torch.arange(5, dtype=torch.float64, device=y.device) * (2 * math.pi / 5) + 0.4
+    z = (0.5 * bound).unsqueeze(-1).to(torch.complex128) * torch.polar(torch.ones_like(ang), ang)
+    for _ in range(iters):
+        ratio = P(z) / dP(z)
+        diff = z.unsqueeze(-1) - z.unsqueeze(-2)
+        eye = torch.eye(5, dtype=torch.bool, device=z.device)
+        inv = torch.where(eye, torch.zeros_like(diff), 1.0 / torch.where(eye, torch.ones_like(diff), diff))
+        w = ratio / (1 - ratio * inv.sum(-1))
+        z = z - torch.nan_to_num(w)
+    step = (P(z) / dP(z)).abs()
+    conv = (step <= 1e-10 * (1 + z.abs())).all(-1) & torch.isfinite(z).all(-1)
+    if (~conv).any():                                                  # fallback: companion eigenvalues
+        idx = (~conv).nonzero().squeeze(-1)
+        cc = coef[idx]
+        comp = torch.zeros(len(idx), 5, 5, dtype=torch.float64, device=y.device)
+        comp[:, 0, :] = -cc[:, 1:]
+        comp[:, 1:, :4] = torch.eye(4, dtype=torch.float64, device=y.device)
+        z[idx] = torch.linalg.eigvals(comp.cpu()).to(z.device)
+    tol = 1e-6 * (1 + z.real.abs())
+    realish = z.imag.abs() <= tol
+    s = z.real.clone()
+    for _ in range(3):                                                 # polish real candidates
+        pv = P(s.to(torch.complex128)).real; dv = dP(s.to(torch.complex128)).real
+        s = torch.where(realish & (dv.abs() > 1e-14), s - pv / dv, s)
+    yy = y.reshape(-1, 1).to(torch.float64)
+    Fv = ((s ** 3 - 3 * s) / math.sqrt(6.0) - yy) ** 2 + 0.5 * rho * (s - av.unsqueeze(-1)) ** 2
+    Fv = torch.where(realish, Fv, torch.full_like(Fv, float('inf')))
+    best = Fv.argmin(-1)
+    out = s.gather(-1, best.unsqueeze(-1)).squeeze(-1)
+    stats = dict(n=int(c.numel()), aberth_converged=float(conv.float().mean()),
+                 fallback=int((~conv).sum()), mean_real_roots=float(realish.float().sum(-1).mean()),
+                 max_abs_residual=float((P(out.unsqueeze(-1).to(torch.complex128)).abs()).max()))
+    return out.reshape(shp).to(y.dtype), stats
+
+
 def _activity_grad(link, y, a, rho, s, K=20, lr=0.05, lim=None):
     """Official-PC-ALM-style activity inference: K local gradient steps from the current activity."""
     for _ in range(K):
@@ -169,8 +237,12 @@ def lifted(link, X, y, W0, T, rho, use_multiplier=True, rho_growth=1.0, mu=1e-2,
     for _ in range(T):
         pred = torch.einsum('end,red->ren', X, W)
         a = pred - lam / r
-        if activity == 'exact':
+        if activity == 'exact':      # grid + Newton: numerical approximation of the global 1-D minimiser
             s = _activity_step(link, y, a, r, grid)
+        elif activity == 'certified':
+            assert link is He3, 'certified activity solver implemented for the He3 link'
+            s, st = _activity_certified_he3(y.expand_as(a), a, r)
+            CERT_LOG.append(st)
         else:
             s = _activity_grad(link, y, a, r, s, lim=lim)
         if use_multiplier:
@@ -180,6 +252,40 @@ def lifted(link, X, y, W0, T, rho, use_multiplier=True, rho_growth=1.0, mu=1e-2,
         W = torch.linalg.solve(A.unsqueeze(0).expand(R, -1, -1, -1), b.unsqueeze(-1)).squeeze(-1)
         r = r * rho_growth
     return W
+
+
+# ---------------------------------------------------------------- GAMP (message-passing baseline)
+def gamp_glm(link, X, y, W0, T, sigma, damp=0.5, zlim=8.0, G=401):
+    """Real GAMP for the GLM y = g(w.x) + N(0, sigma^2) with Gaussian prior w_j ~ N(0, 1/d) (unit-norm prior,
+    the same norm knowledge every method has). Output posterior by 1-D quadrature on a grid; per-row variance
+    tau_p,i = tau_x ||x_i||^2 and per-coordinate tau_r,j = 1 / sum_i x_ij^2 tau_s,i, so rows need not be Gaussian.
+    Scalar tau_x, damping on (s, x, tau_x). W0: (R,E,d) initial estimates (small random).
+    """
+    R, E, d = W0.shape
+    X2 = X ** 2; rn = X2.sum(-1)                                          # (E,n,d), (E,n)
+    v0 = 1.0 / d
+    zg = torch.linspace(-zlim, zlim, G, dtype=X.dtype, device=X.device)
+    loglik = -(y.unsqueeze(-1) - link.f(zg)) ** 2 / (2 * sigma ** 2)      # (E,n,G)
+    xh = W0.clone(); tx = torch.full((R, E, 1), 0.5 * v0, dtype=X.dtype, device=X.device)
+    sh = torch.zeros(R, E, X.shape[1], dtype=X.dtype, device=X.device)
+    for _ in range(T):
+        tp = (tx * rn.unsqueeze(0)).clamp_min(1e-12)                     # (R,E,n)
+        ph = torch.einsum('end,red->ren', X, xh) - tp * sh
+        post = []
+        for r0 in range(R):                                              # chunk over restarts (memory)
+            lp = loglik - (zg - ph[r0].unsqueeze(-1)) ** 2 / (2 * tp[r0].unsqueeze(-1))
+            w = torch.softmax(lp, -1)
+            zh = (w * zg).sum(-1); post.append((zh, (w * zg ** 2).sum(-1) - zh ** 2))
+        zh = torch.stack([p[0] for p in post]); tz = torch.stack([p[1] for p in post])
+        sn = (zh - ph) / tp
+        ts = ((1 - tz / tp) / tp).clamp_min(1e-8)
+        sh = damp * sn + (1 - damp) * sh
+        tr = 1.0 / torch.einsum('end,ren->red', X2, ts).clamp_min(1e-12)
+        rhat = xh + tr * torch.einsum('end,ren->red', X, sh)
+        xn = rhat * v0 / (v0 + tr)
+        tx = damp * (v0 * tr / (v0 + tr)).mean(-1, keepdim=True) + (1 - damp) * tx
+        xh = torch.nan_to_num(damp * xn + (1 - damp) * xh)
+    return xh
 
 
 # ---------------------------------------------------------------- closed-form / fixed features

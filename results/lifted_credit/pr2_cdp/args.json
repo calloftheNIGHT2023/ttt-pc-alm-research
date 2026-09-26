@@ -1,0 +1,32 @@
+{
+ "setting": "cdp",
+ "sides": [
+  16,
+  32
+ ],
+ "alphas": [
+  2.0,
+  3.0
+ ],
+ "episodes": 32,
+ "restarts": 16,
+ "T": 500,
+ "sigma": 0.001,
+ "random_direction": false,
+ "krr": false,
+ "dataset": "cifar10",
+ "only": [
+  "spectral_orth+TAF",
+  "spectral_orth+RAF",
+  "rand1_PCALM",
+  "rand16_PCALM",
+  "rand1_PCnomult_rhosel",
+  "rand16_PCnomult_rhosel",
+  "spectral_orth+ALTMIN",
+  "rand16_ALTMIN",
+  "rand16_WF"
+ ],
+ "seed": 443501,
+ "device": "cuda:0",
+ "out": "/workspace/runs/pr2_cdp"
+}

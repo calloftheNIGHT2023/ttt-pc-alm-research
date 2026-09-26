@@ -1,0 +1,37 @@
+{
+ "setting": "gauss",
+ "sides": [
+  16
+ ],
+ "alphas": [
+  1.25,
+  1.5,
+  1.75,
+  2.0,
+  2.5,
+  3.0
+ ],
+ "episodes": 32,
+ "restarts": 16,
+ "T": 500,
+ "sigma": 0.001,
+ "random_direction": false,
+ "krr": false,
+ "dataset": "cifar10",
+ "only": [
+  "spectral_orth+TAF",
+  "spectral_orth+RAF",
+  "rand16_GAMP",
+  "spectral_orth+GAMP",
+  "rand1_PCALM",
+  "rand16_PCALM",
+  "rand1_PCnomult_rhosel",
+  "rand16_PCnomult_rhosel",
+  "spectral_orth+PCALM",
+  "spectral_orth+ALTMIN",
+  "rand16_WF"
+ ],
+ "seed": 443301,
+ "device": "cuda:1",
+ "out": "/workspace/runs/pr2_gauss_d256"
+}
