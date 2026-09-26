@@ -28,16 +28,12 @@ This remains the closest single area because the central contribution concerns a
 
 ## AI Assistance
 
-Select all that apply below; do not select “No, not at all” or “Yes, but for none of the above purposes.”
+As submitted on OpenReview (2026-09-26), exactly two options are selected:
 
 - Yes, to aid or polish writing. Details are described in the paper.
-- Yes, for retrieval and discovery (e.g., finding related work). Details are described in the paper.
-- Yes, for research ideation or execution. Details are described in the paper.
-- Yes, to draft sections of the paper. Details are described in the paper.
-- Yes, for generating synthetic datasets. Details are described in the paper.
-- Yes, for proving mathematical claims. Details are described in the paper.
+- Yes, but for none of the above purposes. Details are described in the paper. (The other purpose is drawing the figures.)
 
-The manuscript must contain a matching AI-use statement that describes the actual assistance and the authors' verification of AI-assisted code, proofs, experiments, interpretation, and prose.
+The AI-use statement in `main.tex` matches these two selections: polishing the writing, and creating the figures with coding agents following figure-making skills.
 
 ## Fields that do not need a content change
 

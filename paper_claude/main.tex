@@ -430,7 +430,11 @@ On a base that meets these conditions, a self-iterating learner that is consiste
 Code, run configurations, per-sequence result files and figure scripts are kept in the authors' research repository; they are \emph{not} attached to this submission and will be released as an anonymized archive. Every number in the paper is read from a saved result file, and all figures are regenerated from the raw result files. Section~\ref{sec:real} and Appendix~\ref{app:details} give data sources, splits, seeds and hyper-parameters. Member selection used training data only; evaluation sequences are fixed by seed and identical across models, which makes the paired tests valid.
 
 \subsection*{AI use statement}
-Generative AI tools were used to polish writing, to retrieve and discover related work, for research ideation and execution (planning, code, experiment scripting and analysis), to draft sections of the paper, to generate the synthetic datasets, and to help derive and check the mathematical claims. The authors reviewed the AI-assisted code, re-derived the proofs, checked every reported number against the saved result files, and verified the interpretation and prose; they take full responsibility for the content.
+In this work, we used generative AI tools for two purposes: to polish the writing, and to create the figures.
+All figures were drawn by coding agents (Claude Code and Codex) following figure-making skills, i.e., instruction files that fix the house style, the panel layout and automatic legibility checks.
+Each figure is produced by a matplotlib script that reads the archived experimental outputs; no image-generation model was used.
+We have reviewed all AI-assisted work.
+We take responsibility for the final content of this work, including text, claims or artifacts produced with the aid of generative AI.
 
 \bibliography{references}
 \bibliographystyle{iclr2027_conference}
