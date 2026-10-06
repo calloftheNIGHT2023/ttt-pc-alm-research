@@ -2,6 +2,41 @@
 
 Live research source: C:\Users\callofthenight\Documents\Codex\2026-09-18\ttt-pc-alm-ttt-pc-alm
 
+## Current requirements storyline — audited 2026-09-29
+
+Current research checkout: `lifted-credit-mainline`, tracked HEAD `2dcba13b`; `git status --short` was empty at inspection. New local scripts/results/reports are in ignored directories, so a clean tracked checkout does not mean these artifacts are committed. `paper_claude/main.tex` has not yet been synchronized with this audit.
+
+The current question is what the representation and inference-time learner must provide for the studied multi-branch relations. C1–C10 below are historical evidence, not the current outline. Paths are relative to the research repository; `workspace:` means `C:\Users\callofthenight\Documents\ChatGPT\TTT&PCALM`.
+
+| ID | Current claim / decision | Status | Evidence | Budget / boundary |
+|---|---|---|---|---|
+| R1 | The conditional-variance floor is attained by the oracle in controlled Gaussian-residual tasks. | STAGE_SPECIFIC | `results/lifted_credit/q2_mechanisms/results.json:m1_floor`; main.tex thm:b1/cor:b2 | Conditional theorem and numerical check. A real-base linear probe is not a universal lower bound for nonlinear learners. |
+| R2 | Underdetermination differs from optimization failure; the quantitative Gaussian-prior NMSE bound needs normalization repair. | UNRESOLVED | `workspace:local_evidence_audit_456/requirements_audit.json:R2`; main.tex prop:b3 | Random-norm Gaussian u does not give marginal Var(abs(k'u))=1−2/π. At d=32 the proof yields prefactor .973561, not 1. Keep measurements, repair the theoretical statement. |
+| R2-M | The 16-chain mixture improves over the first chain near the threshold in the controlled protocol. | STAGE_SPECIFIC | `results/lifted_credit/q1_requirements/results.json:r4` | 512 tasks/cell; also report best-of-16. This does not isolate averaging from the 16-fold search budget. |
+| R3 | Hard absolute-value ERM inflates the population norm; posterior inversion has the stated consistency identity. | STAGE_SPECIFIC | `q2_mechanisms/results.json:m3_bias`; `q1_requirements/results.json:r1` (under `results/lifted_credit/`) | Truth-initialized check, not global recovery. The finite-rho Gibbs formula needs the branch-feasibility condition used by the clipped implementation. |
+| R4 | Degrees-of-freedom correction reduces underestimation in the folded-observation experiment, but is not exactly unbiased there. | STAGE_SPECIFIC | `results/lifted_credit/q1_requirements/results.json:r3` | Linear theorem contains ridge bias and n−2trH+tr(H²); implementation uses folded RSS/(n−trH). At sigma=.5,n=4d the corrected ratio is .887928: 11.21% low, contradicting the blanket 6% caption. |
+| R5 | Conditional on convergence, the hard leaky update matches its ridge fixed-point equation. | STAGE_SPECIFIC | `results/lifted_credit/q2_mechanisms/results_b_m4.json:m4_fixed_points` | Max discrepancy over all converged cells is 4.3881e−15. Report convergence fractions; neither global convergence nor universal leak tuning is proved. |
+| R6 | Hard-branch expected-loss derivatives contain a boundary term under regularity assumptions; saved differences measure finite-step sensitivity. | STAGE_SPECIFIC | main.tex thm:l5; `results/lifted_credit/q1_requirements/results.json:r5` | Only h=.2,.05 tested: not a converged derivative estimate. Positive-temperature gradients can be exact. Zero observation noise does not imply zero fitted residual along the trajectory. |
+| E-CV | The local new-seed run supports improvement at the frozen largest-context endpoint. | CONFIRMED | `r16_cv_s2_a/b/c/results.json` under `results/lifted_credit/`; `workspace:local_confirmation_451/cv_confirmation_summary.json` | 6m: .0839 vs best baseline .1011 (8-chain GD-soft), paired CIs favor method. New hardware. 2m: .2296 vs quadratic .2041, a negative result. |
+| E-NLP | Reconstructed GloVe/MRC preserves the largest-context advantage in this run. | STAGE_SPECIFIC | `workspace:local_rebuilt_bases_453/nlp_summary.json`; `r17_nlp_rebuilt_s3_a/b` | 3000 outer steps, K=30,1280 sequences/context; 8d .6631 vs GD-soft .6867. Original NPZ absent: not same-frozen-base confirmation. At 2d GD-soft is better. |
+| E-GRAPH | Locally retrained GINE does not yield PC-ALM superiority over GD-soft at 4d/8d. | NEGATIVE | `workspace:local_rebuilt_bases_453/graph_summary.json`; `r17_graph_rebuilt_s3_a/b` | 8d .7018 vs .6015; 4d .7561 vs .6718. A method comparison, not base impossibility; preserve if later seeds differ. |
+| E-TAIL | Rare capped scores influence the old Graph mean, but their raw origin is unavailable. | UNRESOLVED | `results/lifted_credit/r9_graph_s2_a/results.json`; report 454 | Old GD-soft 8d has 3/1280 scores=1000; NaN/Inf versus finite huge errors cannot be recovered from capped JSON. Keep all in the primary endpoint. |
+| E-RESOURCE | Same K/outer steps does not establish equal online compute or a speed advantage. | UNRESOLVED | r16/r17 runtime logs and args | End-to-end process times are not a matched per-context inference benchmark. Diagnostic evaluation time includes sampling/output. |
+
+### Completed bounded diagnostics — 2026-09-29 22:45 UTC
+
+- 455/r18 completed: PC-ALM/GD-soft at 8d .7194/.5995. The new GD-soft cap events at 2d/4d (1/1280 and 5/1280) are finite large errors, not NaN/Inf; none at 8d. PC-ALM has no cap events. This does not identify the raw type of unavailable old r9 events.
+- 457 completed: both original evaluations replay exactly, including raw arrays. Three frozen generator seeds give 8d .721538/.597178, difference +.124360, conditional paired CI[+.119170,+.129534]. Every seed and all five pooled attributes favor GD-soft there. At 2d/4d GD-soft has 7/3840 and 6/3840 finite cap events; both methods have no nonfinite events and PC-ALM no caps.
+- Evidence status: `NEGATIVE` for fixed-model 8d superiority; `STAGE_SPECIFIC` for the observed small-context tail tradeoff. These are post-result diagnostics, not new-base or independent training-seed confirmation. Report `455_graph_tail_diagnostic_results.md` preserves primary scores and scope. All predefined diagnostic runs stopped after completion; no further seed search.
+
+### Required manuscript reconciliation
+
+Revise the all-bases-best claim, add GD-soft to the principal comparison, repair R2 normalization and R3's formula condition, correct R4's 6% and R5's roundoff caption, and narrow R6's true-derivative/no-backprop language. Keep original-base and rebuilt-base provenance distinct. The detailed audit is report `456_requirements_evidence_audit.md`.
+
+Protocol wording: NLP/Graph hold out attributes, not mutually disjoint item pools; contexts/queries are sampled with replacement, and whitening uses the complete unlabeled embedding pool. Methods have matching base/projection architecture/initialization protocols but separately trained theta, not identical final keys. CV fixed-code PC-ALM/GD-soft use 1000 outer steps, other groups 3000; R=8 and R=1 comparisons need explicit accounting.
+
+## Historical ledger — 2026-09-25, retained without promotion to the current storyline
+
 Repository state inspected on 2026-09-25: clean main at ea9eea9; no active project experiment process was found. Recheck before every numerical revision.
 
 | ID | Candidate claim | Status | Exact evidence | Comparator and budget | Scope or failure condition | Planned location |
@@ -16,4 +51,3 @@ Repository state inspected on 2026-09-25: clean main at ea9eea9; no active proje
 | C8 | The frontier result is not independently attributable to multiplier state: residual credit reproduces the primary particles, allocations, and predictions bitwise, while zero credit is slightly better in mean MSE. | NEGATIVE | results/frontier_online/attribution_v1/summary.json; release/FRONTIER-REALLOCATION-20260925.md | Dual, residual, zero, BP, random-sign controls | Applies to this exposed 32-task frontier experiment. | Main limitation |
 | C9 | PC-ALM is independently superior to matched strong BP/Adam on the current task distribution. | UNRESOLVED | C5 and C8 contradict a positive claim | Same-state Adam and same-enhancement non-multiplier controls | Must not appear as an established contribution. | Limitations |
 | C10 | The approach transfers to official TTT-MLP, language models, vision-language models, or real downstream data. | UNRESOLVED | No frozen experiment in the inspected release | N/A | No such validation is currently available. | Limitations |
-
