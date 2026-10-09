@@ -1,0 +1,91 @@
+C:\Users\callofthenight\Documents\Codex\2026-09-18\ttt-pc-alm-ttt-pc-alm\work\lifted_credit\exp_real_ttt.py:283: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:837.)
+  curve.append(dict(step=step, loss=float(loss))); print(f'{name} step {step} loss {float(loss):.4f}', flush=True)
+ttt_pcalm_prox step 0 loss 0.8934
+ttt_pcalm_prox step 250 loss 0.8150
+ttt_pcalm_prox step 500 loss 0.7337
+ttt_pcalm_prox step 750 loss 0.6936
+ttt_pcalm_prox step 1000 loss 0.6249
+ttt_pcalm_prox step 1250 loss 0.6865
+ttt_pcalm_prox step 1500 loss 0.6766
+ttt_pcalm_prox step 1750 loss 0.6216
+ttt_pcalm_prox step 2000 loss 0.6328
+ttt_pcalm_prox step 2250 loss 0.7092
+ttt_pcalm_prox step 2500 loss 0.6801
+ttt_pcalm_prox step 2750 loss 0.6362
+ttt_pcalm_prox step 2999 loss 0.6276
+== ttt_pcalm_prox: held-out attrs pooled NMSE n=2.0d 0.810/0.798  n=4.0d 0.717/0.702  n=8.0d 0.670/0.660  | train attrs n=4d 0.843  (278s)
+ttt_gd_soft step 0 loss 0.8680
+ttt_gd_soft step 250 loss 0.7631
+ttt_gd_soft step 500 loss 0.6327
+ttt_gd_soft step 750 loss 0.6320
+ttt_gd_soft step 1000 loss 0.6161
+ttt_gd_soft step 1250 loss 0.6823
+ttt_gd_soft step 1500 loss 0.6686
+ttt_gd_soft step 1750 loss 0.6220
+ttt_gd_soft step 2000 loss 0.6323
+ttt_gd_soft step 2250 loss 0.6924
+ttt_gd_soft step 2500 loss 0.6788
+ttt_gd_soft step 2750 loss 0.6388
+ttt_gd_soft step 2999 loss 0.6278
+== ttt_gd_soft: held-out attrs pooled NMSE n=2.0d 0.774/0.747  n=4.0d 0.714/0.695  n=8.0d 0.685/0.675  | train attrs n=4d 0.842  (180s)
+ttt_gd_full step 0 loss 1.0443
+ttt_gd_full step 250 loss 0.7576
+ttt_gd_full step 500 loss 0.6648
+ttt_gd_full step 750 loss 0.6813
+ttt_gd_full step 1000 loss 0.6493
+ttt_gd_full step 1250 loss 0.7028
+ttt_gd_full step 1500 loss 0.7102
+ttt_gd_full step 1750 loss 0.6454
+ttt_gd_full step 2000 loss 0.6500
+ttt_gd_full step 2250 loss 0.7125
+ttt_gd_full step 2500 loss 0.7045
+ttt_gd_full step 2750 loss 0.6618
+ttt_gd_full step 2999 loss 0.6597
+== ttt_gd_full: held-out attrs pooled NMSE n=2.0d 0.799/0.762  n=4.0d 0.748/0.715  n=8.0d 0.705/0.684  | train attrs n=4d 0.872  (72s)
+ttt_gd_official step 0 loss 0.8916
+ttt_gd_official step 250 loss 0.7299
+ttt_gd_official step 500 loss 0.6670
+ttt_gd_official step 750 loss 0.6974
+ttt_gd_official step 1000 loss 0.6680
+ttt_gd_official step 1250 loss 0.7205
+ttt_gd_official step 1500 loss 0.7203
+ttt_gd_official step 1750 loss 0.6559
+ttt_gd_official step 2000 loss 0.6747
+ttt_gd_official step 2250 loss 0.7452
+ttt_gd_official step 2500 loss 0.7079
+ttt_gd_official step 2750 loss 0.6828
+ttt_gd_official step 2999 loss 0.6919
+== ttt_gd_official: held-out attrs pooled NMSE n=2.0d 0.908/0.907  n=4.0d 0.828/0.802  n=8.0d 0.756/0.731  | train attrs n=4d 0.899  (25s)
+ttt_quad_ridge step 0 loss 1.4669
+ttt_quad_ridge step 250 loss 1.0552
+ttt_quad_ridge step 500 loss 0.8612
+ttt_quad_ridge step 750 loss 0.7588
+ttt_quad_ridge step 1000 loss 0.7210
+ttt_quad_ridge step 1250 loss 0.7611
+ttt_quad_ridge step 1500 loss 0.7159
+ttt_quad_ridge step 1750 loss 0.6621
+ttt_quad_ridge step 2000 loss 0.6540
+ttt_quad_ridge step 2250 loss 0.7185
+ttt_quad_ridge step 2500 loss 0.6939
+ttt_quad_ridge step 2750 loss 0.6508
+ttt_quad_ridge step 2999 loss 0.6490
+== ttt_quad_ridge: held-out attrs pooled NMSE n=2.0d 0.914/0.901  n=4.0d 0.791/0.781  n=8.0d 0.727/0.717  | train attrs n=4d 0.871  (28s)
+C:\Users\callofthenight\Documents\Codex\2026-09-18\ttt-pc-alm-ttt-pc-alm\work\lifted_credit\exp_real_ttt.py:219: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(nn.TransformerEncoderLayer(dm, heads, 4 * dm, dropout=0.0, batch_first=True, norm_first=True), layers)
+transformer step 0 loss 5.9277
+transformer step 250 loss 0.6890
+transformer step 500 loss 0.5851
+transformer step 750 loss 0.5398
+transformer step 1000 loss 0.4916
+transformer step 1250 loss 0.5094
+transformer step 1500 loss 0.4773
+transformer step 1750 loss 0.4340
+transformer step 2000 loss 0.4207
+transformer step 2250 loss 0.4545
+transformer step 2500 loss 0.4374
+transformer step 2750 loss 0.4160
+transformer step 2999 loss 0.3895
+== transformer: held-out attrs pooled NMSE n=2.0d 0.973/0.938  n=4.0d 0.939/0.908  n=8.0d 0.892/0.865  | train attrs n=4d 0.530  (39s)
+== select_cv: held-out attrs pooled NMSE n=2.0d 0.776/0.754  n=4.0d 0.707/0.691  n=8.0d 0.668/0.662  | chose PC-ALM {'2.0': 0.4150390625, '4.0': 0.4254557291666667, '8.0': 0.5139973958333334}
+DONE

@@ -48,6 +48,8 @@ ap.add_argument('--steps', type=int, default=3000)
 ap.add_argument('--batch', type=int, default=64)
 ap.add_argument('--K', type=int, default=30)
 ap.add_argument('--lr', type=float, default=3e-3)
+ap.add_argument('--select_pair', action='store_true', help='chain closure: per-sequence member selection between ttt_pcalm_prox and '
+                'ttt_gd_soft by 4-fold cross-validation inside the context (deployment data only, R6)')
 ap.add_argument('--models', nargs='+', default=['ttt_pcalm', 'ttt_gd_full', 'ttt_gd_official', 'ttt_ridge', 'ttt_quad_ridge', 'transformer', 'probe_reference'])
 ap.add_argument('--eval_n_over_d', type=float, nargs='+', default=[2, 4, 8])
 ap.add_argument('--eval_seqs', type=int, default=1024)
@@ -102,8 +104,9 @@ def sample(B, n, nq, attrs, gen):
 
 
 class TTT(nn.Module):
-    def __init__(self, kind):
+    def __init__(self, kind, K_iter=None):
         super().__init__()
+        self.K_iter = K_iter or args.K
         self.kind = kind
         th = torch.randn(d, D, generator=torch.Generator().manual_seed(args.seed + 1)); th = th / th.norm(dim=-1, keepdim=True)
         self.theta = nn.Parameter(th.to(dev))
@@ -144,14 +147,14 @@ class TTT(nn.Module):
                 w = (w - eta * 2 / Kc.shape[1] * torch.einsum('bn,bnd->bd', (s.abs() - yc) * torch.sign(s), Kc)).clamp(-50, 50)
         elif self.kind == 'gd_full':
             eta = self.log_step.exp()
-            for _ in range(args.K):
+            for _ in range(self.K_iter):
                 s = torch.einsum('bnd,bd->bn', K, w)
                 w = (w - eta * 2 / n * torch.einsum('bn,bnd->bd', (s.abs() - y) * torch.sign(s), K)).clamp(-50, 50)
         elif self.kind == 'pcalm':
             rho = 1.0
             L = torch.linalg.cholesky(K.transpose(1, 2) @ K + self.log_mu_pc.exp() * I(d))
             lam = torch.zeros(B, n, device=dev)
-            for _ in range(args.K):
+            for _ in range(self.K_iter):
                 pred = torch.einsum('bnd,bd->bn', K, w); a = pred - lam / rho
                 sp = ((2 * y + rho * a) / (2 + rho)).clamp_min(0); sm = ((-2 * y + rho * a) / (2 + rho)).clamp_max(0)
                 Fv = lambda s_: (s_.abs() - y) ** 2 + 0.5 * rho * (s_ - a) ** 2
@@ -177,7 +180,7 @@ class TTT(nn.Module):
                     Lmu = torch.linalg.cholesky(G + self.log_mu_pc.exp() * I(d))
                     df = d - self.log_mu_pc.exp() * torch.cholesky_inverse(Lmu).diagonal(dim1=1, dim2=2).sum(-1)
                     infl = (n / (n - df).clamp_min(1.0))[:, None]
-            for _ in range(args.K):
+            for _ in range(self.K_iter):
                 pred = torch.einsum('bnd,bd->bn', K, w)
                 r2 = infl * ((y - pred.abs()) ** 2).mean(-1, keepdim=True).detach()
                 nsr = torch.ones_like(r2)
@@ -197,7 +200,7 @@ class TTT(nn.Module):
                 w = torch.cholesky_solve((torch.einsum('bnd,bn->bd', K, s + lam / rho) + p * w).unsqueeze(-1), L).squeeze(-1)
         elif self.kind == 'gd_soft':
             eta = self.log_step.exp()
-            for _ in range(args.K):
+            for _ in range(self.K_iter):
                 pred = torch.einsum('bnd,bd->bn', K, w)
                 r2 = ((y - pred.abs()) ** 2).mean(-1, keepdim=True).detach()
                 s = soft_activity(y, pred, 1.0, self.log_c.exp() * r2 + 1e-4)
@@ -250,6 +253,7 @@ def evaluate(fn, attrs_list, label):
 
 n_train = int(args.n_over_d * d)
 results = {}
+trained = {}
 for name in args.models:
     t0 = time.perf_counter()
     if name == 'probe_reference':
@@ -265,6 +269,7 @@ for name in args.models:
         model = {'ttt_pcalm': lambda: TTT('pcalm'), 'ttt_pcalm_sigma': lambda: TTT('pcalm_sigma'), 'ttt_gd_soft': lambda: TTT('gd_soft'),
                  'ttt_pcalm_prox': lambda: TTT('pcalm_prox'), 'ttt_pcalm_prox_nolam': lambda: TTT('pcalm_prox_nolam'),
                  'ttt_pcalm_robust': lambda: TTT('pcalm_robust'), 'ttt_gd_full': lambda: TTT('gd_full'), 'ttt_gd_official': lambda: TTT('gd_official'),
+                 'ttt_gd_soft_k45': lambda: TTT('gd_soft', 45), 'ttt_gd_full_k45': lambda: TTT('gd_full', 45),
                  'ttt_ridge': lambda: TTT('ridge'), 'ttt_quad_ridge': lambda: TTT('quad'), 'transformer': lambda: Transformer()}[name]().to(dev)
         params = list(model.parameters()); opt = torch.optim.Adam(params, lr=args.lr)
         gen = torch.Generator(device=dev).manual_seed(args.seed + 100); curve = []
@@ -276,7 +281,7 @@ for name in args.models:
                 loss.backward(); torch.nn.utils.clip_grad_norm_(params, 1.0); opt.step()
             if step % 250 == 0 or step == args.steps - 1:
                 curve.append(dict(step=step, loss=float(loss))); print(f'{name} step {step} loss {float(loss):.4f}', flush=True)
-        model.eval()
+        model.eval(); trained[name] = model
         fn = lambda o, y, oq, w0, j: model(o, y, oq, w0)
         with torch.no_grad():
             learned = {k: float(v.exp()) if k.startswith('log_') else v.tolist() for k, v in model.named_parameters() if v.numel() <= 2}
@@ -285,5 +290,34 @@ for name in args.models:
     r = results[name]
     print(f"== {name}: held-out attrs pooled NMSE " + '  '.join(f"n={k}d {v['pooled_nmse_mean']:.3f}/{v['pooled_nmse_median']:.3f}" for k, v in r['eval_test'].items())
           + f"  | train attrs n=4d {r['eval_train']['4.0']['pooled_nmse_mean']:.3f}  ({r['train_seconds']:.0f}s)", flush=True)
+    (out / 'results.json').write_text(json.dumps(dict(names=names, train=[names[i] for i in train_attr], test=[names[i] for i in test_attr], results=results), indent=1))
+if args.select_pair:
+    MA, MB = trained['ttt_pcalm_prox'], trained['ttt_gd_soft']
+    stats = dict(chose_pcalm=[], n=[])
+
+    def cv_error(model, o, y, w0, F=4):
+        n = y.shape[1]; err = torch.zeros(y.shape[0], device=dev)
+        for f in range(F):
+            lo, hi = f * n // F, (f + 1) * n // F
+            tr = torch.cat([torch.arange(0, lo, device=dev), torch.arange(hi, n, device=dev)])
+            p = model(o[:, tr], y[:, tr], o[:, lo:hi], w0)
+            err = err + torch.nan_to_num(((p - y[:, lo:hi]) ** 2).mean(-1), nan=1e6).clamp_max(1e6)
+        return err
+
+    def select_fn(o, y, oq, w0, j):
+        ea, eb = cv_error(MA, o, y, w0), cv_error(MB, o, y, w0)
+        pick = (ea <= eb)[:, None]
+        stats['chose_pcalm'].append(float(pick.float().mean())); stats['n'].append(int(y.shape[1]))
+        return torch.where(pick, MA(o, y, oq, w0), MB(o, y, oq, w0))
+
+    with torch.no_grad():
+        t0 = time.perf_counter()
+        results['select_cv'] = dict(eval_test=evaluate(select_fn, test_attr, 'test'), eval_train=evaluate(select_fn, train_attr, 'train'),
+                                    seconds=time.perf_counter() - t0)
+        ns = sorted(set(stats['n']))
+        results['select_cv']['fraction_choosing_pcalm'] = {str(n / d): float(np.mean([c for c, m in zip(stats['chose_pcalm'], stats['n']) if m == n])) for n in ns}
+    r = results['select_cv']
+    print("== select_cv: held-out attrs pooled NMSE " + '  '.join(f"n={k}d {v['pooled_nmse_mean']:.3f}/{v['pooled_nmse_median']:.3f}" for k, v in r['eval_test'].items())
+          + f"  | chose PC-ALM {r['fraction_choosing_pcalm']}", flush=True)
     (out / 'results.json').write_text(json.dumps(dict(names=names, train=[names[i] for i in train_attr], test=[names[i] for i in test_attr], results=results), indent=1))
 print('DONE')

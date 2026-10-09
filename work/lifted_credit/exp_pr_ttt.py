@@ -35,6 +35,8 @@ ap.add_argument('--eval_seqs', type=int, default=1024)
 ap.add_argument('--seed', type=int, default=449101)
 ap.add_argument('--device', default='cuda:0')
 ap.add_argument('--df_correct', action='store_true', help='report 450: unbiased noise estimate RSS/(n - df), df = tr((G+mu I)^-1 G)')
+ap.add_argument('--ens_temps', type=float, nargs='*', default=[], help='chain closure (R2): also evaluate the R-chain mixture at these '
+                'weight temperatures T (weights softmax(-n/2 (r2/min r2 - 1)/T); T=0 means uniform averaging)')
 ap.add_argument('--ens', type=int, default=1, help='report 450: evaluate also with R chains from different inits, weighted by in-context likelihood')
 ap.add_argument('--prox_noise', action='store_true', help='report 450: proximal weight also scales with r2/E[y^2], so it vanishes in the exact regime')
 ap.add_argument('--snr_rule', default='none', choices=['none', 'leak', 'both'],
@@ -218,7 +220,7 @@ def w_init(B, gen):
     return 0.1 * torch.randn(B, m, generator=gen, device=dev) / math.sqrt(m)
 
 
-def evaluate(model, ens=1, pool=None):
+def evaluate(model, ens=1, pool=None, temp=1.0):
     pool = Xte if pool is None else pool
     egen = torch.Generator(device=dev).manual_seed(args.seed + 999); res = {}
     xgen = torch.Generator(device=dev).manual_seed(args.seed + 4242)   # extra chains: separate stream, eval set unchanged
@@ -233,7 +235,10 @@ def evaluate(model, ens=1, pool=None):
                     for _r in range(ens - 1):
                         Ps.append(model(a, y, aq, w_init(128, xgen))); R2.append(model.last_r2)
                     R2 = torch.cat(R2, -1)
-                    wts = torch.softmax(-0.5 * n * (R2 / R2.min(-1, keepdim=True).values.clamp_min(1e-12) - 1), -1)
+                    if temp == 0:
+                        wts = torch.full_like(R2, 1.0 / R2.shape[-1])
+                    else:
+                        wts = torch.softmax(-0.5 * n * (R2 / R2.min(-1, keepdim=True).values.clamp_min(1e-12) - 1) / temp, -1)
                     p = (torch.stack(Ps, -1) * wts[:, None, :]).sum(-1)
                 errs.append(((p - yq) ** 2).mean(-1) / yq.var(-1).clamp_min(1e-8))
             e = torch.nan_to_num(torch.cat(errs), nan=1e3).clamp_max(1e3)
@@ -284,6 +289,11 @@ for name in args.models:
     ev = evaluate(model)
     if args.ens > 1 and isinstance(model, TTT) and model.kind not in ('ridge', 'quad'):
         results.setdefault('ensemble', {})[name] = evaluate(model, args.ens)
+        for T in args.ens_temps:
+            results.setdefault(f'ensemble_T{T:g}', {})[name] = evaluate(model, args.ens, temp=T)
+            if args.val_train:      # temperature chosen on TRAIN-split images only (R6)
+                results.setdefault(f'val_train_ensemble_T{T:g}', {})[name] = evaluate(model, args.ens, Xtr, temp=T)
+            print(f'   {name} ens={args.ens} T={T:g}: ' + '  '.join(f"n={k}m: {v['nmse_mean']:.4f}" for k, v in results[f'ensemble_T{T:g}'][name].items()), flush=True)
         if args.val_train:
             results.setdefault('val_train_ensemble', {})[name] = evaluate(model, args.ens, Xtr)
             print(f'   {name} VAL(train images) ens={args.ens}: ' + '  '.join(f"n={k}m: {v['nmse_mean']:.3f}" for k, v in results['val_train_ensemble'][name].items()), flush=True)

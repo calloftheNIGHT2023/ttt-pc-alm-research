@@ -1,0 +1,61 @@
+C:\Users\callofthenight\Documents\Codex\2026-09-18\ttt-pc-alm-ttt-pc-alm\work\lifted_credit\exp_real_ttt.py:283: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:837.)
+  curve.append(dict(step=step, loss=float(loss))); print(f'{name} step {step} loss {float(loss):.4f}', flush=True)
+ttt_pcalm_prox step 0 loss 0.8383
+ttt_pcalm_prox step 250 loss 0.1229
+ttt_pcalm_prox step 500 loss 0.1073
+ttt_pcalm_prox step 750 loss 0.1052
+ttt_pcalm_prox step 1000 loss 0.1209
+ttt_pcalm_prox step 1250 loss 0.0798
+ttt_pcalm_prox step 1500 loss 0.1008
+ttt_pcalm_prox step 1750 loss 0.0988
+ttt_pcalm_prox step 2000 loss 0.1480
+ttt_pcalm_prox step 2250 loss 0.0869
+ttt_pcalm_prox step 2500 loss 0.1053
+ttt_pcalm_prox step 2750 loss 0.0759
+ttt_pcalm_prox step 2999 loss 0.0467
+== ttt_pcalm_prox: held-out attrs pooled NMSE n=2.0d 0.855/0.807  n=4.0d 0.756/0.734  n=8.0d 0.702/0.684  | train attrs n=4d 6.344  (433s)
+ttt_gd_soft step 0 loss 0.7702
+ttt_gd_soft step 250 loss 0.1131
+ttt_gd_soft step 500 loss 0.0476
+ttt_gd_soft step 750 loss 0.0485
+ttt_gd_soft step 1000 loss 0.0634
+ttt_gd_soft step 1250 loss 0.0510
+ttt_gd_soft step 1500 loss 0.0640
+ttt_gd_soft step 1750 loss 0.0636
+ttt_gd_soft step 2000 loss 0.0577
+ttt_gd_soft step 2250 loss 0.0547
+ttt_gd_soft step 2500 loss 0.0709
+ttt_gd_soft step 2750 loss 0.0492
+ttt_gd_soft step 2999 loss 0.0347
+== ttt_gd_soft: held-out attrs pooled NMSE n=2.0d 2.384/0.760  n=4.0d 0.672/0.629  n=8.0d 0.601/0.582  | train attrs n=4d 53.322  (210s)
+ttt_gd_soft_k45 step 0 loss 0.8345
+ttt_gd_soft_k45 step 250 loss 0.0925
+ttt_gd_soft_k45 step 500 loss 0.0574
+ttt_gd_soft_k45 step 750 loss 0.0583
+ttt_gd_soft_k45 step 1000 loss 0.0586
+ttt_gd_soft_k45 step 1250 loss 0.0544
+ttt_gd_soft_k45 step 1500 loss 0.0637
+ttt_gd_soft_k45 step 1750 loss 0.0628
+ttt_gd_soft_k45 step 2000 loss 0.0603
+ttt_gd_soft_k45 step 2250 loss 0.0500
+ttt_gd_soft_k45 step 2500 loss 0.0576
+ttt_gd_soft_k45 step 2750 loss 0.0437
+ttt_gd_soft_k45 step 2999 loss 0.0307
+== ttt_gd_soft_k45: held-out attrs pooled NMSE n=2.0d 2.385/0.762  n=4.0d 0.668/0.633  n=8.0d 0.595/0.573  | train attrs n=4d 59.682  (281s)
+ttt_gd_full_k45 step 0 loss 0.9698
+ttt_gd_full_k45 step 250 loss 0.3903
+ttt_gd_full_k45 step 500 loss 0.2341
+ttt_gd_full_k45 step 750 loss 0.1636
+ttt_gd_full_k45 step 1000 loss 55119.7109
+ttt_gd_full_k45 step 1250 loss 0.1159
+ttt_gd_full_k45 step 1500 loss 0.1870
+ttt_gd_full_k45 step 1750 loss 0.1744
+ttt_gd_full_k45 step 2000 loss 0.2090
+ttt_gd_full_k45 step 2250 loss 0.1279
+ttt_gd_full_k45 step 2500 loss 0.2005
+ttt_gd_full_k45 step 2750 loss 0.1626
+ttt_gd_full_k45 step 2999 loss 0.1072
+== ttt_gd_full_k45: held-out attrs pooled NMSE n=2.0d 0.990/0.894  n=4.0d 0.862/0.788  n=8.0d 0.764/0.727  | train attrs n=4d 63.529  (105s)
+== select_cv: held-out attrs pooled NMSE n=2.0d 0.806/0.761  n=4.0d 0.678/0.646  n=8.0d 0.608/0.587  | chose PC-ALM {'2.0': 0.3268914473684211, '4.0': 0.22471217105263158, '8.0': 0.16447368421052633}
+DONE
